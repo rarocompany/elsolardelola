@@ -23,7 +23,8 @@ class HT_CTC_Admin_Others {
     }
 
     function ajax() {
-        // add_action( 'wp_ajax_ht_ctc_admin_dismiss_notices', [$this, 'dismiss_notices'] );
+
+        add_action( 'wp_ajax_ht_ctc_admin_dismiss_notices', [$this, 'dismiss_notices'] );
     }
 
     function admin_hooks() {
@@ -139,28 +140,35 @@ class HT_CTC_Admin_Others {
         }
 
 
-        // // pro notice
-        // if ( !isset($ht_ctc_notices['pro_banner']) ) {
+        /**
+         * pro notice
+         * 
+         * not closed/dismissed the pro notice
+         * not yet installed once.
+         * after 1 week of first install..
+         */
+        if ( !isset($ht_ctc_notices['pro_banner']) ) {
 
-        //     // display pro banner only if pro plugin is not yet installed once
-        //     if ( !isset($ht_ctc_pro_plugin_details['version']) ) {
+            // display pro banner only if pro plugin is not yet installed once
+            if ( !isset($ht_ctc_pro_plugin_details['version']) ) {
 
-        //         $time = time();
-        //         // 1 week
-        //         $wait_time = (7*24*60*60);
-        //         $ht_ctc_plugin_details = get_option('ht_ctc_plugin_details');
-        //         $first_install_time = (isset($ht_ctc_plugin_details['first_install_time'])) ? esc_attr($ht_ctc_plugin_details['first_install_time']) : 1;
+                $time = time();
+                // 1 week
+                $wait_time = (7*24*60*60);
 
-        //         $diff_time = $time - $first_install_time;
+                $ht_ctc_plugin_details = get_option('ht_ctc_plugin_details');
+                $first_install_time = (isset($ht_ctc_plugin_details['first_install_time'])) ? esc_attr($ht_ctc_plugin_details['first_install_time']) : 1;
 
-        //         if ( $diff_time > $wait_time ) {
-        //             add_action('admin_notices', array( $this, 'pro_notice') );
-        //             add_action('admin_footer', array( $this, 'admin_pro_notice_scripts') );
-        //         }
+                $diff_time = $time - $first_install_time;
 
-        //     }
+                if ( $diff_time > $wait_time ) {
+                    add_action('admin_notices', array( $this, 'pro_notice') );
+                    add_action('admin_footer', array( $this, 'admin_pro_notice_scripts') );
+                }
 
-        // }
+            }
+
+        }
 
         // // todo -remove this..  - added here for testing.. 
         // add_action('admin_notices', array( $this, 'pro_notice') );
@@ -198,14 +206,15 @@ class HT_CTC_Admin_Others {
 
     function pro_notice() {
         ?>
-        <div class="notice notice-info is-dismissible ht-ctc-notice-pro-banner" data-db="pro_banner" style="display:flex; flex-direction: column; padding:25px;">
-            <p style="margin:0; font-size: 1.4em;color:#1d2327; font-weight:600;">Click to Chat - PRO</p>
-            <p style="margin:0 0 2px;">
-                Upgrade to Click to Chat PRO. Includes feature like Random Number, Form filling, Webhooks, Business hours, Display based on time range, days in a week, time dealy, scroll delay, login status
+        <div class="notice notice-info is-dismissible ht-ctc-notice-pro-banner" data-db="pro_banner" style="display:flex; flex-direction:column; padding:14px; background-color:#253142; border-color:#253142; color:#f7d070; border-radius:5px;">
+            <p style="margin:0; font-size:1.4rem; color:#1d2327; font-weight:600; color:#f7d070;">Click to Chat - PRO</p>
+            <p style="margin:0 0 2px; color:#f7d070; font-size:1.1rem;">
+                Upgrade to Click to Chat PRO. Includes features like Random Number, Form filling, Webhooks, Business hours, Display based on time range, days in a week, time dealy, scroll delay, login status
             </p>
-            <p style="margin:0;">
-                <a class="button button-primary" href="https://holithemes.com/plugins/click-to-chat/pricing/" target="_blank">Buy Now</a>
-                <a class="button button-dismiss" href="#">Dismiss</a>
+            <p>
+                <a class="button button-primary" style="padding:2px 15px;" href="https://holithemes.com/plugins/click-to-chat/pricing/" target="_blank">Buy Now</a>
+                <br>
+                <a class="button-dismiss" style="text-decoration: none;" href="#">Dismiss</a>
             </p>
         </div>
         <?php
@@ -264,34 +273,39 @@ class HT_CTC_Admin_Others {
      * 
      * dismise notice - $key - post data 'db' - value is time..
      */
-    // function dismiss_notices() {
+    function dismiss_notices() {
 
-    //     check_ajax_referer('ht-ctc-notices', 'nonce');
+        check_ajax_referer('ht-ctc-notices', 'nonce');
 
-    //     $time = time();
+        $time = time();
 
-    //     $post_data = ($_POST) ? map_deep( $_POST, 'sanitize_text_field' ) : '';
-    //     $db_key = (isset($post_data['db'])) ? esc_attr( $post_data['db'] ) : '';
+        $post_data = ($_POST) ? map_deep( $_POST, 'sanitize_text_field' ) : '';
+        $db_key = (isset($post_data['db'])) ? esc_attr( $post_data['db'] ) : '';
 
-    //     // update/add at db..
-    //     $values = array(
-    //         'version' => HT_CTC_VERSION,
-    //     );
-    //     $db_values = get_option( 'ht_ctc_notices', array() );
-    //     $update_values = array_merge($values, $db_values);
-    //     // update to latest values
-    //     $update_values['version'] = HT_CTC_VERSION;
-    //     // add data ..
-    //     if ('' !== $db_key) {
-    //         $update_values[$db_key] = $time;
-    //     }
-    //     update_option( 'ht_ctc_notices', $update_values );
+        // update/add at db..
+        $values = array(
+            'version' => HT_CTC_VERSION,
+        );
+        $update_values = [];
+        $db_values = get_option( 'ht_ctc_notices', array() );
 
-    //     wp_send_json_success();
+        if (is_array($db_values)) {
+            $update_values = array_merge($values, $db_values);
+        }
 
-    //     // this wont run
-    //     wp_die();
-    // }
+        // update to latest values
+        $update_values['version'] = HT_CTC_VERSION;
+        // add data ..
+        if ('' !== $db_key) {
+            $update_values[$db_key] = $time;
+        }
+        update_option( 'ht_ctc_notices', $update_values );
+
+        wp_send_json_success();
+
+        // this wont run
+        wp_die();
+    }
 
 
     /**

@@ -72,7 +72,9 @@
 
             function tiny_bg() {
                 if (document.getElementById("header_content_ifr")) {
-                    tiny_bg_color();
+                    try {
+                        tiny_bg_color();
+                    } catch (e) {}
                 } else {
                     check++;
                     if (check < check_times) {

@@ -136,10 +136,14 @@ class HT_CTC_WOO_Pages {
         $class_names = "";
         $class_names .= "ctc_chat ctc_woo_place";
 
+        $display_from_js = '';
+
         // shop cart layout 
         if ('' !== $woo_shop_layout_cart_btn) {
-            $class_names .= " ctc_woo_shop_cart_layout";
-            $css .= "display: none;";
+            if ('1' == $ht_ctc_woo_shop['style'] || '8' == $ht_ctc_woo_shop['style'] ) {
+                $class_names .= " ctc_woo_shop_cart_layout";
+                $display_from_js = 'yes';
+            }
         }
 
         $ht_ctc_woo_shop['shop_schedule'] = 'no';
@@ -151,6 +155,10 @@ class HT_CTC_WOO_Pages {
 
         if ('yes' == $ht_ctc_woo_shop['shop_schedule']) {
             $class_names .= " ctc_woo_schedule";
+            $display_from_js = 'yes';
+        }
+
+        if ('yes' == $display_from_js) {
             $css .= "display: none;";
         } else {
             $css .= "display: $woo_shop_block_type;";
@@ -242,10 +250,14 @@ class HT_CTC_WOO_Pages {
         $class_names = "";
         $class_names .= "ctc_chat ctc_woo_place";
 
+        $display_from_js = '';
+
         // single - cart layout
         if ('' !== $woo_single_layout_cart_btn) {
-            $class_names .= " ctc_woo_single_cart_layout";
-            $css .= "display: none;";
+            if ('1' == $ht_ctc_woo_single_product['style'] || '8' == $ht_ctc_woo_single_product['style'] ) {
+                $class_names .= " ctc_woo_single_cart_layout";
+                $display_from_js = 'yes';
+            }
         }
 
         $ht_ctc_woo_single_product['single_schedule'] = 'no';
@@ -255,6 +267,10 @@ class HT_CTC_WOO_Pages {
 
         if ('yes' == $ht_ctc_woo_single_product['single_schedule']) {
             $class_names .= " ctc_woo_schedule";
+            $display_from_js = 'yes';
+        } 
+        
+        if ('yes' == $display_from_js) {
             $css .= "display: none;";
         } else {
             $css .= "display: $woo_single_block_type;";

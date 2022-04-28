@@ -3,7 +3,7 @@ Requires at least: 4.6
 Tested up to: 5.9.3
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 3.9.1
+Stable tag: 3.9.2
 Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, whatsapp support, whatsapp group, whatsapp message, WhatsApp WooCommerce, whatsapp wordpress, whatsapp floating button, whatsapp icon, holithemes
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -60,13 +60,15 @@ The custom design will navigate to WhatsApp based on plugin settings (WhatsApp N
 
 == Greetings Dialog ==
 
-Encourage user engagement by displaying the perfect Greetings message
+Encourage user engagement by displaying the perfect message at the perfect time
 
 * [Greetings-1](https://holithemes.com/plugins/click-to-chat/greetings-1/): Customizable Design
 * [Greetings-2](https://holithemes.com/plugins/click-to-chat/greetings-2/): Content Specific Design
-* [Greetings-Form](https://holithemes.com/plugins/click-to-chat/greetings-form/) [pro]: Form Filling before initializing the chat
 
-[Actions](https://holithemes.com/plugins/click-to-chat/greetings-actions/) [pro]: Display/reappear based on Time, Scroll
+PRO
+
+* [Greetings-Form](https://holithemes.com/plugins/click-to-chat/greetings-form/): Form Filling before initializing the chat
+* [Actions](https://holithemes.com/plugins/click-to-chat/greetings-actions/): Display/reappear Greetings dialog based on Time, Scroll
 
 
 == ✳️ Position to Place == 
@@ -179,7 +181,7 @@ Connect other applications using Integrate, Automation tools like Zapier, IFTTT,
     * {number} - WhatsApp Number for that icon/button
 * Greetings
     * Greetings From filling before initiating the chat
-    * Display/reappear based Time, Scroll Actions
+    * Display/reappear based on Time, page scroll
 * Position to place
     * Fixed: Fixed position to the screen (default, available in Free version)
     * Absolute: Fixed position to the body content. (Moves when the user scrolls page)
@@ -495,6 +497,9 @@ plugin will update automatically when new version is released
 After Activate the plugin, add WhatsApp Number at plugin settings.
 
 == Changelog ==
+
+= 3.9.2 =
+* Enchantment: Greetings feature
 
 = 3.9.1 =
 * Enchantment: Greetings feature

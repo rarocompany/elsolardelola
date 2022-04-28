@@ -142,9 +142,9 @@ $(function () {
             $(document).on('click', '.ht_ctc_chat_style', function (e) {
                 // ctc_greetings_opened / ctc_greetings_closed
                 if ($('.ht_ctc_chat_greetings_box').hasClass('ctc_greetings_opened')) {
-                    greetings_close();
+                    greetings_close('user_closed');
                 } else {
-                    greetings_open();
+                    greetings_open('user_opened');
                 }
             });
 
@@ -152,7 +152,7 @@ $(function () {
 
         // close btn - greetings dialog
         $(document).on('click', '.ctc_greetings_close_btn', function (e) {
-            greetings_close();
+            greetings_close('user_closed');
         });
         
     }
@@ -178,9 +178,17 @@ $(function () {
                 new CustomEvent("ht_ctc_event_after_chat_displayed", { detail: { ctc, greetings_open, greetings_close } })
             );
 
-            if (ctc.g_init && 'open' == ctc.g_init && 'user_closed' !== ctc_getItem('g_user_action') ) {
+            if (ctc.g_init && 'open' == ctc.g_init && 'user_closed' !== ctc_getItem('g_user_action')) {
                 greetings_open('init');
             }
+
+
+            $(document).on('click', '.ctc_open_greetings, #ctc_open_greetings', function (e) {
+                console.log('greetings open triggered');
+                greetings_close('element');
+                greetings_open('element');
+            });
+
 
         }
 
@@ -190,7 +198,7 @@ $(function () {
      * ht_ctc_chat_greetings_box_user_action - this is needed for initial close or open.. if user closed.. then no auto open initially
      * 
      */
-    function greetings_open(message = 'user_opened') {
+    function greetings_open(message = 'open') {
         console.log('open');
         $('.ctc_cta_stick').remove();
         $('.ht_ctc_chat_greetings_box').show(70);
@@ -201,7 +209,7 @@ $(function () {
         }
     }
 
-    function greetings_close(message = 'user_closed') {
+    function greetings_close(message = 'close') {
         console.log('close');
         $('.ht_ctc_chat_greetings_box').hide(70);
         $('.ht_ctc_chat_greetings_box').addClass('ctc_greetings_closed').removeClass('ctc_greetings_opened');

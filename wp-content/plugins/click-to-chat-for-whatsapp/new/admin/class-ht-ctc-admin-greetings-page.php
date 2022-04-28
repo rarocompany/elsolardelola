@@ -114,7 +114,7 @@ class HT_CTC_Admin_Greetings {
                         'description' => "",
                         'list_cb' => 'greetings_template',
                         'parent_class' => 'pr_greetings_template',
-                        'description' => "<a href='https://holithemes.com/plugins/click-to-chat/greetings/' target='_blank'>Greetings</a> | <a href='https://holithemes.com/plugins/click-to-chat/greetings-1/' target='_blank'>Greetings-1</a> | <a href='https://holithemes.com/plugins/click-to-chat/greetings-2/' target='_blank'>Greetings-2</a> | <a href='https://holithemes.com/plugins/click-to-chat/greetings-form/' target='_blank'>Greetings Form </a> ",
+                        'description' => "<a href='https://holithemes.com/plugins/click-to-chat/greetings/' target='_blank'>Greetings</a> | <a href='https://holithemes.com/plugins/click-to-chat/greetings-1/' target='_blank'>Greetings-1</a> | <a href='https://holithemes.com/plugins/click-to-chat/greetings-2/' target='_blank'>Greetings-2</a> | <a href='https://holithemes.com/plugins/click-to-chat/greetings-form/' target='_blank'>Greetings - Form Filling</a> ",
                     ],
                     [
                         'db' => 'empty',
@@ -135,7 +135,7 @@ class HT_CTC_Admin_Greetings {
                         'db' => 'main_content',
                         'template' => 'editor',
                         'label' => 'Main Content',
-                        'description' => '',
+                        'description' => "Variables: {site}, {title}, {url}",
                         'parent_class' => 'pr_main_content ctc_greetings_settings ctc_g_1 ctc_g_2',
                     ],
                     'bottom_content' => [
@@ -458,8 +458,6 @@ class HT_CTC_Admin_Greetings {
     public function ht_ctc_greetings_section_cb() {
         ?>
         <h1 id="greetings_settings">Greetings Dialog</h1>
-        <p class="description"> <b style="color:#42a69a;">New feature: </b> please <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/support">contact us</a> for any suggestions</p>
-        <br>
         <?php
         do_action('ht_ctc_ah_admin' );
 
@@ -472,7 +470,7 @@ class HT_CTC_Admin_Greetings {
             <div class="ctc_greetings_settings ctc_greetings_notes">
                 <p class="description"><a href="https://holithemes.com/plugins/click-to-chat/pricing/">PRO Features</a></p>
                 <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/greetings-form/">Greetings Form</a>: Form filling before initiating the chat</p>
-                <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/greetings-actions/">Actions</a>: Display/reappear based on time, scroll Actions</p>
+                <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/greetings-actions/">Actions</a>: Display/reappear Greetings Dialog based on time, scroll Actions</p>
             </div>
             <?php
         }

@@ -28,12 +28,6 @@ class HT_CTC_Chat_Greetings {
         $chat = get_option('ht_ctc_chat_options');
 
         $ht_ctc_greetings = array();
-        $ht_ctc_greetings['greetings_template'] = ( isset( $greetings['greetings_template']) ) ? esc_attr( $greetings['greetings_template'] ) : '';
-
-        // return if template not set..
-        if ( '' == $ht_ctc_greetings['greetings_template'] ) {
-            return;
-        }
 
         $page_id = get_the_ID();
         // $page_id = get_queried_object_id();
@@ -94,12 +88,21 @@ class HT_CTC_Chat_Greetings {
             $post_title = esc_html( get_the_title( $page_id ) );
         }
 
-
-        // greetings dialog position based on chat icon/button position
-        $g_position_r_l = ( isset( $chat['side_2']) ) ? esc_attr( $chat['side_2'] ) : 'right';
-
+        
         // page level
         $ht_ctc_pagelevel = get_post_meta( $page_id, 'ht_ctc_pagelevel', true );
+
+        
+        $ht_ctc_greetings['greetings_template'] = ( isset( $ht_ctc_pagelevel['greetings_template']) ) ? esc_attr( $ht_ctc_pagelevel['greetings_template'] ) : '';
+        if ( '' == $ht_ctc_greetings['greetings_template'] ) {
+            $ht_ctc_greetings['greetings_template'] = ( isset( $greetings['greetings_template']) ) ? esc_attr( $greetings['greetings_template'] ) : '';
+        }
+
+        // return if template not set..
+        if ( '' == $ht_ctc_greetings['greetings_template'] ) {
+            return;
+        }
+
 
         $ht_ctc_greetings['header_content'] = (isset($ht_ctc_pagelevel['header_content'])) ? esc_attr($ht_ctc_pagelevel['header_content']) : '';
         if ( '' == $ht_ctc_greetings['header_content'] ) {
@@ -149,6 +152,8 @@ class HT_CTC_Chat_Greetings {
             $ht_ctc_greetings['bottom_content'] = str_replace( array('{url}', '{title}', '{site}' ),  array( $page_url, $post_title, HT_CTC_BLOG_NAME ), $ht_ctc_greetings['bottom_content'] );
         }
 
+        // greetings dialog position based on chat icon/button position
+        $g_position_r_l = ( isset( $chat['side_2']) ) ? esc_attr( $chat['side_2'] ) : 'right';
 
         $ht_ctc_greetings['call_to_action'] = ( isset( $greetings['call_to_action']) ) ? esc_attr( $greetings['call_to_action'] ) : '';
         if ('' == $ht_ctc_greetings['call_to_action']) {
@@ -160,35 +165,29 @@ class HT_CTC_Chat_Greetings {
         // filter hook to update values... 
         $ht_ctc_greetings = apply_filters( 'ht_ctc_fh_greetings', $ht_ctc_greetings );
 
+        $box_shadow = '1px 1px 3px 1px rgba(0,0,0,.14)';
+        if ( 'greetings-2' == $ht_ctc_greetings['greetings_template'] ) {
+            $box_shadow = '0px 0px 5px 1px rgba(0,0,0,.14)';
+        }
+
         if ( is_file( $ht_ctc_greetings['path'] ) ) {
             
-            // $script = 'dev';
             $script = '';
+            // $script = 'dev';
             if('dev' == $script) {
                 ?>
                 <style>
-                .ctc_greetings_close_btn {
-                    display: none;
-                }
-                .ht_ctc_chat_greetings_box:hover .ctc_greetings_close_btn {
-                    display: block;
-                }
                 .ht_ctc_chat_greetings_box *:not(ul):not(ol) {
                     padding: 0px; margin: 0px;
                 }
                 .ht_ctc_chat_greetings_box ul, .ht_ctc_chat_greetings_box ol {
                     margin-top: 0px; margin-bottom: 0px;
                 }
-                @media only screen and (max-width: 1200px) {
-                    .ctc_greetings_close_btn {
-                        display: block;
-                    }
-                }
                 </style>
                 <?php
             } else {
                 ?>
-                <style>.ctc_greetings_close_btn{display:none}.ht_ctc_chat_greetings_box:hover .ctc_greetings_close_btn{display:block}.ht_ctc_chat_greetings_box :not(ul):not(ol){padding:0;margin:0}.ht_ctc_chat_greetings_box ul,.ht_ctc_chat_greetings_box ol{margin-top:0;margin-bottom:0}@media only screen and (max-width: 1200px){.ctc_greetings_close_btn{display:block}}</style>
+                <style>.ht_ctc_chat_greetings_box :not(ul):not(ol){padding:0;margin:0}.ht_ctc_chat_greetings_box ul,.ht_ctc_chat_greetings_box ol{margin-top:0;margin-bottom:0}</style>
                 <?php
             }
             ?>
@@ -197,13 +196,13 @@ class HT_CTC_Chat_Greetings {
 
                 <div class="ht_ctc_chat_greetings_box" style="display: none; position: absolute; bottom: 0px; <?= $g_position_r_l ?>: 0px; min-width: 300px; max-width: 400px; ">
 
-                    <span style=" cursor:pointer; float:right;" class="ctc_greetings_close_btn">
+                    <span style=" cursor:pointer; float:<?= $g_position_r_l ?>;" class="ctc_greetings_close_btn">
                         <svg style="color:#ffffff; background-color:lightgray; border-radius:50%;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
                             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                         </svg>
                     </span>
                     <br>
-                    <div class="ht_ctc_chat_greetings_box_layout" style="max-height: 67vh; overflow-y:auto; background-color: #ffffff; box-shadow: 1px 1px 3px 1px rgba(0,0,0,.14); border-radius:8px;clear:both;">
+                    <div class="ht_ctc_chat_greetings_box_layout" style="max-height: 67vh; overflow-y:auto; background-color: #ffffff; box-shadow: <?= $box_shadow ?>; border-radius:8px;clear:both;">
                         <div class="ctc_greetings_template">
                             <?php include $ht_ctc_greetings['path']; ?>
                         </div>
