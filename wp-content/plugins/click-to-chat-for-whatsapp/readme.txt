@@ -3,7 +3,7 @@ Requires at least: 4.6
 Tested up to: 5.9.3
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 3.9.2
+Stable tag: 3.9.3
 Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, whatsapp support, whatsapp group, whatsapp message, WhatsApp WooCommerce, whatsapp wordpress, whatsapp floating button, whatsapp icon, holithemes
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -48,13 +48,13 @@ Instead of selecting a pre-defined style, add any Image/Animated-image/GIF.
 
 == 🌈 Custom Element == 
 
-Convert any Element/Design as WhatsApp Chat Element by adding  
+Convert any Element as WhatsApp Chat Element by adding  
 
 * Class name: 'ctc_chat' (or)
 * Id name: 'ctc_chat' (or)
 * Href/link: '#ctc_chat'
 
-The custom design will navigate to WhatsApp based on plugin settings (WhatsApp Number, pre-filled message, .... ).
+The custom design will navigate to WhatsApp based on plugin settings (WhatsApp Number, pre-filled message, .... ). 
 
 [Custom Element](https://holithemes.com/plugins/click-to-chat/custom-element/?utm_source=wp&utm_medium=readme&utm_campaign=ht)
 
@@ -62,13 +62,17 @@ The custom design will navigate to WhatsApp based on plugin settings (WhatsApp N
 
 Encourage user engagement by displaying the perfect message at the perfect time
 
+** Templates **
+
 * [Greetings-1](https://holithemes.com/plugins/click-to-chat/greetings-1/): Customizable Design
 * [Greetings-2](https://holithemes.com/plugins/click-to-chat/greetings-2/): Content Specific Design
+* [Greetings-Form](https://holithemes.com/plugins/click-to-chat/greetings-form/): Form Filling before initializing the chat [PRO]
 
-PRO
+** [Actions](https://holithemes.com/plugins/click-to-chat/greetings-actions/):** Display/reappear Greetings dialog based on
 
-* [Greetings-Form](https://holithemes.com/plugins/click-to-chat/greetings-form/): Form Filling before initializing the chat
-* [Actions](https://holithemes.com/plugins/click-to-chat/greetings-actions/): Display/reappear Greetings dialog based on Time, Scroll
+* Click any element which contains Class /Id name: 'ctc_greetings'
+* Time, Scroll [PRO]
+* When an element is in viewport(25% margin) with contains Class name: 'ctc_greetings_now' [PRO]
 
 
 == ✳️ Position to Place == 
@@ -497,6 +501,12 @@ plugin will update automatically when new version is released
 After Activate the plugin, add WhatsApp Number at plugin settings.
 
 == Changelog ==
+
+= 3.9.3 =
+* Enchantment: Greetings feature
+* Open Greetings dialog: 
+    * Click on any element which contains Class /Id name: 'ctc_greetings'
+    * When an element is in viewport(25% margin) which contains Class name: 'ctc_greetings_now' [PRO]
 
 = 3.9.2 =
 * Enchantment: Greetings feature

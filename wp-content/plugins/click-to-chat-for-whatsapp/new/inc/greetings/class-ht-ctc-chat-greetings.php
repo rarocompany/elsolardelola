@@ -88,39 +88,29 @@ class HT_CTC_Chat_Greetings {
             $post_title = esc_html( get_the_title( $page_id ) );
         }
 
-        
-        // page level
-        $ht_ctc_pagelevel = get_post_meta( $page_id, 'ht_ctc_pagelevel', true );
 
-        
-        $ht_ctc_greetings['greetings_template'] = ( isset( $ht_ctc_pagelevel['greetings_template']) ) ? esc_attr( $ht_ctc_pagelevel['greetings_template'] ) : '';
-        if ( '' == $ht_ctc_greetings['greetings_template'] ) {
-            $ht_ctc_greetings['greetings_template'] = ( isset( $greetings['greetings_template']) ) ? esc_attr( $greetings['greetings_template'] ) : '';
+        $ht_ctc_greetings['greetings_template'] = ( isset( $greetings['greetings_template']) ) ? esc_attr( $greetings['greetings_template'] ) : '';
+        $ht_ctc_greetings['header_content'] = ( isset( $greetings['header_content']) ) ? esc_attr($greetings['header_content']) : '';
+        $ht_ctc_greetings['main_content'] = ( isset( $greetings['main_content']) ) ? esc_attr($greetings['main_content']) : '';
+        $ht_ctc_greetings['bottom_content'] = ( isset( $greetings['bottom_content']) ) ? esc_attr($greetings['bottom_content']) : '';
+        $ht_ctc_greetings['call_to_action'] = ( isset( $greetings['call_to_action']) ) ? esc_attr( $greetings['call_to_action'] ) : '';
+
+        if ('' == $ht_ctc_greetings['call_to_action']) {
+            $ht_ctc_greetings['call_to_action'] = 'WhatsApp';
         }
 
+        $ht_ctc_greetings = apply_filters( 'ht_ctc_fh_greetings_start', $ht_ctc_greetings );
+
         // return if template not set..
-        if ( '' == $ht_ctc_greetings['greetings_template'] ) {
+        if ( '' == $ht_ctc_greetings['greetings_template'] || 'no' == $ht_ctc_greetings['greetings_template'] ) {
             return;
         }
 
-
-        $ht_ctc_greetings['header_content'] = (isset($ht_ctc_pagelevel['header_content'])) ? esc_attr($ht_ctc_pagelevel['header_content']) : '';
-        if ( '' == $ht_ctc_greetings['header_content'] ) {
-            $ht_ctc_greetings['header_content'] = ( isset( $greetings['header_content']) ) ? esc_attr($greetings['header_content']) : '';
-        }
         $ht_ctc_greetings['header_content'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_greetings['header_content'], 'Click to Chat for WhatsApp', 'greetings_header_content' );
-
-        $ht_ctc_greetings['main_content'] = (isset($ht_ctc_pagelevel['main_content'])) ? esc_attr($ht_ctc_pagelevel['main_content']) : '';
-        if ( '' == $ht_ctc_greetings['main_content'] ) {
-            $ht_ctc_greetings['main_content'] = ( isset( $greetings['main_content']) ) ? esc_attr($greetings['main_content']) : '';
-        }
         $ht_ctc_greetings['main_content'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_greetings['main_content'], 'Click to Chat for WhatsApp', 'greetings_main_content' );
-        
-        $ht_ctc_greetings['bottom_content'] = (isset($ht_ctc_pagelevel['bottom_content'])) ? esc_attr($ht_ctc_pagelevel['bottom_content']) : '';
-        if ( '' == $ht_ctc_greetings['bottom_content'] ) {
-            $ht_ctc_greetings['bottom_content'] = ( isset( $greetings['bottom_content']) ) ? esc_attr($greetings['bottom_content']) : '';
-        }
         $ht_ctc_greetings['bottom_content'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_greetings['bottom_content'], 'Click to Chat for WhatsApp', 'greetings_bottom_content' );
+        $ht_ctc_greetings['call_to_action'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_greetings['call_to_action'], 'Click to Chat for WhatsApp', 'greetings_call_to_action' );
+        
 
         $allowed_html = wp_kses_allowed_html( 'post' );
 
@@ -154,11 +144,6 @@ class HT_CTC_Chat_Greetings {
 
         // greetings dialog position based on chat icon/button position
         $g_position_r_l = ( isset( $chat['side_2']) ) ? esc_attr( $chat['side_2'] ) : 'right';
-
-        $ht_ctc_greetings['call_to_action'] = ( isset( $greetings['call_to_action']) ) ? esc_attr( $greetings['call_to_action'] ) : '';
-        if ('' == $ht_ctc_greetings['call_to_action']) {
-            $ht_ctc_greetings['call_to_action'] = 'WhatsApp';
-        }
 
         $ht_ctc_greetings['path'] = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/greetings/' . $ht_ctc_greetings['greetings_template']. '.php';
 

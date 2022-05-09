@@ -79,68 +79,23 @@ class HT_CCW_Chat {
         }
 
 
-        $fb_analytics = '';
-        $fb_event_name = '';
-        $p1_value = '';
-        $p2_value = '';
-        $p3_value = '';
-        $p1_name = '';
-        $p2_name = '';
-        $p3_name = '';
-
-        if ( isset( $values['fb_analytics'] ) ) {
-            $fb_analytics = 'true';
-
-            $ht_ccw_fb = get_option( 'ht_ccw_fb' );
-
-            $fb_event_name = esc_attr( $ht_ccw_fb['fb_event_name'] );
-            $p1_value = esc_attr( $ht_ccw_fb['p1_value'] );
-            $p2_value = esc_attr( $ht_ccw_fb['p2_value'] );
-            $p3_value = esc_attr( $ht_ccw_fb['p3_value'] );
-            $p1_name = esc_attr( $ht_ccw_fb['p1_name'] );
-            $p2_name = esc_attr( $ht_ccw_fb['p2_name'] );
-            $p3_name = esc_attr( $ht_ccw_fb['p3_name'] );
-        }
-
         $page_title = esc_html( get_the_title() );
 
         /**
          * pass values to JavaScript 
-         * 
          * @var string google_analytics - is enable
-         * @var string fb_analytics  - is enable
-         * 
          */
         $ht_ccw_var = array(
             'page_title' => $page_title,
-
 
             'google_analytics' => $google_analytics,
             'ga_category' => $ga_category,
             'ga_action' => $ga_action,
             'ga_label' => $ga_label,
 
-
-            'fb_analytics' => $fb_analytics,
-            
-            'fb_event_name' => $fb_event_name,
-            'p1_value' => $p1_value,
-            'p2_value' => $p2_value,
-            'p3_value' => $p3_value,
-            'p1_name' => $p1_name,
-            'p2_name' => $p2_name,
-            'p3_name' => $p3_name,
-
             );
 
-        // push values to $ht_ccw_var
-        // if ( 'php' == $device_based_on ) {
-        //     $ht_ccw_var['php_ismobile'] = '2';
-        // }
-
         wp_localize_script( 'ccw_app', 'ht_ccw_var', $ht_ccw_var );
-
-
 
         // enable
         if( 1 == $enable ) {

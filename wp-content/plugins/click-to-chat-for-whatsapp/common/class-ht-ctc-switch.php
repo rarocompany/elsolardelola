@@ -55,12 +55,13 @@ class HT_CTC_Swift {
 		$user = '';
 
 
-		// if first time user - new interface .. $is_new = 'yes';
-		// if user swifted to new interface .. $is_new = 'yes';
-
-		// if user swifted to prev interface .. $is_new = 'no';
-		// if prev user / update .. $is_new = 'no';
-		
+		/**
+		 * if first time user - new interface .. $is_new = 'yes';
+		 * if user swifted to new interface .. $is_new = 'yes';
+		 * 
+		 * if user swifted to prev interface .. $is_new = 'no';
+		 * if prev user / update .. $is_new = 'no';
+		 */
 		$ccw_options = get_option('ccw_options');
 
 		if ( isset( $ccw_options['number'] ) ) {

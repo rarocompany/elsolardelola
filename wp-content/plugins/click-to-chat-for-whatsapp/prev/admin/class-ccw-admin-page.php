@@ -21,7 +21,7 @@ class CCW_Admin_Page {
     
         add_settings_section( 'ccw_settings', '', array( $this, 'ccw_settings_section' ), 'ccw_options_settings' );
     
-        add_settings_field( 'ht_ctc_switch', __( 'Switch to new User Interface' , 'click-to-chat-for-whatsapp' ), array( $this, 'ccw_switch_cb' ), 'ccw_options_settings', 'ccw_settings' );
+        add_settings_field( 'ht_ctc_switch', __( 'Switch to New Interface' , 'click-to-chat-for-whatsapp' ), array( $this, 'ccw_switch_cb' ), 'ccw_options_settings', 'ccw_settings' );
 
         add_settings_field( 'ccw_enable', __( 'Enable Floating Styles' , 'click-to-chat-for-whatsapp' ), array( $this, 'ccw_enable_cb' ), 'ccw_options_settings', 'ccw_settings' );
         add_settings_field( 'ccw_enable_sc', __( 'Enable ShortCodes' , 'click-to-chat-for-whatsapp' ), array( $this, 'ccw_enable_sc_cb' ), 'ccw_options_settings', 'ccw_settings' );
@@ -35,7 +35,6 @@ class CCW_Admin_Page {
         add_settings_field( 'ccw_placeholder', __( 'Text to Display' , 'click-to-chat-for-whatsapp' ), array( $this, 'ccw_input_placeholder_cb' ), 'ccw_options_settings', 'ccw_settings' );
         
         add_settings_field( 'ccw_google_analytics', __( 'Google Analytics' , 'click-to-chat-for-whatsapp' ), array( $this, 'ccw_google_analytics_cb' ), 'ccw_options_settings', 'ccw_settings' );
-        add_settings_field( 'ccw_fb_analytics', __( 'Facebook Analytics' , 'click-to-chat-for-whatsapp' ), array( $this, 'ccw_fb_analytics_cb' ), 'ccw_options_settings', 'ccw_settings' );
         
         add_settings_field( 'ccw_checkbox', __( 'Hide Based on post type' , 'click-to-chat-for-whatsapp' ), array( $this, 'ccw_checkbox_cb' ), 'ccw_options_settings', 'ccw_settings' );
         add_settings_field( 'ccw_list_id_tohide', __( "Posts, Pages Id's to Hide" , 'click-to-chat-for-whatsapp' ), array( $this, 'ccw_list_id_tohide_cb' ), 'ccw_options_settings', 'ccw_settings' );
@@ -48,7 +47,7 @@ class CCW_Admin_Page {
     
     // heading
     function ccw_settings_section() {
-        echo '<h1>Click to Chat For WhatsApp - Global Settings</h1>';
+        echo '<h1>Click to Chat - Interface-1</h1>';
     }
 
 
@@ -69,7 +68,6 @@ class CCW_Admin_Page {
         <p class="description" style="color: red"> <strong> Please reconfigure the settings, after switching to the new interface </strong></p>
         <br>
         <p class="description">We developed a new interface with lot more features</p>
-        <p class="description">Chat, Group and Share features</p>
         <br>
 
         <div class="row">
@@ -82,15 +80,6 @@ class CCW_Admin_Page {
                 <label>Switch Interface</label>
             </div>
         </div>
-
-        <!-- <p class="description"> Please reconfigure the settings, after switching to the new interface </p> -->
-        <p class="description"> Modified: </p>
-        <ol>
-        <li class="description"> Styles   </li>
-        <li class="description"> Shortcodes  </li>
-        <li class="description"> Show/Hide feature to Show or Hide, the styles</li>
-        </ol>
-        <br>
         <p class="description"> <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/new-interface/">New Interface</a></p>
         
         </div>
@@ -369,38 +358,6 @@ class CCW_Admin_Page {
     }
 
 
-    // Enable facebook Analytics
-    function ccw_fb_analytics_cb() {
-        $ccw_fb_analytics = get_option('ccw_options');
-
-
-        if ( isset( $ccw_fb_analytics['fb_analytics'] ) ) {
-            ?>
-            <p>
-                <label>
-                    <input name="ccw_options[fb_analytics]" type="checkbox" value="1" <?php checked( $ccw_fb_analytics['fb_analytics'], 1 ); ?> id="fb_analytics" />
-                    <span>Facebook Analytics</span>
-                </label>
-            </p>
-            <?php
-        } else {
-            ?>
-            <p>
-                <label>
-                    <input name="ccw_options[fb_analytics]" type="checkbox" value="1" id="fb_analytics" />
-                    <span>Facebook Analytics</span>
-                </label>
-            </p>
-            <?php
-        }
-        ?>
-        <p class="description"> If Facebook Analytics is installed - creates an Event at there - <a target="_blank" href="https://holithemes.com/plugins/whatsapp-chat/facebook-analytics/">more info</a> </p>
-        <p class="description"> Customize Event Values - <a target="_blank" href="<?= admin_url( 'admin.php?page=ccw-edit-styles#fb-analytics' ); ?>">Customize Styles</a>  </p>
-        <?php
-    }
-
-
-
     // checkboxes - based on Type of posts .. 
     function ccw_checkbox_cb() {
         $ccw_checkbox = get_option('ccw_options');
@@ -627,7 +584,7 @@ class CCW_Admin_Page {
             <p>
                 <label>
                     <input name="ccw_options[app_first]" type="checkbox" value="1" <?php checked( $ccw_app_first['app_first'], 1 ); ?> id="app_first" />
-                    <span>App First ( If Cache Issue )</span>
+                    <span>App First ( api.whatsapp links )</span>
                 </label>
             </p>
             <?php
@@ -636,13 +593,14 @@ class CCW_Admin_Page {
             <p>
                 <label>
                     <input name="ccw_options[app_first]" type="checkbox" value="1" id="app_first" />
-                    <span>App First ( If Cache Issue )</span>
+                    <span>App First ( api.whatsapp links )</span>
                 </label>
             </p>
             <?php
         }
         ?>
-        <p class="description"> check this only if an issue with some cache plugin - api.whatsapp, web.whatsapp - <a target="_blank" href="https://holithemes.com/plugins/whatsapp-chat/app-first/">more info</a> </p>
+        <p class="description">if checked navigates to api.whatsapp in all devices instead of web.whatsapp in desktop - <a target="_blank" href="https://holithemes.com/plugins/whatsapp-chat/app-first/">more info</a> </p>
+        <p class="desciption">uncheck - If in mobile navigates to web.whatsapp, it might be cache issue.</p>
         <?php
     }
 

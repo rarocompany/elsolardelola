@@ -160,6 +160,11 @@ class HT_CTC_MetaBox {
 			return $post_id;
 		}
 
+        include_once HT_CTC_PLUGIN_DIR .'new/admin/admin_commons/ht-ctc-admin-formatting.php';
+
+		$editor = [];
+        $editor = apply_filters( 'ht_ctc_fh_greetings_setting_meta_editor', $editor );
+
 		if ( isset( $_POST['ht_ctc_pagelevel'] ) ) {
 			
 			$ht_ctc_pagelevel = array_filter( $_POST['ht_ctc_pagelevel'] );
@@ -171,8 +176,12 @@ class HT_CTC_MetaBox {
 					if( isset( $ht_ctc_pagelevel[$key] ) ) {
 						if ( 'pre_filled' == $key ) {
 							$new[$key] = sanitize_textarea_field( $ht_ctc_pagelevel[$key] );
-						} elseif ( 'call_to_action' == $key ) {
+						} else if ( 'call_to_action' == $key ) {
 							$new[$key] = sanitize_text_field( $ht_ctc_pagelevel[$key] );
+						}  else if ( in_array( $key, $editor ) ) {
+							if ( !empty( $ht_ctc_pagelevel[$key]) && '' !== $ht_ctc_pagelevel[$key] && function_exists('ht_ctc_wp_sanitize_text_editor') ) {
+								$new[$key] = ht_ctc_wp_sanitize_text_editor( $ht_ctc_pagelevel[$key] );
+							}
 						} else {
 							$new[$key] = sanitize_text_field( $ht_ctc_pagelevel[$key] );
 						}

@@ -514,24 +514,10 @@ class HT_CTC_Admin_Greetings {
                 if ( is_array( $input[$key] ) ) {
                     $new_input[$key] = map_deep( $input[$key], 'sanitize_text_field' );
                 } else {
-
                     if ( in_array( $key, $editor ) ) {
                         // editor
-                        if ( !empty( $input[$key]) && '' !== $input[$key] ) {
-
-                            if ( function_exists('ht_ctc_wp_encode_emoji') ) {
-                                $input[$key] = ht_ctc_wp_encode_emoji( $input[$key] );
-                            }
-
-                            $allowed_html = wp_kses_allowed_html( 'post' );
-
-                            $new_input[$key] = wp_kses($input[$key], $allowed_html);
-                            // htmlentities this $new_input[$key] (double security ..)
-                            $new_input[$key] = htmlentities( $new_input[$key] );
-                            
-                            // (may not needed - but extra security)
-                            $new_input[$key] = sanitize_textarea_field( $new_input[$key] );
-
+                        if ( !empty( $input[$key]) && '' !== $input[$key] && function_exists('ht_ctc_wp_sanitize_text_editor') ) {
+                            $new_input[$key] = ht_ctc_wp_sanitize_text_editor( $input[$key] );
                         } else {
                             // save field even if the value is empty..
                             $new_input[$key] = sanitize_text_field( $input[$key] );
@@ -561,9 +547,11 @@ class HT_CTC_Admin_Greetings {
         $local = apply_filters( 'ht_ctc_fh_greetings_setting_local_values', $local );
 
         // l10n
-        foreach ($input as $key => $value) {
+        do_action('ht_ctc_ah_admin_localization_greetings_page', $new_input );
+
+        foreach ($new_input as $key => $value) {
             if ( in_array( $key, $local ) ) {
-                do_action( 'wpml_register_single_string', 'Click to Chat for WhatsApp', "greetings_$key", $input[$key] );
+                do_action( 'wpml_register_single_string', 'Click to Chat for WhatsApp', "greetings_$key", $new_input[$key] );
             }
         }
 

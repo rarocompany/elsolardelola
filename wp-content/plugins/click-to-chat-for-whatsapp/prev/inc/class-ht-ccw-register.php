@@ -40,8 +40,9 @@ class HT_CCW_Register {
     public static function version_check() {
         
         $ccw_plugin_details = get_option('ccw_plugin_details');
-    
-        if ( HT_CTC_VERSION !== $ccw_plugin_details['version'] ) {
+
+        $version = (isset($ccw_plugin_details['version'])) ? esc_attr($ccw_plugin_details['version']) : '';
+        if ( HT_CTC_VERSION !== $version ) {
             //  to update the plugin - just like activate plugin
             self::activate();
 

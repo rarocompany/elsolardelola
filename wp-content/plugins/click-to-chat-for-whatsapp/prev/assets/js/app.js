@@ -10,7 +10,6 @@ jQuery(document).ready(function () {
 });
 var url = window.location.href;
 var google_analytics = ht_ccw_var.google_analytics;
-var fb_analytics = ht_ccw_var.fb_analytics;
 var title = ht_ccw_var.page_title;
 ht_ccw_clickevent();
 function ht_ccw_clickevent() {
@@ -22,9 +21,6 @@ function ht_ccw_clickevent() {
 function ht_ccw_clicked() {
     if ( 'true' == google_analytics ) {
         google_analytics_event();
-    }
-    if ( 'true' == fb_analytics ) {
-        fb_analytics_event();
     }
 }
 function google_analytics_event() {
@@ -41,19 +37,4 @@ function google_analytics_event() {
             'event_label': ga_label,
         });
     }
-}
-function fb_analytics_event() {
-    var p1_value = ht_ccw_var.p1_value.replace('{{url}}', url).replace('{{title}}', title);
-    var p2_value = ht_ccw_var.p2_value.replace('{{url}}', url).replace('{{title}}', title);
-    var p3_value = ht_ccw_var.p3_value.replace('{{url}}', url).replace('{{title}}', title);
-    var p1_name = ht_ccw_var.p1_name;
-    var p2_name = ht_ccw_var.p2_name;
-    var p3_name = ht_ccw_var.p3_name;
-    var fb_event_name = ht_ccw_var.fb_event_name;
-    var params = {};
-    params[p1_name] = p1_value;
-    params[p2_name] = p2_value;
-    params[p3_name] = p3_value;
-    // if fb analytics is not installed - uncheck the fb analytics option from plugin settings
-    FB.AppEvents.logEvent(fb_event_name, null, params);
 }

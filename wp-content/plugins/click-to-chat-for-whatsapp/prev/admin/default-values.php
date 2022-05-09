@@ -134,22 +134,6 @@ $db_ccw_ga = get_option( 'ht_ccw_ga', array() );
 $update_ccw_ga = array_merge($ccw_ga, $db_ccw_ga);
 update_option('ht_ccw_ga', $update_ccw_ga);
 
-/**
- * fb Analytics
- * option  - ht_ccw_fb
- */
-$ccw_fb = array(
-    'fb_event_name' => 'Click to Chat Event',
-    'p1_name' => 'Category',
-    'p2_name' => 'Action',
-    'p3_name' => 'Label',
-    'p1_value' => 'Click to Chat',
-    'p2_value' => 'Click',
-    'p3_value' => '{{url}}',
-);
-$db_ccw_fb = get_option( 'ht_ccw_fb', array() );
-$update_ccw_fb = array_merge($ccw_fb, $db_ccw_fb);
-update_option('ht_ccw_fb', $update_ccw_fb);
 
 // plugin details 
 $plugin_details = array(

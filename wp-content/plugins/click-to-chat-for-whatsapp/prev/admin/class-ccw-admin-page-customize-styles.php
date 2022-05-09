@@ -23,7 +23,6 @@ class CCW_Admin_Page_Customize_Styles {
         register_setting( 'ccw_settings_group_cs', 'ccw_options_cs' , 'ccw_options_sanitize_cs_cb' );
 
         register_setting( 'ccw_settings_group_cs', 'ht_ccw_ga' , 'ccw_options_sanitize_cs_cb' );
-        register_setting( 'ccw_settings_group_cs', 'ht_ccw_fb' , 'ccw_options_sanitize_cs_cb' );
         
         add_settings_section( 'ccw_settings_cs', '', array( $this, 'ccw_settings_section_cs_cb' ), 'ccw_options_settings_cs' );
     
@@ -40,8 +39,6 @@ class CCW_Admin_Page_Customize_Styles {
         add_settings_field( 'ccw_animations', 'Animations', array( $this, 'ccw_animations_cb' ), 'ccw_options_settings_cs', 'ccw_settings_cs' );
 
         add_settings_field( 'ht_ccw_ga', 'Google Analytics', array( $this, 'ht_ccw_ga_cb' ), 'ccw_options_settings_cs', 'ccw_settings_cs' );
-        add_settings_field( 'ht_ccw_fb', 'Facebook Analytics', array( $this, 'ht_ccw_fb_cb' ), 'ccw_options_settings_cs', 'ccw_settings_cs' );
-
     }
 
     
@@ -670,10 +667,9 @@ class CCW_Admin_Page_Customize_Styles {
         ?>
         <ul class="collapsible" data-collapsible="accordion">
         <li>
-        <div class="collapsible-header">Animations - alpha release </div>
+        <div class="collapsible-header">Animations </div>
         <div class="collapsible-body">
             
-        <p class="description"> alpha stage, things may change, may not work as like this in next releases, </br> may need to reconfigure also .. </p>
         <p class="description"> Animations for floating styles - <a target="_blank" href="https://holithemes.com/plugins/whatsapp-chat/animations/">more info</a> </p>
         <br><br>            
 
@@ -772,108 +768,6 @@ class CCW_Admin_Page_Customize_Styles {
                 </div>
                 <div class="input-field col s5">
                     <input name="ht_ccw_ga[ga_label]" value="<?= esc_attr( $ht_ccw_ga['ga_label'] ) ?>" type="text" class="" >
-                </div>
-            </div>
-        
-        </div>
-        </div>
-        </li>
-        </ul>
-
-        <?php
-    }
-
-
-    // fb Analytics
-    function ht_ccw_fb_cb() {
-        $ht_ccw_fb = get_option('ht_ccw_fb');
-        $fb_event_name = esc_attr( $ht_ccw_fb['fb_event_name'] );
-        $p1_value = esc_attr( $ht_ccw_fb['p1_value'] );
-        $p2_value = esc_attr( $ht_ccw_fb['p2_value'] );
-        $p3_value = esc_attr( $ht_ccw_fb['p3_value'] );
-        $p1_name = esc_attr( $ht_ccw_fb['p1_name'] );
-        $p2_name = esc_attr( $ht_ccw_fb['p2_name'] );
-        $p3_name = esc_attr( $ht_ccw_fb['p3_name'] );
-        
-        ?>
-        <ul class="collapsible" data-collapsible="accordion">
-        <li>
-        <div id="fb-analytics" class="collapsible-header">Facebook Analytics </div>
-        <div class="collapsible-body">
-            
-            <p class="description"> Enable Facebook Analytics at plugin home settings - <a target="_blank" href="<?= admin_url( 'admin.php?page=click-to-chat' ); ?>"><?php _e( 'Click to Chat' , 'click-to-chat-for-whatsapp' ) ?></a>  </p>
-            <p class="description"> Event Parameters - <a target="_blank" href="https://holithemes.com/plugins/whatsapp-chat/facebook-analytics/"><?php _e( 'more info' , 'click-to-chat-for-whatsapp' ) ?></a> </p>
-            <br><br>    
-
-            <!-- Event Name -->
-            <div class="row">
-                <div class="col s6">
-                    <p>Event Name</p>
-                </div>
-                <div class="input-field col s5">
-                    <input name="ht_ccw_fb[fb_event_name]" value="<?= esc_attr( $ht_ccw_fb['fb_event_name'] ) ?>" type="text" class="" >
-                </div>
-            </div>
-
-            <!-- Parameter 1 -->
-            <div class="row">
-                <div class="col s6">
-                    <p>Custom Parameter 1</p>
-                </div>
-                <div class="input-field col s5">
-                    
-                    <div class="input-field col">
-                    <input name="ht_ccw_fb[p1_name]" value="<?= esc_attr( $ht_ccw_fb['p1_name'] ) ?>" id="p1_name" type="text" class="" >
-                    <label for="p1_name">Name: </label>
-                    </div>
-
-                    <div class="input-field col">
-                    <input name="ht_ccw_fb[p1_value]" value="<?= esc_attr( $ht_ccw_fb['p1_value'] ) ?>" id="p1_value" type="text" class="" >
-                    <label for="p1_value">Value: </label>
-                    </div>
-
-                </div>
-            </div>
-
-            
-            <!-- Parameter 2 -->
-            <div class="row">
-                <div class="col s6">
-                    <p>Custom Parameter 2</p>
-                </div>
-                <div class="input-field col s5">
-                    
-                    <div class="input-field col">
-                    <input name="ht_ccw_fb[p2_name]" value="<?= esc_attr( $ht_ccw_fb['p2_name'] ) ?>" id="p2_name" type="text" class="" >
-                    <label for="p2_name">Name: </label>
-                    </div>
-
-                    <div class="input-field col">
-                    <input name="ht_ccw_fb[p2_value]" value="<?= esc_attr( $ht_ccw_fb['p2_value'] ) ?>" id="p2_value" type="text" class="" >
-                    <label for="p2_value">Value: </label>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <!-- Parameter 3 -->
-            <div class="row">
-                <div class="col s6">
-                    <p>Custom Parameter 3</p>
-                </div>
-                <div class="input-field col s5">
-                    
-                    <div class="input-field col">
-                    <input name="ht_ccw_fb[p3_name]" value="<?= esc_attr( $ht_ccw_fb['p3_name'] ) ?>" id="p3_name" type="text" class="" >
-                    <label for="p3_name">Name: </label>
-                    </div>
-
-                    <div class="input-field col">
-                    <input name="ht_ccw_fb[p3_value]" value="<?= esc_attr( $ht_ccw_fb['p3_value'] ) ?>" id="p3_value" type="text" class="" >
-                    <label for="p3_value">Value: </label>
-                    </div>
-
                 </div>
             </div>
         
