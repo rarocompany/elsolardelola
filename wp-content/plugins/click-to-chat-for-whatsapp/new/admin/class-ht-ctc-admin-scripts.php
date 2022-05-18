@@ -35,7 +35,7 @@ class HT_CTC_Admin_Scripts {
             wp_enqueue_style('ctc_admin_css', plugins_url( 'new/admin/admin_assets/css/admin.css', HT_CTC_PLUGIN_FILE ) , '', HT_CTC_VERSION );
 
             wp_enqueue_script( 'ctc_admin_md_js', plugins_url( 'new/admin/admin_assets/js/materialize.min.js', HT_CTC_PLUGIN_FILE ), array( 'jquery' ), HT_CTC_VERSION, $load_js_bottom );
-            wp_enqueue_script( 'ctc_admin_js', plugins_url( "new/admin/admin_assets/js/$admin_js", HT_CTC_PLUGIN_FILE ), array( 'jquery', 'wp-color-picker', 'ctc_admin_md_js' ), HT_CTC_VERSION, $load_js_bottom );
+            wp_enqueue_script( 'ctc_admin_js', plugins_url( "new/admin/admin_assets/js/$admin_js", HT_CTC_PLUGIN_FILE ), array( 'jquery', 'jquery-ui-core', 'jquery-ui-sortable', 'wp-color-picker', 'ctc_admin_md_js' ), HT_CTC_VERSION, $load_js_bottom );
 
             if ('click-to-chat_page_click-to-chat-greetings' == $hook) {
                 wp_enqueue_script( 'ctc_admin_greetings_js', plugins_url( "new/admin/admin_assets/js/$greetings_js", HT_CTC_PLUGIN_FILE ), array( 'jquery', 'ctc_admin_js' ), HT_CTC_VERSION, $load_js_bottom );

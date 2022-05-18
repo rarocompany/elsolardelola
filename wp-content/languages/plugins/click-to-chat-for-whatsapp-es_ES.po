@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Click to Chat - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-05-09 06:26:37+0000\n"
+"PO-Revision-Date: 2022-05-18 10:24:00+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,76 @@ msgstr ""
 "X-Generator: GlotPress/4.0.0-alpha.1\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - Click to Chat - Stable (latest release)\n"
+
+#: new/admin/components/list/ht-ctc-admin-list-page.php:28
+msgid "-- No Greetings Dialog --"
+msgstr "-- Ventana sin saludo --"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:263
+msgid "Mobile Only"
+msgstr "Solo móvil"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:262
+msgid "Desktop Only"
+msgstr "Solo escritorio"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:261
+msgid "Desktop and Mobile"
+msgstr "Escritorio y móvil"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:259
+msgid "Display Greetings Dialog based on device"
+msgstr "Muestra la ventana de saludo basado en dispositivo"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:225
+#: new/admin/components/list/ht-ctc-admin-list-page.php:30
+msgid "Greetings-2 - Content Specific"
+msgstr "Saludos-2 - Específico del contenido"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:218
+msgid "Greetings Dialog - 2"
+msgstr "Ventana de saludo - 2"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:206
+msgid "Button with WhatsApp Icon (style-7 Extend)"
+msgstr "Botón con el icono de WhatsApp (style-7 ampliado)"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:205
+msgid "Themes Button (style-1)"
+msgstr "Botón del tema (style-1)"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:192
+msgid "Message Box - Background Color"
+msgstr "Caja de mensajes - Color de fondo"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:184
+msgid "Main Content - Background Color"
+msgstr "Contenido principal - Color de fondo"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:176
+msgid "Header - Background Color"
+msgstr "Cabecera - Color de fondo"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:169
+#: new/admin/components/list/ht-ctc-admin-list-page.php:29
+msgid "Greetings-1 - Customizable Design"
+msgstr "Saludos-1 - Diseño personalizable"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:162
+msgid "Greetings Dialog - 1"
+msgstr "Ventana de saludo - 1"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:155
+msgid "Call to Action (Button/Link Text)"
+msgstr "Llamada a la acción (texto del botón/enlace)"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:142
+msgid "Bottom Content"
+msgstr "Contenido del fondo"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:134
+msgid "Main Content"
+msgstr "Contenido principal"
 
 #: prev/admin/class-ccw-admin-page.php:24
 msgid "Switch to New Interface"
@@ -33,7 +103,7 @@ msgstr "Contenido de la cabecera"
 
 #: new/admin/class-ht-ctc-admin-greetings-page.php:104
 msgid "Add Greetings Dialog"
-msgstr "Añadir un diálogo de agradecimiento"
+msgstr "Añadir ventana de saludo"
 
 #: new/admin/class-ht-ctc-admin-other-settings.php:207
 msgid "call gtag_report_conversion function"
@@ -1059,6 +1129,7 @@ msgid "Web WhatsApp"
 msgstr "Web de WhatsApp"
 
 #: new/admin/admin_commons/class-ht-ctc-metabox.php:80
+#: new/admin/class-ht-ctc-admin-greetings-page.php:151
 #: new/admin/class-ht-ctc-admin-group-page.php:70
 #: new/admin/class-ht-ctc-admin-group-page.php:111
 #: new/admin/class-ht-ctc-admin-main-page.php:86
@@ -1103,65 +1174,65 @@ msgstr "Haciendo trampas, ¿eh?"
 #: new/admin/class-ht-ctc-admin-share-page.php:144
 #: new/admin/class-ht-ctc-admin-share-page.php:173
 #: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:194
-#: prev/admin/class-ccw-admin-page-customize-styles.php:741
+#: prev/admin/class-ccw-admin-page-customize-styles.php:739
 msgid "more info"
 msgstr "más información"
 
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1630
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1634
-#: prev/admin/class-ccw-admin-page-customize-styles.php:635
+#: prev/admin/class-ccw-admin-page-customize-styles.php:633
 msgid "Mobile - Image Width"
 msgstr "Móvil - Anchura de la imagen"
 
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1619
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1623
-#: prev/admin/class-ccw-admin-page-customize-styles.php:626
+#: prev/admin/class-ccw-admin-page-customize-styles.php:624
 msgid "Mobile - Image Height"
 msgstr "Móvil - Altura de la imagen"
 
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1608
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1612
-#: prev/admin/class-ccw-admin-page-customize-styles.php:616
+#: prev/admin/class-ccw-admin-page-customize-styles.php:614
 msgid "Desktop - Image Width"
 msgstr "Escritorio - Anchura de la imagen"
 
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1597
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1601
-#: prev/admin/class-ccw-admin-page-customize-styles.php:607
+#: prev/admin/class-ccw-admin-page-customize-styles.php:605
 msgid "Desktop - Image Height"
 msgstr "Escritorio - Altura de la imagen"
 
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1590
-#: prev/admin/class-ccw-admin-page-customize-styles.php:595
+#: prev/admin/class-ccw-admin-page-customize-styles.php:593
 msgid "Image URL - Mobile"
 msgstr "URL de la imagen - Móvil"
 
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1579
-#: prev/admin/class-ccw-admin-page-customize-styles.php:586
+#: prev/admin/class-ccw-admin-page-customize-styles.php:584
 msgid "Image URL - Desktop"
 msgstr "URL de la imagen - Escritorio"
 
-#: prev/admin/class-ccw-admin-page-customize-styles.php:579
+#: prev/admin/class-ccw-admin-page-customize-styles.php:577
 msgid "Style 99 - own Image / GIF"
 msgstr "Estilo 99 - Imagen propia / GIF"
 
-#: prev/admin/class-ccw-admin-page-customize-styles.php:530
+#: prev/admin/class-ccw-admin-page-customize-styles.php:528
 msgid "Icon size"
 msgstr "Tamaño del icono"
 
-#: prev/admin/class-ccw-admin-page-customize-styles.php:506
+#: prev/admin/class-ccw-admin-page-customize-styles.php:504
 msgid "Icon color on hover"
 msgstr "Color del icono al pasar el cursor"
 
-#: prev/admin/class-ccw-admin-page-customize-styles.php:497
+#: prev/admin/class-ccw-admin-page-customize-styles.php:495
 msgid "Background Color on hover"
 msgstr "Color del fondo al pasar el cursor"
 
-#: prev/admin/class-ccw-admin-page-customize-styles.php:488
+#: prev/admin/class-ccw-admin-page-customize-styles.php:486
 msgid "Text Color on hover"
 msgstr "Color del texto al pasar el cursor"
 
-#: prev/admin/class-ccw-admin-page-customize-styles.php:479
+#: prev/admin/class-ccw-admin-page-customize-styles.php:477
 msgid "Icon color"
 msgstr "Color del icono"
 
@@ -1172,30 +1243,30 @@ msgstr "Color del icono"
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1214
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1325
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1414
-#: prev/admin/class-ccw-admin-page-customize-styles.php:196
-#: prev/admin/class-ccw-admin-page-customize-styles.php:470
+#: prev/admin/class-ccw-admin-page-customize-styles.php:194
+#: prev/admin/class-ccw-admin-page-customize-styles.php:468
 msgid "Background Color"
 msgstr "Color del fondo"
 
-#: prev/admin/class-ccw-admin-page-customize-styles.php:159
-#: prev/admin/class-ccw-admin-page-customize-styles.php:557
+#: prev/admin/class-ccw-admin-page-customize-styles.php:157
+#: prev/admin/class-ccw-admin-page-customize-styles.php:555
 msgid "Image size"
 msgstr "Tamaño de la imagen"
 
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1055
-#: prev/admin/class-ccw-admin-page-customize-styles.php:124
+#: prev/admin/class-ccw-admin-page-customize-styles.php:122
 msgid "Text Decoration when Hover"
 msgstr "Decoración del texto al pasar el cursor"
 
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1038
-#: prev/admin/class-ccw-admin-page-customize-styles.php:107
-#: prev/admin/class-ccw-admin-page-customize-styles.php:118
+#: prev/admin/class-ccw-admin-page-customize-styles.php:105
+#: prev/admin/class-ccw-admin-page-customize-styles.php:116
 msgid "Text Decoration"
 msgstr "Decoración del texto"
 
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1027
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1402
-#: prev/admin/class-ccw-admin-page-customize-styles.php:98
+#: prev/admin/class-ccw-admin-page-customize-styles.php:96
 msgid "Text Color on Hover"
 msgstr "Color del texto al pasar el cursor"
 
@@ -1204,9 +1275,9 @@ msgstr "Color del texto al pasar el cursor"
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1015
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1204
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1390
-#: prev/admin/class-ccw-admin-page-customize-styles.php:89
-#: prev/admin/class-ccw-admin-page-customize-styles.php:187
-#: prev/admin/class-ccw-admin-page-customize-styles.php:461
+#: prev/admin/class-ccw-admin-page-customize-styles.php:87
+#: prev/admin/class-ccw-admin-page-customize-styles.php:185
+#: prev/admin/class-ccw-admin-page-customize-styles.php:459
 msgid "Text Color"
 msgstr "Color del texto"
 

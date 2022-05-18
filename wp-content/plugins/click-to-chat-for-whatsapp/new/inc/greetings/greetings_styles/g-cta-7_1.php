@@ -10,12 +10,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 $s7_1_options = get_option( 'ht_ctc_s7_1' );
 $s7_1_options = apply_filters( 'ht_ctc_fh_s7_1_options', $s7_1_options );
 
-$s7_icon_size = esc_attr( $s7_1_options['s7_icon_size'] );
-$s7_icon_color = esc_attr( $s7_1_options['s7_icon_color'] );
-$s7_icon_color_hover = esc_attr( $s7_1_options['s7_icon_color_hover'] );
-$s7_bgcolor = esc_attr( $s7_1_options['s7_bgcolor'] );
-$s7_bgcolor_hover = esc_attr( $s7_1_options['s7_bgcolor_hover'] );
-$s7_border_size = esc_attr( $s7_1_options['s7_border_size'] );
+$s7_icon_size = (isset( $s7_1_options['s7_icon_size'])) ? esc_attr( $s7_1_options['s7_icon_size'] ) : '';
+$s7_icon_color = (isset( $s7_1_options['s7_icon_color'])) ? esc_attr( $s7_1_options['s7_icon_color'] ) : '';
+$s7_icon_color_hover = (isset( $s7_1_options['s7_icon_color_hover'])) ? esc_attr( $s7_1_options['s7_icon_color_hover'] ) : '';
+$s7_bgcolor = (isset( $s7_1_options['s7_bgcolor'])) ? esc_attr( $s7_1_options['s7_bgcolor'] ) : '';
+$s7_bgcolor_hover = (isset( $s7_1_options['s7_bgcolor_hover'])) ? esc_attr( $s7_1_options['s7_bgcolor_hover'] ) : '';
+$s7_border_size = (isset( $s7_1_options['s7_border_size'])) ? esc_attr( $s7_1_options['s7_border_size'] ) : '';
 
 // Call to action 
 $s7_1_cta_font_size = (isset( $s7_1_options['cta_font_size'])) ? esc_attr( $s7_1_options['cta_font_size'] ) : '';

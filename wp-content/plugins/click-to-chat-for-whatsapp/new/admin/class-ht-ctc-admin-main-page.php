@@ -302,8 +302,8 @@ class HT_CTC_Admin_Main_Page {
 
 
         ?>
+        <p class="description"><a target="_blank" href="<?= admin_url( 'admin.php?page=click-to-chat-greetings' ); ?>">Greetings</a></p>
         <p class="description"><a target="_blank" href="<?= admin_url( 'admin.php?page=click-to-chat-customize-styles' ); ?>">Customize Styles</a></p>
-        <p class="description"><a target="_blank" href="<?= admin_url( 'admin.php?page=click-to-chat-greetings' ); ?>">Greetings Dialog</a></p>
         <p class="description"><a target="_blank" href="<?= admin_url( 'admin.php?page=click-to-chat-other-settings' ); ?>">Other Settings</a></p>
         <p class="description"><a target="_blank" href="<?= $woo_link ?>">WooCommerce</a> <?= $woo_text ?></p>
         <br>

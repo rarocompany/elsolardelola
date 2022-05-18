@@ -64,6 +64,12 @@ document.addEventListener('DOMContentLoaded', function () {
             collapsible();
         } catch (e) { }
 
+        try {
+            $(".ctc_sortable").sortable({
+                cursor: "move"
+            });
+        } catch (e) { }
+
 
         // show/hide settings
         function show_hide_options() {

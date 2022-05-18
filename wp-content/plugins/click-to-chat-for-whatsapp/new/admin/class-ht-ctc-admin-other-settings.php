@@ -254,7 +254,7 @@ class HT_CTC_Admin_Other_Settings {
         <div class="row">
         
             <br>
-            <div class="ctc_hook_value">
+            <div class="ctc_hook_value ctc_sortable">
                 <?php
 
                 // hook values

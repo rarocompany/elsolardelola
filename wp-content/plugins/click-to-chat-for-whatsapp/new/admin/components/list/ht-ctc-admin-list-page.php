@@ -25,18 +25,15 @@ class HT_CTC_Admin_List_Page {
          * Note: dont inclued 'pro' keyword in this list.
          */
         $values = array(
-            'no' => '-- No Greetings Dialog --',
-            'greetings-1' => 'Greetings-1 - Customizable Design',
-            'greetings-2' => 'Greetings-2 - Content Specific'
+            'no' => __( '-- No Greetings Dialog --', 'click-to-chat-for-whatsapp'),
+            'greetings-1' => __( 'Greetings-1 - Customizable Design', 'click-to-chat-for-whatsapp'),
+            'greetings-2' => __( 'Greetings-2 - Content Specific', 'click-to-chat-for-whatsapp')
         );
 
         $values = apply_filters( 'ht_ctc_fh_greetings_templates', $values );
 
         return $values;
     }
-
-
-
 
 
 

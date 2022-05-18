@@ -131,7 +131,7 @@ class HT_CTC_Admin_Greetings {
                         'parent_class' => 'pr_header_content ctc_greetings_settings ctc_g_1',
                     ],
                     'main_content' => [
-                        'title' => 'Main Content',
+                        'title' => __( 'Main Content', 'click-to-chat-for-whatsapp'),
                         'db' => 'main_content',
                         'template' => 'editor',
                         'label' => 'Main Content',
@@ -139,7 +139,7 @@ class HT_CTC_Admin_Greetings {
                         'parent_class' => 'pr_main_content ctc_greetings_settings ctc_g_1 ctc_g_2',
                     ],
                     'bottom_content' => [
-                        'title' => 'Bottom Content',
+                        'title' => __( 'Bottom Content', 'click-to-chat-for-whatsapp'),
                         'db' => 'bottom_content',
                         'template' => 'editor',
                         'label' => 'Bottom Content',
@@ -148,32 +148,32 @@ class HT_CTC_Admin_Greetings {
                         'parent_class' => 'pr_bottom_content ctc_greetings_settings ctc_g_1 ctc_g_2',
                     ],
                     [
-                        'title' => 'Call to Action',
+                        'title' => __( 'Call to Action', 'click-to-chat-for-whatsapp'),
                         'db' => 'call_to_action',
                         'template' => 'text',
                         'label' => 'Call to Action',
-                        'description' => 'Call to Action (Button/Link Text)',
+                        'description' => __( 'Call to Action (Button/Link Text)', 'click-to-chat-for-whatsapp'),
                         'parent_class' => 'pr_call_to_action ctc_greetings_settings ctc_g_1 ctc_g_2',
                     ],
                 ]
             ],
             'greetings_1' => [
                 'id' => 'ht_ctc_greetings_1',
-                'title' => 'Greetings Dialog - 1',
+                'title' => __( 'Greetings Dialog - 1', 'click-to-chat-for-whatsapp'),
                 'dbrow' => 'ht_ctc_greetings_1',
                 'fallback_values' => $g1_fallback_values,
                 'class' => 'pr_ht_ctc_greetings_1 ctc_greetings_settings',
                 'inputs' => [
                     [
                         'template' => 'collapsible_start',
-                        'title' => 'Greetings Dialog - 1 - Customizable',
+                        'title' => __( 'Greetings-1 - Customizable Design', 'click-to-chat-for-whatsapp'),
                     ],
                     [
                         'db' => 'empty',
                         'template' => 'empty',
                     ],
                     [
-                        'title' => 'Header - Background Color',
+                        'title' => __( 'Header - Background Color', 'click-to-chat-for-whatsapp'),
                         'db' => 'header_bg_color',
                         'template' => 'color',
                         'default_color' => '#075e54',
@@ -181,7 +181,7 @@ class HT_CTC_Admin_Greetings {
                         'parent_class' => 'pr_g1_header_bg_color',
                     ],
                     [
-                        'title' => 'Main Content - Background Color',
+                        'title' => __( 'Main Content - Background Color', 'click-to-chat-for-whatsapp'),
                         'db' => 'main_bg_color',
                         'template' => 'color',
                         'default_color' => '#ece5dd',
@@ -189,7 +189,7 @@ class HT_CTC_Admin_Greetings {
                         'parent_class' => 'pr_g1_main_bg_color',
                     ],
                     [
-                        'title' => 'Message Box - Background Color',
+                        'title' => __( 'Message Box - Background Color', 'click-to-chat-for-whatsapp'),
                         'db' => 'message_box_bg_color',
                         'template' => 'color',
                         'default_color' => '#dcf8c6',
@@ -200,10 +200,10 @@ class HT_CTC_Admin_Greetings {
                         'title' => __( 'Call to Action - button type', 'click-to-chat-for-whatsapp'),
                         'db' => 'cta_style',
                         'template' => 'select',
-                        'description' => "Call to Action - button type (Color settings at Click to Chat -> Customize)",
+                        'description' => "Call to Action - button type ('Click to Chat' -> Customize)",
                         'list' => [
-                            '1' => 'Themes Button (style-1)',
-                            '7_1' => 'Button with WhatsApp Icon (style-7 Extend)',
+                            '1' => __( 'Themes Button (style-1)', 'click-to-chat-for-whatsapp'),
+                            '7_1' => __( 'Button with WhatsApp Icon (style-7 Extend)', 'click-to-chat-for-whatsapp'),
                         ],
                         'parent_class' => 'pr_g1_cta_style',
                     ],
@@ -215,14 +215,14 @@ class HT_CTC_Admin_Greetings {
             ],
             'greetings_2' => [
                 'id' => 'ht_ctc_greetings_2',
-                'title' => 'Greetings Dialog - 2',
+                'title' => __( 'Greetings Dialog - 2', 'click-to-chat-for-whatsapp'),
                 'dbrow' => 'ht_ctc_greetings_2',
                 'fallback_values' => $g2_fallback_values,
                 'class' => 'pr_ht_ctc_greetings_2 ctc_greetings_settings',
                 'inputs' => [
                     [
                         'template' => 'collapsible_start',
-                        'title' => 'Greetings Dialog - 2 - Content Specific',
+                        'title' => __( 'Greetings-2 - Content Specific', 'click-to-chat-for-whatsapp'),
                     ],
                     [
                         'db' => 'empty',
@@ -256,11 +256,11 @@ class HT_CTC_Admin_Greetings {
                         'title' => __( 'Display', 'click-to-chat-for-whatsapp'),
                         'db' => 'g_device',
                         'template' => 'select',
-                        'description' => "Display Greetings Dialog based on device",
+                        'description' => __( 'Display Greetings Dialog based on device', 'click-to-chat-for-whatsapp'),
                         'list' => [
-                            'all' => 'Desktop and Mobile',
-                            'desktop' => 'Desktop Only',
-                            'mobile' => 'Mobile Only'
+                            'all' => __( 'Desktop and Mobile', 'click-to-chat-for-whatsapp'),
+                            'desktop' => __( 'Desktop Only', 'click-to-chat-for-whatsapp'),
+                            'mobile' => __( 'Mobile Only', 'click-to-chat-for-whatsapp')
                         ],
                         'parent_class' => 'pr_g_device',
                     ],
@@ -380,7 +380,7 @@ class HT_CTC_Admin_Greetings {
                                         <div class="collapsible-header"><?php _e( 'PRO', 'click-to-chat-for-whatsapp' ); ?></div>	
                                         <div class="collapsible-body">
                                             <p class="description">Greetings - Form filling</p>
-                                            <p class="description">Time, Scroll Actions</p>
+                                            <p class="description">Actions: Time, Scroll, Viewport</p>
                                             <p class="description" style="text-align: center; position:sticky; bottom:2px; margin-top:20px;"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/pricing/" class="waves-effect waves-light btn" style="width: 100%;">PRO Version</a></p>
                                         </div>	
                                     </li>
@@ -464,16 +464,33 @@ class HT_CTC_Admin_Greetings {
     }
 
     public function ctc_g_content_cb() {
-        
-        if ( ! defined( 'HT_CTC_PRO_VERSION' ) ) {
-            ?>
-            <div class="ctc_greetings_settings ctc_greetings_notes">
-                <p class="description"><a href="https://holithemes.com/plugins/click-to-chat/pricing/">PRO Features</a></p>
-                <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/greetings-form/">Greetings Form</a>: Form filling before initiating the chat</p>
-                <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/greetings-actions/">Actions</a>: Display/reappear Greetings Dialog based on time, scroll Actions</p>
-            </div>
+
+        ?>
+        <div class="ctc_greetings_settings ctc_greetings_notes">
+            <p class="description">
+                <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/greetings-actions/">Actions</a>: Displays Greetings when 
+            </p>
+            <p class="description">
+                <strong>Click</strong>: Clicked on any element with Class name: 'ctc_greetings' <br>
+                <strong>Viewport</strong>: an element is in viewport(25% margin) with Class name: 'ctc_greetings_now' [PRO]
+            </p>
+            
             <?php
-        }
+            if ( ! defined( 'HT_CTC_PRO_VERSION' ) ) {
+                ?>
+                <br>
+                <p class="description"><strong>PRO</strong>:</p>
+                <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/greetings-form/">Actions</a>: Time, Scroll, Click, Viewport</p>
+                <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/greetings-form/">Greetings Form</a>: Form filling before initiating the chat</p>
+                <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/change-values-at-page-level/#greetings">Greetings Page level settings</a>: Change Greetings content for any post</p>
+                <br>
+                <p class="description"><a href="https://holithemes.com/plugins/click-to-chat/pricing/">PRO Version</a></p>
+                <?php
+            }
+            ?>
+            
+        </div>
+        <?php
 
     }
 

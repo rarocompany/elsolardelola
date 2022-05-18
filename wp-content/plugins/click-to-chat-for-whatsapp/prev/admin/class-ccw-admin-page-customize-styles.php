@@ -58,8 +58,6 @@ class CCW_Admin_Page_Customize_Styles {
                 <p class="description"> Style-1 is the default theme button. (looks like currently activated Theme button).</p>
                 <br>
                 <p class="description">For customizable button, please select style-8</p>
-                <br><br>
-                <p class="description">changes made in style-1 since <a target="_blank" href="https://holithemes.com/plugins/whatsapp-chat/v-1-7">Version-1.7</a></p>
             </div>
 
         </div>

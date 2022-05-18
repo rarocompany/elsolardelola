@@ -20,11 +20,7 @@
 
         // get items from ht_ctc_storage
         function ctc_getItem(item) {
-            if (ht_ctc_storage[item]) {
-                return ht_ctc_storage[item];
-            } else {
-                return false;
-            }
+            return (ht_ctc_storage[item]) ? ht_ctc_storage[item] : false;
         }
 
         // set items to ht_ctc_storage storage

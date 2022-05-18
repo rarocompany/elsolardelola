@@ -206,10 +206,10 @@ class HT_CTC_Admin_Others {
 
     function pro_notice() {
         ?>
-        <div class="notice notice-info is-dismissible ht-ctc-notice-pro-banner" data-db="pro_banner" style="display:flex; flex-direction:column; padding:14px; background-color:#253142; border-color:#253142; color:#f7d070; border-radius:5px;">
-            <p style="margin:0; font-size:1.4rem; color:#1d2327; font-weight:600; color:#f7d070;">Click to Chat - PRO</p>
-            <p style="margin:0 0 2px; color:#f7d070; font-size:1.1rem;">
-                Upgrade to Click to Chat PRO. Includes features like Random Number, Form filling, Webhooks, Business hours, Display based on time range, days in a week, time dealy, scroll delay, login status
+        <div class="notice notice-info is-dismissible ht-ctc-notice-pro-banner" data-db="pro_banner" style="display:flex; flex-direction:column; padding:14px; border-radius:5px;">
+            <p style="margin:0; font-size:1.4rem; color:#1d2327; font-weight:600;">Click to Chat - PRO</p>
+            <p style="margin:0 0 2px;">
+                Random Number, <strong>Form filling</strong>, Webhooks, Business hours, Display based on time range, days in a week, time dealy, scroll delay, login status and much more.
             </p>
             <p>
                 <a class="button button-primary" style="padding:2px 15px;" href="https://holithemes.com/plugins/click-to-chat/pricing/" target="_blank">Buy Now</a>
