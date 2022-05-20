@@ -238,7 +238,7 @@ if ( 'hide' == $show_or_hide ) {
                 if ( !empty($custom_post_types ) ) {
                     if ( in_array( $post_type, $custom_post_types ) ) {
                         if ( isset( $display_settings[$post_type] ) && 'hide' == $display_settings[$post_type] ) {
-                            $display = 'yes';
+                            $display = 'no';
                             return;
                         }
                     }

@@ -3,7 +3,7 @@ Requires at least: 4.6
 Tested up to: 6.0
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 3.9.4
+Stable tag: 3.9.5
 Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, whatsapp support, whatsapp group, whatsapp message, WhatsApp WooCommerce, whatsapp wordpress, whatsapp floating button, whatsapp icon, holithemes
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -502,6 +502,9 @@ After Activate the plugin, add WhatsApp Number at plugin settings.
 
 == Changelog ==
 
+= 3.9.5 =
+* Fix: display settings for custom post types
+
 = 3.9.4 =
 * Enchantment: Webhooks, greetings, admin interface.
 
@@ -510,25 +513,5 @@ After Activate the plugin, add WhatsApp Number at plugin settings.
 * Open Greetings dialog: 
     * Click on any element which contains Class /Id name: 'ctc_greetings'
     * When an element is in viewport(25% margin) which contains Class name: 'ctc_greetings_now' [PRO]
-
-= 3.9.2 =
-* Enchantment: Greetings feature
-
-= 3.9.1 =
-* Enchantment: Greetings feature
-* PRO: New - [Greetings - From filling](https://holithemes.com/plugins/click-to-chat/greetings-form/)
-* PRO: New - [Greetings Actions - Time, Scroll](https://holithemes.com/plugins/click-to-chat/greetings-actions/)
-
-= 3.9 =
-* New: Greetings Dialogs
-    * Greetings 1: Customizable Design
-    * Greetings 2: Content Specific
-
-= 3.8.1 =
-* Enchantment: Pre-filled message, Call to Action settings
-
-= 3.8 =
-* Enchantment: Style-1 button with icon.
-* Enchantment: WhatsApp at WooCommerce Shop, single product pages
 
 [changelog](https://holithemes.com/plugins/click-to-chat/changelog/)

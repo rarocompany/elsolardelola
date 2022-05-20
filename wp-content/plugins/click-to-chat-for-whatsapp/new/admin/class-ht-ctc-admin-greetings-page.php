@@ -381,6 +381,7 @@ class HT_CTC_Admin_Greetings {
                                         <div class="collapsible-body">
                                             <p class="description">Greetings - Form filling</p>
                                             <p class="description">Actions: Time, Scroll, Viewport</p>
+                                            <p class="description">Greetings page level settings</p>
                                             <p class="description" style="text-align: center; position:sticky; bottom:2px; margin-top:20px;"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/pricing/" class="waves-effect waves-light btn" style="width: 100%;">PRO Version</a></p>
                                         </div>	
                                     </li>
