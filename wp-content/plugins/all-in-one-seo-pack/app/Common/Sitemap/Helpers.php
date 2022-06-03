@@ -425,9 +425,9 @@ class Helpers {
 			return $urls;
 		}
 
-		foreach ( aioseo()->sitemap->addons as $classes ) {
-			if ( ! empty( $classes['helpers'] ) ) {
-				$urls = array_merge( $urls, $classes['helpers']->getSitemapUrls() );
+		foreach ( aioseo()->addons->getLoadedAddons() as $loadedAddon ) {
+			if ( ! empty( $loadedAddon->helpers ) && method_exists( $loadedAddon->helpers, 'getSitemapUrls' ) ) {
+				$urls = array_merge( $urls, $loadedAddon->helpers->getSitemapUrls() );
 			}
 		}
 

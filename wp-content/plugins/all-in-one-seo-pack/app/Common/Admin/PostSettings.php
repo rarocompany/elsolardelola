@@ -61,7 +61,8 @@ class PostSettings {
 			aioseo()->helpers->isScreenBase( 'event-espresso' ) ||
 			aioseo()->helpers->isScreenBase( 'post' ) ||
 			aioseo()->helpers->isScreenBase( 'term' ) ||
-			aioseo()->helpers->isScreenBase( 'edit-tags' )
+			aioseo()->helpers->isScreenBase( 'edit-tags' ) ||
+			aioseo()->helpers->isScreenBase( 'site-editor' )
 		) {
 			$page = null;
 			if (

@@ -152,6 +152,14 @@ class Updates {
 			$this->migrateDeprecatedRunShortcodesSetting();
 		}
 
+		if ( version_compare( $lastActiveVersion, '4.2.1', '<' ) ) {
+			// Force WordPress to flush the rewrite rules.
+			aioseo()->options->flushRewriteRules();
+
+			Models\Notification::deleteNotificationByName( 'deprecated-filters' );
+			Models\Notification::deleteNotificationByName( 'deprecated-filters-v2' );
+		}
+
 		do_action( 'aioseo_run_updates', $lastActiveVersion );
 	}
 

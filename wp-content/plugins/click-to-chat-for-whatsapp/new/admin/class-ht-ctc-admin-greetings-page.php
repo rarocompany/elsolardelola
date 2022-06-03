@@ -350,7 +350,7 @@ class HT_CTC_Admin_Greetings {
 
         ?>
 
-        <div class="wrap">
+        <div class="wrap ctc-admin-greetings-page">
 
             <?php settings_errors(); ?>
 

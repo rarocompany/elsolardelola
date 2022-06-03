@@ -39,7 +39,7 @@ class HT_CTC_Admin_Main_Page {
 
         ?>
 
-        <div class="wrap">
+        <div class="wrap ctc-admin-main-page">
 
             <?php settings_errors(); ?>
 
@@ -185,11 +185,11 @@ class HT_CTC_Admin_Main_Page {
         $options = get_option('ht_ctc_chat_options');
         $value = ( isset( $options['pre_filled']) ) ? esc_attr( $options['pre_filled'] ) : '';
         $blogname = HT_CTC_BLOG_NAME;
-        $placeholder = "Hello $blogname!! \nName: \nLike to know more information about {{title}}, {{url}}";
+        $placeholder = "Hello {site} \nLike to know more information about {title}, {url}";
         ?>
         <div class="row">
             <div class="input-field col s12">
-                <textarea style="min-height: 84px;" placeholder="<?= $placeholder ?>" name="ht_ctc_chat_options[pre_filled]" id="pre_filled" class="materialize-textarea input-margin"><?= $value ?></textarea>
+                <textarea style="min-height: 64px;" placeholder="<?= $placeholder ?>" name="ht_ctc_chat_options[pre_filled]" id="pre_filled" class="materialize-textarea input-margin"><?= $value ?></textarea>
                 <label for="pre_filled"><?php _e( 'Pre-filled message', 'click-to-chat-for-whatsapp' ); ?></label>
                 <p class="description"><?php _e( "Text that pre-filled in WhatsApp Chat window. Add variables {site}, {url}, {title} to replace with site name, current webpage URL, Post title", 'click-to-chat-for-whatsapp' ); ?> - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/pre-filled-message/"><?php _e( 'more info', 'click-to-chat-for-whatsapp' ); ?></a> </p>
             </div>

@@ -35,7 +35,7 @@ class HT_CTC_Admin_Group_Page {
 
         ?>
 
-        <div class="wrap">
+        <div class="wrap ctc-admin-group-page">
 
             <?php settings_errors(); ?>
 

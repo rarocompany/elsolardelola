@@ -4,13 +4,20 @@
     $(function () {
 
         try {
-            greetings();
+            if (document.querySelector('.pr_greetings_template')) {
+                greetings_template();
+            }
+
+            // todo..
+            if (document.querySelector('.pr_greetings_template')) {
+                editor();
+            }
         } catch (e) { }
 
         /**
-        * Greetings
+        * display settings based on Greetings template selection
         */
-        function greetings() {
+        function greetings_template() {
 
 
             var greetings_template = $('.pr_greetings_template select').find(":selected").val();
@@ -64,25 +71,25 @@
                 }
             });
 
+        }
 
+
+        function editor() {
             // tinymce editor - bg color
             var check = 1;
             var check_interval = 1000;
             var check_times = 28; // ( check_times * check_interval = total milliseconds )
 
-            function tiny_bg() {
-                if (document.getElementById("header_content_ifr")) {
-                    try {
-                        tiny_bg_color();
-                    } catch (e) {}
-                } else {
-                    check++;
-                    if (check < check_times) {
-                        setTimeout(tiny_bg, check_interval);
-                    }
+            if (document.getElementById("header_content_ifr")) {
+                try {
+                    tiny_bg_color();
+                } catch (e) { }
+            } else {
+                check++;
+                if (check < check_times) {
+                    setTimeout(tiny_bg, check_interval);
                 }
             }
-            tiny_bg();
 
             function tiny_bg_color() {
                 // f0f0f1
@@ -98,7 +105,6 @@
                 var elmnt = bottom_content_ifr.contentWindow.document.getElementsByTagName("body")[0];
                 elmnt.style.backgroundColor = "#26a69a";
             }
-
         }
 
 

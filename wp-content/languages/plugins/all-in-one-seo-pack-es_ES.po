@@ -2,14 +2,72 @@
 # This file is distributed under the same license as the Plugins - All in One SEO – Best WordPress SEO Plugin – Easily Improve SEO Rankings &amp; Increase Traffic - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-04-26 15:25:48+0000\n"
+"PO-Revision-Date: 2022-05-27 15:57:12+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/3.0.0\n"
+"X-Generator: GlotPress/4.0.0-alpha.1\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - All in One SEO – Best WordPress SEO Plugin – Easily Improve SEO Rankings &amp; Increase Traffic - Stable (latest release)\n"
+
+#. Translators: 1 - Opening HTML bold tag, 2 - Closing HTML bold tag, 3 - The
+#. plugin name ("All in One SEO"), 4 - Opening HTML link tag, 5 - Closing HTML
+#. link tag.
+#: app/init/notices.php:173
+msgid "%1$sNote:%2$s %3$s will be discontinuing support for WordPress versions older than version 5.3 by the end of 2022. %4$sRead more for additional information.%5$s"
+msgstr "%1$sNota:%2$s A finales de 2022, %3$s dejará de ser compatible con las versiones de WordPress anteriores a la 5.3. %4$sLee más para obtener información adicional.%5$s"
+
+#. Translators: 1 - Blog name, 2 - Separator (raquo), 3 - Post type name.
+#: app/Common/Rss.php:302
+msgid "%1$s %2$s %3$s Feed"
+msgstr "Feed de %1$s %2$s %3$s"
+
+#. Translators: 1 - Blog name, 2 - Separator (raquo), 3 - Search query.
+#: app/Common/Rss.php:300
+msgid "%1$s %2$s Search Results for &#8220;%3$s&#8221; Feed"
+msgstr "%1$s %2$s Resultados de búsqueda del feed &#8220;%3$s&#8221;"
+
+#. Translators: 1 - Blog name, 2 - Separator (raquo), 3 - Author name.
+#: app/Common/Rss.php:298
+msgid "%1$s %2$s Posts by %3$s Feed"
+msgstr "%1$s %2$s Entradas del feed de %3$s"
+
+#. Translators: 1 - Blog name, 2 - Separator (raquo), 3 - Term name, 4:
+#. Taxonomy singular name.
+#: app/Common/Rss.php:296
+msgid "%1$s %2$s %3$s %4$s Feed"
+msgstr "Feed de %1$s %2$s %3$s %4$s"
+
+#. Translators: 1 - Blog name, 2 - Separator (raquo), 3 - Tag name.
+#: app/Common/Rss.php:294
+msgid "%1$s %2$s %3$s Tag Feed"
+msgstr "Feed de la etiqueta %1$s %2$s %3$s"
+
+#. Translators: 1 - Blog name, 2 - Separator (raquo), 3 - Category name.
+#: app/Common/Rss.php:292
+msgid "%1$s %2$s %3$s Category Feed"
+msgstr "Feed de la categoría %1$s %2$s %3$s"
+
+#. Translators: 1 - Blog name, 2 - Separator (raquo), 3 - Post title.
+#: app/Common/Rss.php:290
+msgid "%1$s %2$s %3$s Comments Feed"
+msgstr "Feed de comentarios de %1$s %2$s %3$s"
+
+#. Translators: Separator between blog name and feed type in feed links.
+#: app/Common/Rss.php:288
+msgctxt "feed link"
+msgid "-"
+msgstr "-"
+
+#. Translators: 1 - The plugin short name ("AIOSEO").
+#: app/Common/Api/Wizard.php:297
+msgid "You selected to install the free OptinMonster Conversion Tools plugin during the setup of %1$s, but there was an issue during installation. Click below to manually install."
+msgstr "Seleccionaste instalar el plugin gratuito OptinMonster Conversion Tools durante la configuración de %1$s, pero hubo un problema durante la instalación. Haz clic a continuación para instalarlo manualmente."
+
+#: app/Common/Api/Wizard.php:294 app/Common/Api/Wizard.php:302
+msgid "Install OptinMonster"
+msgstr "Instalar OptinMonster"
 
 #. Translators: 1 - The plugin short name ("AIOSEO").
 #: app/Common/Admin/Dashboard.php:61
@@ -53,7 +111,7 @@ msgid "Ooops! It Appears JavaScript Didn’t Load"
 msgstr "¡Vaya! Parece que JavaScript no se ha cargado"
 
 #. Translators: 1 - The sitemap name, 2 - The current page.
-#: app/Common/Sitemap/Sitemap.php:520
+#: app/Common/Sitemap/Xsl.php:64
 msgid "%1$s Sitemap %2$s"
 msgstr "%1$s Mapa del sitio %2$s"
 
@@ -124,7 +182,7 @@ msgstr "terrorífico"
 msgid "AIOSEO"
 msgstr "AIOSEO"
 
-#: app/Common/Models/Post.php:439
+#: app/Common/Models/Post.php:442
 msgid "No content yet"
 msgstr "Aún no hay contenido"
 
@@ -202,19 +260,19 @@ msgstr "Contador de URLs"
 #: app/Common/Views/sitemap/xsl/default.php:42
 #: app/Common/Views/sitemap/xsl/default.php:92
 #: app/Common/Views/sitemap/xsl/default.php:257
-#: app/Common/Views/sitemap/xsl/default.php:434
+#: app/Common/Views/sitemap/xsl/default.php:444
 msgid "Sitemap Index"
 msgstr "Índice del mapa del sitio"
 
-#: app/Common/Sitemap/Sitemap.php:494
+#: app/Common/Sitemap/Xsl.php:38
 msgid "Post Archive"
 msgstr "Archivo de entradas"
 
-#: app/Common/Options/Options.php:531
+#: app/Common/Options/Options.php:560
 msgid "404 - Page Not Found"
 msgstr "404 - Página no encontrada"
 
-#: app/Common/Options/Options.php:530
+#: app/Common/Options/Options.php:559
 msgid "Search Results for"
 msgstr "Resultados de búsqueda para"
 
@@ -311,7 +369,7 @@ msgstr "No se han podido encontrar entradas/términos."
 msgid "Your site is running an %1$sinsecure version%2$s of WordPress that is no longer supported. Please update your site to the latest version of WordPress in order to continue using %3$s."
 msgstr "Tu sitio está ejecutando una %1$sversión no segura%2$s de WordPress que ya no es compatible. Por favor, actualiza tu sitio a la última versión de WordPress para poder seguir usando %3$s."
 
-#: app/Common/Models/Post.php:421
+#: app/Common/Models/Post.php:424
 msgid "Content"
 msgstr "Contenido"
 
@@ -2665,7 +2723,7 @@ msgstr "emoción"
 #. Translators: 1 - Opening HTML bold tag, 2 - Closing HTML bold tag, 3 - The
 #. plugin name ("All in One SEO"), 4 - Opening HTML link tag, 5 - Closing HTML
 #. link tag.
-#: app/Common/Admin/Notices/DeprecatedWordPress.php:85 app/init/notices.php:173
+#: app/Common/Admin/Notices/DeprecatedWordPress.php:85
 msgid "%1$sNote:%2$s %3$s will be discontinuing support for WordPress versions older than version 5.3 by the end of 2021. %4$sRead more for additional information.%5$s"
 msgstr "%1$sNota:%2$s A finales de 2021, %3$s dejará de ser compatible con las versiones de WordPress anteriores a la 5.3. %4$sLee más para obtener información adicional.%5$s"
 
@@ -2844,12 +2902,6 @@ msgstr "%1$s ha migrado todos tus formatos de título, algunos de los cuales est
 #: app/Common/Standalone/HeadlineAnalyzer.php:202
 msgid "Question"
 msgstr "Pregunta"
-
-#. Translators: 1 - The plugin short name ("AIOSEO"), 2 - Opening link tag, 3 -
-#. Closing link tag.
-#: app/Common/Admin/Notices/Notices.php:567
-msgid "Warning: %1$s has detected the use of filters that have been deprecated on your site. These filters may be in use by another plugin or your theme. If that is the case, these filters most likely will not work with this plugin. Please make sure you have updated all your plugins. If you have manually added these filters, please %2$scheck out our documentation%3$s for the updated filters to use."
-msgstr "Advertencia: %1$s ha detectado el uso de filtros que han quedado obsoletos en tu sitio. Estos filtros pueden estar en uso por otro plugin o por tu tema. Si ese es el caso, lo más probable es que estos filtros no funcionarán con este plugin. Por favor, asegúrate de que has actualizado todos tus plugins. Si has añadido manualmente estos filtros, por favor, %2$sconsulta nuestra documentación%3$s para usar los filtros actualizados."
 
 #: app/Common/Utils/Tags.php:315
 msgid "The first name of the post author."
@@ -3255,7 +3307,7 @@ msgstr "Leyenda del medio"
 msgid "Image Alt Tag"
 msgstr "Etiqueta Alt de la imagen"
 
-#: app/Common/Options/Options.php:529
+#: app/Common/Options/Options.php:558
 msgid "Archives for"
 msgstr "Archivos para"
 
@@ -3273,18 +3325,18 @@ msgstr "Este mapa del sitio lo generó %4$s %1$s el %2$s a las %3$s - el plugin 
 msgid "statically"
 msgstr "estáticamente"
 
-#: app/Common/Sitemap/Sitemap.php:155
+#: app/Common/Sitemap/Sitemap.php:144
 msgid "Delete Static Files"
 msgstr "Borrar archivos estáticos"
 
 #. Translators: 1 - The plugin short name ("AIOSEO"), 2 - Same as previous.
-#: app/Common/Sitemap/Sitemap.php:148
+#: app/Common/Sitemap/Sitemap.php:137
 msgid ""
 "%1$s has detected static sitemap files in the root folder of your WordPress installation.\n"
 "\t\t\t\tAs long as these files are present, %2$s is not able to dynamically generate your sitemap."
 msgstr "%1$s ha detectado archivos de mapas del sitio estáticos en la carpeta raíz de la instalación de WordPress. Mientras estos archivos estén presentes, %2$s no puedes generar dinámicamente tu mapa del sitio."
 
-#: app/Common/Sitemap/Sitemap.php:145
+#: app/Common/Sitemap/Sitemap.php:134
 msgid "Static sitemap files detected"
 msgstr "Detectados archivos del mapa del sitio estáticos"
 
@@ -3505,7 +3557,7 @@ msgid "Published on %1$s."
 msgstr "Publicado el %1$s."
 
 #. Translators: 1 - The plugin short name ("AIOSEO").
-#: app/Common/Admin/PostSettings.php:134
+#: app/Common/Admin/PostSettings.php:135
 msgid "%1$s Settings"
 msgstr "Configuración de %1$s"
 
@@ -3625,32 +3677,28 @@ msgstr "Importación de metadatos SEO en curso"
 msgid "CEO of %1$s"
 msgstr "CEO de %1$s"
 
-#: app/Common/Admin/Notices/Notices.php:592
-msgid "Deprecated Filters Detected"
-msgstr "Filtros obsoletos detectados"
-
-#: app/Common/Admin/Notices/Notices.php:535
+#: app/Common/Admin/Notices/Notices.php:544
 msgid "Conflicting Plugins Detected"
 msgstr "Plugins conflictivos detectados"
 
 #. Translators: 1 - The plugin short name ("AIOSEO").
-#: app/Common/Admin/Notices/Notices.php:458
+#: app/Common/Admin/Notices/Notices.php:467
 msgid "Warning: %1$s has detected that you may have an invalid description format. This could lead to descriptions not being properly applied to your content."
 msgstr "Advertencia: %1$s ha detectado que puede que tengas un formato de descripción no válido. Esto podría llevar a que las descripciones no se apliquen correctamente a tu contenido."
 
-#: app/Common/Admin/Notices/Notices.php:455
+#: app/Common/Admin/Notices/Notices.php:464
 msgid "Invalid Description Format"
 msgstr "Formato de descripción no válido"
 
-#: app/Common/Admin/Notices/Notices.php:414
-#: app/Common/Admin/Notices/Notices.php:463
-#: app/Common/Admin/Notices/Notices.php:539
+#: app/Common/Admin/Notices/Notices.php:423
+#: app/Common/Admin/Notices/Notices.php:472
+#: app/Common/Admin/Notices/Notices.php:548
 #: app/Common/ImportExport/RankMath/TitleMeta.php:415
 #: app/Common/Migration/GeneralSettings.php:745
 msgid "Fix Now"
 msgstr "Corregir ahora"
 
-#: app/Common/Admin/Notices/Notices.php:406
+#: app/Common/Admin/Notices/Notices.php:415
 msgid "Search Engines Blocked"
 msgstr "Motores de búsqueda bloqueados"
 
@@ -3697,17 +3745,17 @@ msgstr "%1$s &rsaquo; Conectar"
 msgid "General"
 msgstr "General"
 
-#: app/Common/Models/Post.php:431
+#: app/Common/Models/Post.php:434
 msgid "Please add a title first."
 msgstr "Por favor añada un título primero."
 
-#: app/Common/Models/Post.php:422 app/Common/Models/Post.php:440
+#: app/Common/Models/Post.php:425 app/Common/Models/Post.php:443
 msgid "Please add some content first."
 msgstr "Por favor primero añada algo de contenido."
 
 #. Translators: This refers to the homepage of the site.
 #: app/Common/Breadcrumbs/Breadcrumbs.php:499
-#: app/Common/Options/Options.php:528 app/Common/Schema/Breadcrumb.php:306
+#: app/Common/Options/Options.php:557 app/Common/Schema/Breadcrumb.php:306
 #: app/Common/Views/sitemap/xsl/partials/breadcrumb.php:24
 msgid "Home"
 msgstr "Inicio"
@@ -3760,7 +3808,7 @@ msgstr "Mapas del sitio"
 msgid "Social Networks"
 msgstr "Redes Sociales"
 
-#: app/Common/Admin/Notices/Notices.php:460
+#: app/Common/Admin/Notices/Notices.php:469
 msgid "A Description tag is required in order to properly display your meta descriptions on your site."
 msgstr "Es obligatoria una etiqueta de descripción para mostrar correctamente tus meta descriptions en tu sitio."
 
@@ -3804,7 +3852,7 @@ msgstr "Análisis SEO"
 msgid "Redirects"
 msgstr "Redirecciones"
 
-#: app/Common/Options/Options.php:520
+#: app/Common/Options/Options.php:549
 msgid "default"
 msgstr "por defecto"
 
@@ -4003,7 +4051,7 @@ msgid "Update"
 msgstr "Actualizar"
 
 #. Translators: 1 - The plugin short name ("AIOSEO").
-#: app/Common/Admin/Notices/Notices.php:512
+#: app/Common/Admin/Notices/Notices.php:521
 msgid "Warning: %1$s has detected other active SEO or sitemap plugins. We recommend that you deactivate the following plugins to prevent any conflicts:"
 msgstr "Advertencia: %1$s ha detectado otros plugins de mapas del sitio o SEO activos. Le recomendamos que desactive los siguientes plugins para evitar conflictos:"
 
@@ -4135,14 +4183,14 @@ msgid "Temporarily unable to load feed."
 msgstr "No ha sido posible temporalmente cargar el feed."
 
 #. Translators: 1 - The plugin short name ("AIOSEO").
-#: app/Common/Admin/Notices/Notices.php:409
+#: app/Common/Admin/Notices/Notices.php:418
 msgid "Warning: %1$s has detected that you are blocking access to search engines. You can change this in Settings > Reading if this was unintended."
 msgstr "Advertencia: %1$s ha detectado que está bloqueando el acceso a los motores de búsqueda. Puede cambiar esto en Ajustes > Lectura si esto no fue intencionado."
 
-#: app/Common/Admin/Notices/Notices.php:416
-#: app/Common/Admin/Notices/Notices.php:465
-#: app/Common/Admin/Notices/Notices.php:541
-#: app/Common/Admin/Notices/Notices.php:596 app/Common/Api/Wizard.php:271
+#: app/Common/Admin/Notices/Notices.php:425
+#: app/Common/Admin/Notices/Notices.php:474
+#: app/Common/Admin/Notices/Notices.php:550 app/Common/Api/Wizard.php:271
+#: app/Common/Api/Wizard.php:304
 #: app/Common/ImportExport/RankMath/TitleMeta.php:417
 #: app/Common/Migration/GeneralSettings.php:747
 #: app/Common/Migration/Helpers.php:168
@@ -4247,7 +4295,7 @@ msgstr "Ajustes SEO"
 msgid "dynamically"
 msgstr "dinámicamente"
 
-#: app/Common/Sitemap/Sitemap.php:491
+#: app/Common/Sitemap/Xsl.php:35
 msgid "Additional Pages"
 msgstr "Páginas adicionales"
 
@@ -4396,7 +4444,7 @@ msgstr "SEO"
 msgid "Description"
 msgstr "Descripción"
 
-#: app/Common/Admin/Admin.php:301 app/Common/Models/Post.php:430
+#: app/Common/Admin/Admin.php:301 app/Common/Models/Post.php:433
 #: app/Common/Views/sitemap/html/widget-options.php:8
 msgid "Title"
 msgstr "Título"

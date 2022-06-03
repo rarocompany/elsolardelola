@@ -91,7 +91,7 @@ class Post extends Model {
 			$post = self::runDynamicMigrations( $post );
 		}
 
-		return $post;
+		return apply_filters( 'aioseo_get_post', $post );
 	}
 
 	/**
@@ -195,7 +195,9 @@ class Post extends Model {
 
 		$thePost = self::getPost( $postId );
 		// Before setting the data, we check if the title/description are the same as the defaults and clear them if so.
-		$data    = self::checkForDefaultFormat( $postId, $thePost, $data );
+		$data = self::checkForDefaultFormat( $postId, $thePost, $data );
+
+		$thePost = apply_filters( 'aioseo_save_post', $thePost );
 		$thePost = self::sanitizeAndSetDefaults( $postId, $thePost, $data );
 
 		// Update traditional post meta so that it can be used by multilingual plugins.
@@ -222,17 +224,18 @@ class Post extends Model {
 	 * @return array          The data.
 	 */
 	private static function checkForDefaultFormat( $postId, $thePost, $data ) {
-		if ( $thePost->exists() ) {
-			$post            = aioseo()->helpers->getPost( $postId );
-			$metaTitle       = aioseo()->meta->title->getPostTypeTitle( $post->post_type );
-			$metaDescription = aioseo()->meta->description->getPostTypeDescription( $post->post_type );
-			if ( empty( $thePost->title ) && ! empty( $data['title'] ) && trim( $data['title'] ) === trim( $metaTitle ) ) {
-				$data['title'] = null;
-			}
+		$data['title']       = trim( $data['title'] );
+		$data['description'] = trim( $data['description'] );
 
-			if ( empty( $thePost->description ) && ! empty( $data['description'] ) && trim( $data['description'] ) === trim( $metaDescription ) ) {
-				$data['description'] = null;
-			}
+		$post                     = aioseo()->helpers->getPost( $postId );
+		$defaultTitleFormat       = trim( aioseo()->meta->title->getPostTypeTitle( $post->post_type ) );
+		$defaultDescriptionFormat = trim( aioseo()->meta->description->getPostTypeDescription( $post->post_type ) );
+		if ( ! empty( $data['title'] ) && $data['title'] === $defaultTitleFormat ) {
+			$data['title'] = null;
+		}
+
+		if ( ! empty( $data['description'] ) && $data['description'] === $defaultDescriptionFormat ) {
+			$data['description'] = null;
 		}
 
 		return $data;
@@ -451,10 +454,12 @@ class Post extends Model {
 	 *
 	 * @since 4.1.7
 	 *
-	 * @return array The defaults.
+	 * @param  string $keyphrases The database keyphrases.
+	 * @return array              The defaults.
 	 */
-	public static function getKeyphrasesDefaults() {
-		$defaults = [
+	public static function getKeyphrasesDefaults( $keyphrases = '' ) {
+		$keyphrases = json_decode( $keyphrases );
+		$defaults   = [
 			'focus'      => [
 				'keyphrase' => '',
 				'score'     => 0,
@@ -469,6 +474,18 @@ class Post extends Model {
 			'additional' => []
 		];
 
-		return json_decode( wp_json_encode( $defaults ) );
+		if ( empty( $keyphrases ) ) {
+			return json_decode( wp_json_encode( $defaults ) );
+		}
+
+		if ( empty( $keyphrases->focus ) ) {
+			$keyphrases->focus = $defaults['focus'];
+		}
+
+		if ( empty( $keyphrases->additional ) ) {
+			$keyphrases->additional = $defaults['additional'];
+		}
+
+		return $keyphrases;
 	}
 }

@@ -48,7 +48,7 @@ class HT_CTC_Admin_Other_Settings {
 
         ?>
 
-        <div class="wrap">
+        <div class="wrap ctc-admin-other-settings">
 
             <?php settings_errors(); ?>
 

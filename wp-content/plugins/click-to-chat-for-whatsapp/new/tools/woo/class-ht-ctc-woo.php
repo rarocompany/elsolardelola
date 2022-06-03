@@ -23,7 +23,6 @@ class HT_CTC_WOO_Pages {
         
         // chat - woo values
         add_filter( 'ht_ctc_fh_chat', array($this, 'chat') );
-        add_filter( 'ht_ctc_fh_greetings', array($this, 'greetings') );
 
         // woo places
         $woo_position = ( isset( $woo['woo_position']) ) ? esc_attr( $woo['woo_position'] ) : 'select';
@@ -351,68 +350,6 @@ class HT_CTC_WOO_Pages {
 
         return $ht_ctc_chat;
     }
-
-
-    
-
-    function greetings( $ht_ctc_greetings ) {
-        
-        $woo_greetings_options = get_option('ht_ctc_woo_greetings_options');
-
-        // if woocommerce single product page
-        if ( function_exists( 'is_product' ) && function_exists( 'wc_get_product' )) {
-            if ( is_product() ) {
-                
-                $name = '';
-                $price = '';
-                $regular_price = '';
-                $sku = '';
-                
-                $product = wc_get_product();
-
-                if ( is_object($product) && method_exists($product, 'get_name') ) {
-                    $name = $product->get_name();
-                    // $title = $product->get_title();
-                    $price = $product->get_price();
-                    $regular_price = $product->get_regular_price();
-                    $sku = $product->get_sku();
-                }
-
-                $page_id = get_the_ID();
-                $ht_ctc_pagelevel = get_post_meta( $page_id, 'ht_ctc_pagelevel', true );
-
-
-                // header_content
-                if ( isset( $woo_greetings_options['header_content'] ) && '' !== $woo_greetings_options['header_content'] ) {
-                    $ht_ctc_greetings['header_content'] = esc_attr( $woo_greetings_options['header_content'] );
-                    $ht_ctc_greetings['header_content'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_greetings['header_content'], 'Click to Chat for WhatsApp', 'woo_header_content' );
-                }
-
-                // header_content
-                if ( isset( $woo_greetings_options['main_content'] ) && '' !== $woo_greetings_options['main_content'] ) {
-                    $ht_ctc_greetings['main_content'] = esc_attr( $woo_greetings_options['main_content'] );
-                    $ht_ctc_greetings['main_content'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_greetings['main_content'], 'Click to Chat for WhatsApp', 'woo_main_content' );
-                }
-
-                // header_content
-                if ( isset( $woo_greetings_options['bottom_content'] ) && '' !== $woo_greetings_options['bottom_content'] ) {
-                    $ht_ctc_greetings['bottom_content'] = esc_attr( $woo_greetings_options['bottom_content'] );
-                    $ht_ctc_greetings['bottom_content'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_greetings['bottom_content'], 'Click to Chat for WhatsApp', 'woo_bottom_content' );
-                }
-
-                // variables works in default pre_filled also for woo pages.
-                $ht_ctc_greetings['header_content'] = str_replace( array('{product}', '{price}', '{regular_price}', '{sku}' ),  array( $name, $price, $regular_price, $sku ), $ht_ctc_greetings['header_content'] );
-                $ht_ctc_greetings['main_content'] = str_replace( array('{product}', '{price}', '{regular_price}', '{sku}' ),  array( $name, $price, $regular_price, $sku ), $ht_ctc_greetings['main_content'] );
-                $ht_ctc_greetings['bottom_content'] = str_replace( array('{product}', '{price}', '{regular_price}', '{sku}' ),  array( $name, $price, $regular_price, $sku ), $ht_ctc_greetings['bottom_content'] );
-
-            }
-        }
-
-        return $ht_ctc_greetings;
-    }
-
-
-
 
 
 

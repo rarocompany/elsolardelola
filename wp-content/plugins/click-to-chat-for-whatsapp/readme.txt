@@ -3,7 +3,7 @@ Requires at least: 4.6
 Tested up to: 6.0
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 3.9.5
+Stable tag: 3.9.6
 Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, whatsapp support, whatsapp group, whatsapp message, WhatsApp WooCommerce, whatsapp wordpress, whatsapp floating button, whatsapp icon, holithemes
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -39,7 +39,7 @@ Select a Style that matches your Website design.
 * All pre-defined styles are customizable
 * Select style, customize to match the website design.
 
-[list of Styles](https://holithemes.com/plugins/click-to-chat/list-of-styles/?utm_source=wp&utm_medium=readme&utm_campaign=ht)  |  [Customize Styles](https://holithemes.com/plugins/click-to-chat/customize-styles/?utm_source=wp&utm_medium=readme&utm_campaign=ht) ✏️
+[list of Styles](https://holithemes.com/plugins/click-to-chat/list-of-styles/)  |  ✏️[Customize Styles](https://holithemes.com/plugins/click-to-chat/customize-styles/)
 
 
 = 🌼 Add Own Image =
@@ -55,8 +55,9 @@ Convert any Element as WhatsApp Chat Element by adding
 * Href/link: '#ctc_chat'
 
 The custom design will navigate to WhatsApp based on plugin settings (WhatsApp Number, pre-filled message, .... ). 
+(e.g. Add WhatsApp in menu)
 
-[Custom Element](https://holithemes.com/plugins/click-to-chat/custom-element/?utm_source=wp&utm_medium=readme&utm_campaign=ht)
+[Custom Element](https://holithemes.com/plugins/click-to-chat/custom-element/)
 
 == Greetings Dialog ==
 
@@ -66,13 +67,12 @@ Encourage user engagement by displaying the perfect message at the perfect time
 * [Greetings-2](https://holithemes.com/plugins/click-to-chat/greetings-2/): Content Specific Design
 * [Greetings-Form](https://holithemes.com/plugins/click-to-chat/greetings-form/): Form Filling before initializing the chat [PRO]
 
-Display Greetings:
+= [Actions](https://holithemes.com/plugins/click-to-chat/greetings-actions/) =
 
-* Click on any element which contains Class /Id name: 'ctc_greetings'
-* Time, Scroll [PRO]
-* When an element is in viewport(25% margin) with contains Class name: 'ctc_greetings_now' [PRO]
+**Click**: Display Greetings When Clicks on any element with Class name: 'ctc_greetings'
+**ViewPort**: Display Greetings When an element is in viewport(25% margin) with Class name: 'ctc_greetings_now' [PRO]
+**Time, Scroll** Display Greetings based on time, scroll [PRO]
 
-[Actions](https://holithemes.com/plugins/click-to-chat/greetings-actions/)
 
 
 == ✳️ Position to Place == 
@@ -96,7 +96,7 @@ Variables to change values dynamically
 
 With these variables, we can understand from which page the user started WhatsApp chat.
  
-[Pre-filled Message](https://holithemes.com/plugins/click-to-chat/pre-filled-message/?utm_source=wp&utm_medium=readme&utm_campaign=ht)
+[Pre-filled Message](https://holithemes.com/plugins/click-to-chat/pre-filled-message/)
 
 == 🎁 WooCommerce ==
 
@@ -135,10 +135,10 @@ Add WhatsApp at WooCommerce Products list (shop page, related products list)
 
 [Shop page](https://holithemes.com/plugins/click-to-chat/whatsapp-chat-in-woocommerce-shop-page/)
 
-= 📒 Change Settings at page level =
+= 📒 Page Level Settings =
 
-At the page-level, we can overwrite the settings. For each post, we can add different Whatsapp Number, Prefilled Message, Call to Action.
-(while editing the post, at the right sidebar 'Click to Chat' meta box)
+At the page-level, we can overwrite the settings for each post. we can add different Whatsapp Number, Prefilled Message, Call to Action.
+(while editing the post, at the right sidebar 'Click to Chat' metabox)
 
 * WhatsApp Number
 * Call to Action
@@ -151,17 +151,17 @@ PRO:
 * Time Delay
 * Scroll Delay
 
-[Page-level settings](https://holithemes.com/plugins/click-to-chat/change-values-at-page-level/?utm_source=wp&utm_medium=readme&utm_campaign=ht)
+[Page-level settings](https://holithemes.com/plugins/click-to-chat/change-values-at-page-level/)
 
 == 📈 Analytics ==
 
 Creates an Event when the user clicks on the WhatsApp Icon/button.
 
-[Google Analytics](https://holithemes.com/plugins/click-to-chat/google-analytics/?utm_source=wp&utm_medium=readme&utm_campaign=ht)
+[Google Analytics](https://holithemes.com/plugins/click-to-chat/google-analytics/)
 
-[Facebook Pixel](https://holithemes.com/plugins/click-to-chat/facebook-pixel/?utm_source=wp&utm_medium=readme&utm_campaign=ht)
+[Facebook Pixel](https://holithemes.com/plugins/click-to-chat/facebook-pixel/)
 
-[Google Ads Conversations](https://holithemes.com/plugins/click-to-chat/google-ads-conversion/?utm_source=wp&utm_medium=readme&utm_campaign=ht)
+[Google Ads Conversations](https://holithemes.com/plugins/click-to-chat/google-ads-conversion/)
 
 == Webhooks ==
 
@@ -207,10 +207,11 @@ Easy to set up different values for each language
 * WhatsApp Number
 * Call to Action
 * Pre-filled Message
+* Greetings Content
 * Group ID
 * Share Text
 
-Setup for [WPML](https://holithemes.com/plugins/click-to-chat/translate-click-to-chat-settings-using-wpml-plugin/?utm_source=wp&utm_medium=readme&utm_campaign=ht), [Polylang](https://holithemes.com/plugins/click-to-chat/translate-click-to-chat-settings-using-polylang-plugin/?utm_source=wp&utm_medium=readme&utm_campaign=ht)
+Setup for [WPML](https://holithemes.com/plugins/click-to-chat/translate-click-to-chat-settings-using-wpml-plugin/), [Polylang](https://holithemes.com/plugins/click-to-chat/translate-click-to-chat-settings-using-polylang-plugin/)
 
 == 🚀 Performance ==
 
@@ -238,7 +239,7 @@ PRO:
 
 == ⛳ Shortcodes ==
 
-Use shortcodes to add the icon/button with inline the Post content, widget area.
+Use shortcodes to add WhatsApp icon/button with inline the Post content, widget area.
 
 change the default setting values using shortcode attributes - WhatsApp Number, Style, Pre-filled message, Call to Action.
 
@@ -250,7 +251,7 @@ To change the WhatsApp number use the 'number' attribute
 
 [ht-ctc-chat number=915123456789]
 
-[Shortcodes for Chat](https://holithemes.com/plugins/click-to-chat/shortcodes-chat/?utm_source=wp&utm_medium=readme&utm_campaign=ht)
+[Shortcodes for Chat](https://holithemes.com/plugins/click-to-chat/shortcodes-chat/)
 
 = Group =
 
@@ -258,13 +259,13 @@ Enable Group chat feature and add WhatsApp Group id at the plugin settings.
 
 Make it easy for your customers to join your Whatsapp Group.
 
-[Group](https://holithemes.com/plugins/click-to-chat/group-chat-feature/?utm_source=wp&utm_medium=readme&utm_campaign=ht)
+[Group](https://holithemes.com/plugins/click-to-chat/group-chat-feature/)
 
 = Share =
 
 Let users share your website with their WhatsApp contacts and get more leads.
 
-[Share](https://holithemes.com/plugins/click-to-chat/share-feature/?utm_source=wp&utm_medium=readme&utm_campaign=ht)
+[Share](https://holithemes.com/plugins/click-to-chat/share-feature/)
 
 = Help Translate The Plugin =
 
@@ -501,6 +502,9 @@ plugin will update automatically when new version is released
 After Activate the plugin, add WhatsApp Number at plugin settings.
 
 == Changelog ==
+
+= 3.9.6 =
+* Enchantment: click to chat admin page for WooCommerce
 
 = 3.9.5 =
 * Fix: display settings for custom post types

@@ -34,7 +34,6 @@ class Options {
 			'baidu'                     => [ 'type' => 'string' ],
 			'pinterest'                 => [ 'type' => 'string' ],
 			'microsoftClarityProjectId' => [ 'type' => 'string' ],
-			'alexa'                     => [ 'type' => 'string' ],
 			'norton'                    => [ 'type' => 'string' ],
 			'miscellaneousVerification' => [ 'type' => 'html' ]
 		],
@@ -43,7 +42,7 @@ class Options {
 			'separator'             => [ 'type' => 'string', 'default' => '&raquo;' ],
 			'homepageLink'          => [ 'type' => 'boolean', 'default' => true ],
 			'homepageLabel'         => [ 'type' => 'string', 'default' => 'Home' ],
-			'breadcrumbPrefix'      => [ 'type' => 'string' ],
+			'breadcrumbPrefix'      => [ 'type' => 'string', 'localized' => true ],
 			'archiveFormat'         => [ 'type' => 'string', 'default' => 'Archives for #breadcrumb_archive_post_type_name', 'localized' => true ],
 			'searchResultFormat'    => [ 'type' => 'string', 'default' => 'Search Results for \'#breadcrumb_search_string\'', 'localized' => true ],
 			'errorFormat404'        => [ 'type' => 'string', 'default' => '404 - Page Not Found', 'localized' => true ],
@@ -279,7 +278,37 @@ TEMPLATE
 				'useTagsForMetaKeywords'       => [ 'type' => 'boolean', 'default' => false ],
 				'dynamicallyGenerateKeywords'  => [ 'type' => 'boolean', 'default' => false ],
 				'pagedFormat'                  => [ 'type' => 'string', 'default' => '- Page #page_number', 'localized' => true ],
-				'runShortcodes'                => [ 'type' => 'boolean', 'default' => false ]
+				'runShortcodes'                => [ 'type' => 'boolean', 'default' => false ],
+				'crawlCleanup'                 => [
+					'enable'                      => [ 'type' => 'boolean', 'default' => false ],
+					'feeds'                       => [
+						'global'         => [ 'type' => 'boolean', 'default' => true ],
+						'globalComments' => [ 'type' => 'boolean', 'default' => false ],
+						'staticBlogPage' => [ 'type' => 'boolean', 'default' => true ],
+						'authors'        => [ 'type' => 'boolean', 'default' => true ],
+						'postComments'   => [ 'type' => 'boolean', 'default' => false ],
+						'search'         => [ 'type' => 'boolean', 'default' => false ],
+						'attachments'    => [ 'type' => 'boolean', 'default' => false ],
+						'archives'       => [
+							'all'      => [ 'type' => 'boolean', 'default' => false ],
+							'included' => [ 'type' => 'array', 'default' => [] ],
+						],
+						'taxonomies'     => [
+							'all'      => [ 'type' => 'boolean', 'default' => false ],
+							'included' => [ 'type' => 'array', 'default' => [ 'category' ] ],
+						],
+						'atom'           => [ 'type' => 'boolean', 'default' => false ],
+						'rdf'            => [ 'type' => 'boolean', 'default' => false ],
+						'paginated'      => [ 'type' => 'boolean', 'default' => false ]
+					],
+					'removeUnrecognizedQueryArgs' => [ 'type' => 'boolean', 'default' => true ],
+					'allowedQueryArgs'            => [
+						'type'    => 'html',
+						'default' => <<<TEMPLATE
+/^utm_*/
+TEMPLATE
+					]
+				],
 			],
 			'archives' => [
 				'author' => [
@@ -583,6 +612,17 @@ TEMPLATE
 			$dbOptions['sitemap']['html']['taxonomies']['included']['value']              = $this->sanitizeField( $options['sitemap']['html']['taxonomies']['included'], 'array' );
 			$dbOptions['sitemap']['html']['advancedSettings']['excludePosts']['value']    = $this->sanitizeField( $options['sitemap']['html']['advancedSettings']['excludePosts'], 'array' );
 			$dbOptions['sitemap']['html']['advancedSettings']['excludeTerms']['value']    = $this->sanitizeField( $options['sitemap']['html']['advancedSettings']['excludeTerms'], 'array' );
+		}
+
+		// RSS Content.
+		if ( ! empty( $options['searchAppearance']['advanced']['crawlCleanup']['feeds'] ) ) {
+			if ( isset( $options['searchAppearance']['advanced']['crawlCleanup']['feeds']['archives']['included'] ) ) {
+				$dbOptions['searchAppearance']['advanced']['crawlCleanup']['feeds']['archives']['included']['value'] = $this->sanitizeField( $options['searchAppearance']['advanced']['crawlCleanup']['feeds']['archives']['included'], 'array' ); // phpcs:ignore Generic.Files.LineLength.MaxExceeded
+			}
+
+			if ( isset( $options['searchAppearance']['advanced']['crawlCleanup']['feeds']['taxonomies']['included'] ) ) {
+				$dbOptions['searchAppearance']['advanced']['crawlCleanup']['feeds']['taxonomies']['included']['value'] = $this->sanitizeField( $options['searchAppearance']['advanced']['crawlCleanup']['feeds']['taxonomies']['included'], 'array' ); // phpcs:ignore Generic.Files.LineLength.MaxExceeded
+			}
 		}
 
 		// Advanced options.

@@ -38,7 +38,7 @@ class HT_CTC_Admin_Customize_Styles {
 
         ?>
 
-        <div class="wrap">
+        <div class="wrap ctc-admin-customize-styles">
 
             <?php settings_errors(); ?>
 

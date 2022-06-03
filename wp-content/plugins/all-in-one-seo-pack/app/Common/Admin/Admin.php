@@ -378,7 +378,7 @@ class Admin {
 
 		$count      = count( Models\Notification::getAllActiveNotifications() );
 		$htmlCount  = 10 > $count ? $count : '!';
-		$htmlCount  = $htmlCount ? '<div class="aioseo-menu-notification-counter">' . $htmlCount . '</div>' : '';
+		$htmlCount  = $htmlCount ? '<div class="wp-core-ui wp-ui-notification aioseo-menu-notification-counter">' . $htmlCount . '</div>' : '';
 		$htmlCount .= '<div id="aioseo-menu-new-notifications"></div>';
 
 		$this->adminBarMenuItems[] = [

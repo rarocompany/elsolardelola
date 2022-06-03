@@ -1,23 +1,16 @@
 // Click to Chat
 document.addEventListener('DOMContentLoaded', function () {
-
+    // md
     try {
-        // M.AutoInit();
-
         var elems = document.querySelectorAll('select');
         M.FormSelect.init(elems, {});
-
         var elems = document.querySelectorAll('.collapsible');
         M.Collapsible.init(elems, {});
-
         var elems = document.querySelectorAll('.modal');
         M.Modal.init(elems, {});
-
         var elems = document.querySelectorAll('.tooltipped');
         M.Tooltip.init(elems, {});
     } catch (e) { }
-
-
 });
 
 (function ($) {
@@ -25,6 +18,31 @@ document.addEventListener('DOMContentLoaded', function () {
     // ready
     $(function () {
 
+        // local storage
+        var ht_ctc_admin = {};
+
+        if (localStorage.getItem('ht_ctc_admin')) {
+            ht_ctc_admin = localStorage.getItem('ht_ctc_admin');
+            ht_ctc_admin = JSON.parse(ht_ctc_admin);
+        }
+
+        // get items from ht_ctc_admin
+        function ctc_getItem(item) {
+            if (ht_ctc_admin[item]) {
+                return ht_ctc_admin[item];
+            } else {
+                return false;
+            }
+        }
+
+        // set items to ht_ctc_admin storage
+        function ctc_setItem(name, value) {
+            ht_ctc_admin[name] = value;
+            var newValues = JSON.stringify(ht_ctc_admin);
+            localStorage.setItem('ht_ctc_admin', newValues);
+        }
+
+        // md
         try {
             $('select').formSelect();
             $('.collapsible').collapsible();
@@ -32,6 +50,41 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.tooltipped').tooltip();
         } catch (e) { }
 
+        // md tabs
+        try {
+
+            $(document).on('click', '.open_tab', function () {
+                var tab = $(this).attr('data-tab');
+                $('.tabs').tabs('select', tab);
+                ctc_setItem('woo_tab', '#' + tab);
+            });
+
+            $(document).on('click', '.md_tab_li', function () {
+                var href = $(this).children('a').attr('href');
+                window.location.hash = href;
+                ctc_setItem('woo_tab', href);
+            });
+
+            $(".tabs").tabs();
+
+            // only on woo page.. 
+            if ( document.querySelector('.ctc-admin-woo-page') && ctc_getItem('woo_tab') ) {
+
+                var woo_tab = ctc_getItem('woo_tab');
+
+                // setTimeout(() => {
+                //     $(".tabs").tabs('select', woo_tab);
+                // }, 2500);
+
+                woo_tab = woo_tab.replace('#', '');
+                setTimeout(() => {
+                    $("[data-tab=" + woo_tab + "]").trigger('click');
+                }, 1200);
+            }
+
+        } catch (e) { }
+
+        // wpColorPicker
         var color_picker = {
             palettes: [
                 '#000000',
@@ -44,9 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 '#ECE5DD',
             ],
         }
-
         $('.ht-ctc-color').wpColorPicker(color_picker);
-
 
         // functions
         show_hide_options();
@@ -64,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
             collapsible();
         } catch (e) { }
 
+        // jquery ui
         try {
             $(".ctc_sortable").sortable({
                 cursor: "move"
@@ -142,14 +194,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             $(".s1_add_icon").on("change", function (e) {
-                console.log('change');
-
                 if ($('.s1_add_icon').is(':checked')) {
                     $(".s1_icon_settings").show(200);
                 } else {
                     $(".s1_icon_settings").hide(200);
                 }
-
             });
 
         }
@@ -474,33 +523,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // collapsible..
         function collapsible() {
 
-            var ht_ctc_admin = {};
-
-            if (localStorage.getItem('ht_ctc_admin')) {
-                ht_ctc_admin = localStorage.getItem('ht_ctc_admin');
-                ht_ctc_admin = JSON.parse(ht_ctc_admin);
-            }
-            // else {
-            //     ht_ctc_admin = demo;
-            //     demo = JSON.stringify(demo);
-            //     localStorage.setItem('ht_ctc_admin', demo);
-            // }
-
-            // get items from ht_ctc_admin
-            function ctc_getItem(item) {
-                if (ht_ctc_admin[item]) {
-                    return ht_ctc_admin[item];
-                } else {
-                    return false;
-                }
-            }
-
-            // set items to ht_ctc_admin storage
-            function ctc_setItem(name, value) {
-                ht_ctc_admin[name] = value;
-                var newValues = JSON.stringify(ht_ctc_admin);
-                localStorage.setItem('ht_ctc_admin', newValues);
-            }
+            
 
             /**
              * ht_ctc_sidebar_contat - not added, as it may cause view distraction..

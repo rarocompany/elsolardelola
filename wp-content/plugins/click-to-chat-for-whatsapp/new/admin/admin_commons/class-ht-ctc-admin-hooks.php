@@ -36,6 +36,7 @@ class HT_CTC_Admin_Others {
         add_action( 'load-click-to-chat_page_click-to-chat-woocommerce', array( $this, 'ctc_admin_pages') );
         
         add_action( 'ht_ctc_ah_admin_scripts_start', [$this, 'dequeue'] );
+        add_action( 'ht_ctc_ah_admin_scripts_start_woo_page', [$this, 'woo_dequeue'] );
 
         // admin notices
         $this->admin_notice();
@@ -328,6 +329,13 @@ class HT_CTC_Admin_Others {
             }
 
         }
+    }
+
+    /**
+     * runs on click to chat - woo admin page
+     */
+    function woo_dequeue() {
+        add_action( 'wp_print_scripts', [$this, 'dequeue_scripts'] );
     }
 
     // dequeue scripts to avioid conflicts..

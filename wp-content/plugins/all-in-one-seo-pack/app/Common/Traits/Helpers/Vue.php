@@ -63,13 +63,20 @@ trait Vue {
 				'editScreen'        => admin_url( 'edit.php' ),
 				'publicPath'        => aioseo()->core->assets->normalizeAssetsHost( plugin_dir_url( AIOSEO_FILE ) ),
 				'assetsPath'        => aioseo()->core->assets->getAssetsPath(),
-				'rssFeedUrl'        => get_bloginfo( 'rss2_url' ),
 				'generalSitemapUrl' => aioseo()->sitemap->helpers->getUrl( 'general' ),
 				'rssSitemapUrl'     => aioseo()->sitemap->helpers->getUrl( 'rss' ),
 				'robotsTxtUrl'      => $this->getSiteUrl() . '/robots.txt',
 				'blockedBotsLogUrl' => wp_upload_dir()['baseurl'] . '/aioseo/logs/aioseo-bad-bot-blocker.log',
 				'upgradeUrl'        => apply_filters( 'aioseo_upgrade_link', AIOSEO_MARKETING_URL ),
 				'staticHomePage'    => 'page' === get_option( 'show_on_front' ) ? get_edit_post_link( get_option( 'page_on_front' ), 'url' ) : null,
+				'feeds'             => [
+					'rdf'            => get_bloginfo( 'rdf_url' ),
+					'rss'            => get_bloginfo( 'rss_url' ),
+					'atom'           => get_bloginfo( 'atom_url' ),
+					'global'         => get_bloginfo( 'rss2_url' ),
+					'globalComments' => get_bloginfo( 'comments_rss2_url' ),
+					'staticBlogPage' => $this->getBlogPageId() ? trailingslashit( get_permalink( $this->getBlogPageId() ) ) . 'feed' : ''
+				],
 				'connect'           => add_query_arg( [
 					'siteurl'  => site_url(),
 					'homeurl'  => home_url(),
@@ -181,9 +188,7 @@ trait Vue {
 				'title'                          => ! empty( $post->title ) ? $post->title : aioseo()->meta->title->getPostTypeTitle( $postTypeObj->name ),
 				'description'                    => ! empty( $post->description ) ? $post->description : aioseo()->meta->description->getPostTypeDescription( $postTypeObj->name ),
 				'keywords'                       => ! empty( $post->keywords ) ? $post->keywords : wp_json_encode( [] ),
-				'keyphrases'                     => ! empty( $post->keyphrases )
-					? json_decode( $post->keyphrases )
-					: Models\Post::getKeyphrasesDefaults(),
+				'keyphrases'                     => Models\Post::getKeyphrasesDefaults( $post->keyphrases ),
 				'page_analysis'                  => ! empty( $post->page_analysis )
 					? json_decode( $post->page_analysis )
 					: Models\Post::getPageAnalysisDefaults(),

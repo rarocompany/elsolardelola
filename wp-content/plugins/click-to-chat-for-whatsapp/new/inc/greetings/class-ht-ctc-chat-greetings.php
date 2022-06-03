@@ -129,6 +129,16 @@ class HT_CTC_Chat_Greetings {
         //     'picture-in-picture' => true,
         // );
         
+        
+
+        // greetings dialog position based on chat icon/button position
+        $g_position_r_l = ( isset( $chat['side_2']) ) ? esc_attr( $chat['side_2'] ) : 'right';
+
+        $ht_ctc_greetings['path'] = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/greetings/' . $ht_ctc_greetings['greetings_template']. '.php';
+
+        // filter hook to update values... 
+        $ht_ctc_greetings = apply_filters( 'ht_ctc_fh_greetings', $ht_ctc_greetings );
+
         if ( '' !== $ht_ctc_greetings['header_content'] ) {
             $ht_ctc_greetings['header_content'] = html_entity_decode(wp_kses($ht_ctc_greetings['header_content'], $allowed_html) );
             $ht_ctc_greetings['header_content'] = str_replace( array('{url}', '{title}', '{site}' ),  array( $page_url, $post_title, HT_CTC_BLOG_NAME ), $ht_ctc_greetings['header_content'] );
@@ -141,14 +151,6 @@ class HT_CTC_Chat_Greetings {
             $ht_ctc_greetings['bottom_content'] = html_entity_decode(wp_kses($ht_ctc_greetings['bottom_content'], $allowed_html) );
             $ht_ctc_greetings['bottom_content'] = str_replace( array('{url}', '{title}', '{site}' ),  array( $page_url, $post_title, HT_CTC_BLOG_NAME ), $ht_ctc_greetings['bottom_content'] );
         }
-
-        // greetings dialog position based on chat icon/button position
-        $g_position_r_l = ( isset( $chat['side_2']) ) ? esc_attr( $chat['side_2'] ) : 'right';
-
-        $ht_ctc_greetings['path'] = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/greetings/' . $ht_ctc_greetings['greetings_template']. '.php';
-
-        // filter hook to update values... 
-        $ht_ctc_greetings = apply_filters( 'ht_ctc_fh_greetings', $ht_ctc_greetings );
 
         $box_shadow = '1px 1px 3px 1px rgba(0,0,0,.14)';
         if ( 'greetings-2' == $ht_ctc_greetings['greetings_template'] ) {
