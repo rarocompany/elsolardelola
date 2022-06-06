@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Click to Chat - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-06-02 14:06:35+0000\n"
+"PO-Revision-Date: 2022-06-04 07:51:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -176,6 +176,10 @@ msgstr "z-index"
 #: new/admin/class-ht-ctc-admin-other-settings.php:448
 msgid "All this below settings are not important to everyone"
 msgstr "Todos estos ajustes siguientes no son importantes para todo el mundo"
+
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:427
+msgid "At Products - Archive, Shop Page"
+msgstr "En los productos - Archivo, página de la tienda"
 
 #: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:264
 msgid "Shop Page"
