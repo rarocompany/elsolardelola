@@ -1,9 +1,9 @@
 === Click to Chat ===
 Requires at least: 4.6
-Tested up to: 6.0
+Tested up to: 6.0.1
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 3.9.6
+Stable tag: 3.9.7
 Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, whatsapp support, whatsapp group, whatsapp message, WhatsApp WooCommerce, whatsapp wordpress, whatsapp floating button, whatsapp icon, holithemes
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -502,6 +502,10 @@ plugin will update automatically when new version is released
 After Activate the plugin, add WhatsApp Number at plugin settings.
 
 == Changelog ==
+
+= 3.9.7 =
+* New: opt-in - user consent before initiate the chat
+* Enchantment: Greetings Text Editor, can add background color to text.
 
 = 3.9.6 =
 * Enchantment: click to chat admin page for WooCommerce

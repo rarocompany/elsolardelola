@@ -95,6 +95,7 @@ class HT_CTC_Admin_Greetings {
         $greetings_fallback_values = $default_greetings->greetings;
         $g1_fallback_values = $default_greetings->g_1;
         $g2_fallback_values = $default_greetings->g_2;
+        $g_settings_fallback_values = $default_greetings->g_settings;
 
 
         $start_values = [
@@ -128,7 +129,7 @@ class HT_CTC_Admin_Greetings {
                         'description' => '',
                         'link_url' => '',
                         'link_title' => 'more info',
-                        'parent_class' => 'pr_header_content ctc_greetings_settings ctc_g_1',
+                        'parent_class' => 'pr_header_content ctc_greetings_settings ctc_g_1 ctc_wp_editor',
                     ],
                     'main_content' => [
                         'title' => __( 'Main Content', 'click-to-chat-for-whatsapp'),
@@ -136,7 +137,7 @@ class HT_CTC_Admin_Greetings {
                         'template' => 'editor',
                         'label' => 'Main Content',
                         'description' => "Variables: {site}, {title}, {url}",
-                        'parent_class' => 'pr_main_content ctc_greetings_settings ctc_g_1 ctc_g_2',
+                        'parent_class' => 'pr_main_content ctc_greetings_settings ctc_g_1 ctc_g_2 ctc_wp_editor',
                     ],
                     'bottom_content' => [
                         'title' => __( 'Bottom Content', 'click-to-chat-for-whatsapp'),
@@ -145,7 +146,7 @@ class HT_CTC_Admin_Greetings {
                         'label' => 'Bottom Content',
                         'description' => '',
                         'parent_style' => "margin-bottom: 20px;",
-                        'parent_class' => 'pr_bottom_content ctc_greetings_settings ctc_g_1 ctc_g_2',
+                        'parent_class' => 'pr_bottom_content ctc_greetings_settings ctc_g_1 ctc_g_2 ctc_wp_editor',
                     ],
                     [
                         'title' => __( 'Call to Action', 'click-to-chat-for-whatsapp'),
@@ -246,11 +247,37 @@ class HT_CTC_Admin_Greetings {
                 'id' => 'ht_ctc_greetings_settings',
                 'title' => 'Additional Settings',
                 'dbrow' => 'ht_ctc_greetings_settings',
+                'fallback_values' => $g_settings_fallback_values,
                 'class' => 'pr_ht_ctc_greetings_settings ctc_greetings_settings',
                 'inputs' => [
                     [
                         'db' => 'empty',
                         'template' => 'empty',
+                    ],
+                    [
+                        'template' => 'collapsible_start',
+                        'title' => __( 'Opt-in', 'click-to-chat-for-whatsapp'),
+                    ],
+                    [
+                        'title' => __( 'Opt-in', 'click-to-chat-for-whatsapp'),
+                        'db' => 'is_opt_in',
+                        'template' => 'checkbox',
+                        'description' => __( "User consent before starting the chat ", 'click-to-chat-for-whatsapp') . "- <a href='https://holithemes.com/plugins/click-to-chat/opt-in/' target='_blank'>Opt-in</a> <br> " . __( "Once website visitor opt-in, it won't display again", 'click-to-chat-for-whatsapp'),
+                        'parent_class' => 'pr_is_opt_in',
+                    ],
+                    [
+                        'title' => '',
+                        'db' => 'opt_in',
+                        'template' => 'editor_lite',
+                        'label' => 'Opt-in',
+                        'description' => '',
+                        'parent_style' => "margin-bottom: 20px;",
+                        'parent_class' => 'pr_opt_in ctc_greetings_settings ctc_wp_editor',
+                    ],
+                    [
+                        'template' => 'collapsible_end',
+                        'description' => "Currenlty available with 'Greetings-1', 'Greetings-2'",
+
                     ],
                     [
                         'title' => __( 'Display', 'click-to-chat-for-whatsapp'),
@@ -515,7 +542,8 @@ class HT_CTC_Admin_Greetings {
         $editor = [
             'header_content',
             'main_content',
-            'bottom_content'
+            'bottom_content',
+            'opt_in'
         ];
 
         // formatting api - emoji ..
@@ -559,7 +587,8 @@ class HT_CTC_Admin_Greetings {
             'header_content',
             'main_content',
             'bottom_content',
-            'call_to_action'
+            'call_to_action',
+            'opt_in'
         ];
 
         $local = apply_filters( 'ht_ctc_fh_greetings_setting_local_values', $local );

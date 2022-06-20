@@ -13,6 +13,7 @@ class HT_CTC_Defaults_Greetings {
     public $greetings = '';
     public $g_1 = '';
     public $g_2 = '';
+    public $g_settings = '';
 
     public function __construct() {
         $this->defaults();
@@ -22,6 +23,7 @@ class HT_CTC_Defaults_Greetings {
         $this->greetings = $this->greetings();
         $this->g_1 = $this->g_1();
         $this->g_2 = $this->g_2();
+        $this->g_settings = $this->g_settings();
     }
 
 
@@ -32,7 +34,7 @@ class HT_CTC_Defaults_Greetings {
             'header_content' => '<span style="color: #ffffff;">{site}</span>',
             'main_content' => 'Any questions related to {title}?',
             'bottom_content' => '<p style="text-align: center;"><span style="font-size: 12px;">🟢 we are online | privacy policy</span></p>',
-            'call_to_action' => 'Whatsapp Us',
+            'call_to_action' => 'WhatsApp Us',
             'g_device' => 'all',
             'g_init' => 'open',
         );
@@ -59,6 +61,16 @@ class HT_CTC_Defaults_Greetings {
         );
 
         return $values;
+    }
+
+    function g_settings() {
+
+        $values = array(
+            'opt_in' => 'Accept Privacy Policy',
+        );
+
+        return $values;
+
     }
 
 }

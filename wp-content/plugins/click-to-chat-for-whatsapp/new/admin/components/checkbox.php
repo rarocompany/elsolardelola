@@ -16,10 +16,16 @@ $description = (isset($input['description'])) ? $input['description'] : '';
 <div class="row ctc_component_checkbox <?= $parent_class ?>">
     <p>
         <label>
-            <input name="<?= $dbrow ?>[<?= $db_key ?>]" type="checkbox" value="1" <?php checked( $db_value, 1 ); ?> />
+            <input name="<?= $dbrow ?>[<?= $db_key ?>]" type="checkbox" class="<?= $db_key ?>" value="1" <?php checked( $db_value, 1 ); ?> />
             <span><?= $title ?></span>
         </label>
-        <p class="description"><?= $description ?></p>
+        <?php
+        if ('' !== $description) {
+            ?>
+            <p class="description"><?= $description ?></p>
+            <?php
+        }
+        ?>
     </p>
 </div>
 <?php

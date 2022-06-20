@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Click to Chat - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-06-04 07:51:37+0000\n"
+"PO-Revision-Date: 2022-06-15 12:13:28+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,19 @@ msgstr ""
 "X-Generator: GlotPress/4.0.0-alpha.1\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - Click to Chat - Stable (latest release)\n"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:265
+msgid "Once website visitor opt-in, it won't display again"
+msgstr "Una vez que el visitante de la web acepte no se mostrará de nuevo"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:265
+msgid "User consent before starting the chat "
+msgstr "Consentimiento del usuario antes de empezar el chat"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:259
+#: new/admin/class-ht-ctc-admin-greetings-page.php:262
+msgid "Opt-in"
+msgstr "Aceptación"
 
 #: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:265
 msgid "Advanced"
@@ -23,69 +36,69 @@ msgstr "Tienda, carrito, finalizar compra, cuenta"
 msgid "-- No Greetings Dialog --"
 msgstr "-- Ventana sin saludo --"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:263
+#: new/admin/class-ht-ctc-admin-greetings-page.php:290
 msgid "Mobile Only"
 msgstr "Solo móvil"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:262
+#: new/admin/class-ht-ctc-admin-greetings-page.php:289
 msgid "Desktop Only"
 msgstr "Solo escritorio"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:261
+#: new/admin/class-ht-ctc-admin-greetings-page.php:288
 msgid "Desktop and Mobile"
 msgstr "Escritorio y móvil"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:259
+#: new/admin/class-ht-ctc-admin-greetings-page.php:286
 msgid "Display Greetings Dialog based on device"
 msgstr "Muestra la ventana de saludo basado en dispositivo"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:225
+#: new/admin/class-ht-ctc-admin-greetings-page.php:226
 #: new/admin/components/list/ht-ctc-admin-list-page.php:30
 msgid "Greetings-2 - Content Specific"
 msgstr "Saludos-2 - Específico del contenido"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:218
+#: new/admin/class-ht-ctc-admin-greetings-page.php:219
 msgid "Greetings Dialog - 2"
 msgstr "Ventana de saludo - 2"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:206
+#: new/admin/class-ht-ctc-admin-greetings-page.php:207
 msgid "Button with WhatsApp Icon (style-7 Extend)"
 msgstr "Botón con el icono de WhatsApp (style-7 ampliado)"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:205
+#: new/admin/class-ht-ctc-admin-greetings-page.php:206
 msgid "Themes Button (style-1)"
 msgstr "Botón del tema (style-1)"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:192
+#: new/admin/class-ht-ctc-admin-greetings-page.php:193
 msgid "Message Box - Background Color"
 msgstr "Caja de mensajes - Color de fondo"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:184
+#: new/admin/class-ht-ctc-admin-greetings-page.php:185
 msgid "Main Content - Background Color"
 msgstr "Contenido principal - Color de fondo"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:176
+#: new/admin/class-ht-ctc-admin-greetings-page.php:177
 msgid "Header - Background Color"
 msgstr "Cabecera - Color de fondo"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:169
+#: new/admin/class-ht-ctc-admin-greetings-page.php:170
 #: new/admin/components/list/ht-ctc-admin-list-page.php:29
 msgid "Greetings-1 - Customizable Design"
 msgstr "Saludos-1 - Diseño personalizable"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:162
+#: new/admin/class-ht-ctc-admin-greetings-page.php:163
 msgid "Greetings Dialog - 1"
 msgstr "Ventana de saludo - 1"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:155
+#: new/admin/class-ht-ctc-admin-greetings-page.php:156
 msgid "Call to Action (Button/Link Text)"
 msgstr "Llamada a la acción (texto del botón/enlace)"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:142
+#: new/admin/class-ht-ctc-admin-greetings-page.php:143
 msgid "Bottom Content"
 msgstr "Contenido del fondo"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:134
+#: new/admin/class-ht-ctc-admin-greetings-page.php:135
 msgid "Main Content"
 msgstr "Contenido principal"
 
@@ -93,23 +106,23 @@ msgstr "Contenido principal"
 msgid "Switch to New Interface"
 msgstr "Cambiar a la nueva interfaz"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:268
+#: new/admin/class-ht-ctc-admin-greetings-page.php:295
 msgid "Initial stage"
 msgstr "Etapa inicial"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:256
+#: new/admin/class-ht-ctc-admin-greetings-page.php:283
 msgid "Display"
 msgstr "Visualización"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:200
+#: new/admin/class-ht-ctc-admin-greetings-page.php:201
 msgid "Call to Action - button type"
 msgstr "Llamada a la acción - Tipo de botón"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:124
+#: new/admin/class-ht-ctc-admin-greetings-page.php:125
 msgid "Header Content"
 msgstr "Contenido de la cabecera"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:104
+#: new/admin/class-ht-ctc-admin-greetings-page.php:105
 msgid "Add Greetings Dialog"
 msgstr "Añadir ventana de saludo"
 
@@ -218,7 +231,7 @@ msgid "Add WhatsApp in WooCommerce Single Product pages"
 msgstr "Añadir WhatsApp en las páginas de productos individuales de WooCommerce"
 
 #: new/admin/admin_commons/admin-sidebar-content.php:39
-#: new/admin/class-ht-ctc-admin-greetings-page.php:380
+#: new/admin/class-ht-ctc-admin-greetings-page.php:407
 msgid "PRO"
 msgstr "PRO"
 
@@ -1135,7 +1148,7 @@ msgid "Web WhatsApp"
 msgstr "Web de WhatsApp"
 
 #: new/admin/admin_commons/class-ht-ctc-metabox.php:80
-#: new/admin/class-ht-ctc-admin-greetings-page.php:151
+#: new/admin/class-ht-ctc-admin-greetings-page.php:152
 #: new/admin/class-ht-ctc-admin-group-page.php:70
 #: new/admin/class-ht-ctc-admin-group-page.php:111
 #: new/admin/class-ht-ctc-admin-main-page.php:86

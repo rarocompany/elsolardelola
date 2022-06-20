@@ -116,12 +116,38 @@
                 $(document).on('click', '.ht_ctc_chat_greetings_box_link', function (e) {
                     console.log('ht_ctc_chat_greetings_box_link');
                     e.preventDefault();
-                    ht_ctc_link(ht_ctc_chat);
 
+                    // optin
+                    if (document.querySelector('#ctc_opt')) {
+                        // if (ctc_getItem('g_optin')) {
+                        //     $('#ctc_opt').prop('checked', true);
+                        // }
+                        if ($('#ctc_opt').is(':checked') || ctc_getItem('g_optin')) {
+                            ht_ctc_link(ht_ctc_chat);
+                        } else {
+                            $('.ctc_opt_in').show(400).fadeOut('1').fadeIn('1');
+                        }
+                    } else {
+                        ht_ctc_link(ht_ctc_chat);
+                    }
+                        
                     document.dispatchEvent(
                         new CustomEvent("ht_ctc_event_greetings")
                     );
                 });
+
+                // optin - checkbox on change
+                if (document.querySelector('#ctc_opt')) {
+                    $("#ctc_opt").on("change", function (e) {
+                        if ($('#ctc_opt').is(':checked')) {
+                            $('.ctc_opt_in').hide(100);
+                            ctc_setItem('g_optin', 'y');
+                            setTimeout(() => {
+                                ht_ctc_link(ht_ctc_chat);
+                            }, 500);
+                        }
+                    });
+                }
 
             }
 

@@ -26,6 +26,7 @@ class HT_CTC_Chat_Greetings {
         
         $greetings = get_option('ht_ctc_greetings_options' );
         $chat = get_option('ht_ctc_chat_options');
+        $greetings_settings = get_option('ht_ctc_greetings_settings');
 
         $ht_ctc_greetings = array();
 
@@ -95,6 +96,9 @@ class HT_CTC_Chat_Greetings {
         $ht_ctc_greetings['bottom_content'] = ( isset( $greetings['bottom_content']) ) ? esc_attr($greetings['bottom_content']) : '';
         $ht_ctc_greetings['call_to_action'] = ( isset( $greetings['call_to_action']) ) ? esc_attr( $greetings['call_to_action'] ) : '';
 
+        $ht_ctc_greetings['is_opt_in'] = ( isset( $greetings_settings['is_opt_in']) ) ? esc_attr( $greetings_settings['is_opt_in'] ) : '';
+        $ht_ctc_greetings['opt_in'] = ( isset( $greetings_settings['opt_in']) ) ? esc_attr( $greetings_settings['opt_in'] ) : '';
+
         if ('' == $ht_ctc_greetings['call_to_action']) {
             $ht_ctc_greetings['call_to_action'] = 'WhatsApp';
         }
@@ -110,6 +114,7 @@ class HT_CTC_Chat_Greetings {
         $ht_ctc_greetings['main_content'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_greetings['main_content'], 'Click to Chat for WhatsApp', 'greetings_main_content' );
         $ht_ctc_greetings['bottom_content'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_greetings['bottom_content'], 'Click to Chat for WhatsApp', 'greetings_bottom_content' );
         $ht_ctc_greetings['call_to_action'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_greetings['call_to_action'], 'Click to Chat for WhatsApp', 'greetings_call_to_action' );
+        $ht_ctc_greetings['opt_in'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_greetings['opt_in'], 'Click to Chat for WhatsApp', 'greetings_opt_in' );
         
 
         $allowed_html = wp_kses_allowed_html( 'post' );
@@ -150,6 +155,10 @@ class HT_CTC_Chat_Greetings {
         if ( '' !== $ht_ctc_greetings['bottom_content'] ) {
             $ht_ctc_greetings['bottom_content'] = html_entity_decode(wp_kses($ht_ctc_greetings['bottom_content'], $allowed_html) );
             $ht_ctc_greetings['bottom_content'] = str_replace( array('{url}', '{title}', '{site}' ),  array( $page_url, $post_title, HT_CTC_BLOG_NAME ), $ht_ctc_greetings['bottom_content'] );
+        }
+        if ( '' !== $ht_ctc_greetings['is_opt_in'] && '' !== $ht_ctc_greetings['opt_in'] ) {
+            $ht_ctc_greetings['opt_in'] = html_entity_decode(wp_kses($ht_ctc_greetings['opt_in'], $allowed_html) );
+            $ht_ctc_greetings['opt_in'] = str_replace( array('{url}', '{title}', '{site}' ),  array( $page_url, $post_title, HT_CTC_BLOG_NAME ), $ht_ctc_greetings['opt_in'] );
         }
 
         $box_shadow = '1px 1px 3px 1px rgba(0,0,0,.14)';

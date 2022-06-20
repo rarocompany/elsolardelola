@@ -17,4 +17,4 @@ if ('' !== $description) {
 
 </div>
 </li>
-<ul>
+</ul>

@@ -123,7 +123,6 @@ class API {
 	}
 
 	public static function set_license_data( $license_data, $expiration = null ) {
-		$expiration = 'lifetime';
 		if ( null === $expiration ) {
 			$expiration = '+12 hours';
 
@@ -156,17 +155,20 @@ class API {
 
 	public static function get_license_data( $force_request = false ) {
 		$license_data_error = [
-			'license' => 'valid',
-			'payment_id' => '140',
-			'license_limit' => null,
-			'site_count' => '1',
-			'activations_left' => null,
-			'expires' => 'lifetime',
-			'success' => true,
+			'license' => 'http_error',
+			'payment_id' => '0',
+			'license_limit' => '0',
+			'site_count' => '0',
+			'activations_left' => '0',
+			'success' => false,
 		];
 
 		$license_key = Admin::get_license_key();
+
+		if ( empty( $license_key ) ) {
 			return $license_data_error;
+		}
+
 		$license_data = self::get_transient( Admin::LICENSE_DATA_OPTION_NAME );
 
 		if ( false === $license_data || $force_request ) {
@@ -233,15 +235,6 @@ class API {
 		}
 
 		return $info_data;
-	}
-
-	/**
-	 * @param $version
-	 *
-	 * @deprecated 2.7.0 Use `API::get_plugin_package_url()` method instead.
-	 */
-	public static function get_previous_package_url( $version ) {
-		return self::get_plugin_package_url( $version );
 	}
 
 	public static function get_plugin_package_url( $version ) {
@@ -351,14 +344,19 @@ class API {
 	public static function get_error_message( $error ) {
 		$errors = self::get_errors();
 
-		
-		return '';
+		if ( isset( $errors[ $error ] ) ) {
+			$error_msg = $errors[ $error ];
+		} else {
+			$error_msg = esc_html__( 'An error occurred. Please check your internet connection and try again. If the problem persists, contact our support.', 'elementor-pro' ) . ' (' . $error . ')';
+		}
+
+		return $error_msg;
 	}
 
 	public static function is_license_active() {
 		$license_data = self::get_license_data();
 
-		return true;
+		return self::STATUS_VALID === $license_data['license'];
 	}
 
 	public static function is_license_expired() {
@@ -373,10 +371,18 @@ class API {
 
 	public static function is_licence_has_feature( $feature_name ) {
 		$license_data = self::get_license_data();
+
+		return ! empty( $license_data['features'] )
+			&& in_array( $feature_name, $license_data['features'], true );
 	}
 
 	public static function is_license_about_to_expire() {
+		$license_data = self::get_license_data();
+
+		if ( ! empty( $license_data['subscriptions'] ) && 'enable' === $license_data['subscriptions'] ) {
 			return false;
+		}
+
 		if ( 'lifetime' === $license_data['expires'] ) {
 			return false;
 		}
@@ -392,7 +398,7 @@ class API {
 	public static function get_library_access_level( $library_type = 'template' ) {
 		$license_data = static::get_license_data();
 
-		$access_level = ConnectModule::ACCESS_LEVEL_PRO;
+		$access_level = ConnectModule::ACCESS_LEVEL_CORE;
 
 		if ( static::is_license_active() ) {
 			$access_level = ConnectModule::ACCESS_LEVEL_PRO;

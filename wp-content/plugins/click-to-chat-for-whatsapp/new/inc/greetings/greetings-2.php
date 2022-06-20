@@ -32,6 +32,7 @@ if ('' !== $bg_color) {
 // $cta_style = ( isset($g2_options['cta_style']) ) ? esc_attr( $g2_options['cta_style'] ) : '7_1';
 $cta_style = '1';
 $g_cta_path = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/greetings/greetings_styles/g-cta-' . $cta_style. '.php';
+$g_optin_path = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/greetings/greetings_styles/opt-in.php';
 
 ?>
 
@@ -40,6 +41,11 @@ $g_cta_path = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/greetings/greetin
 </div>
 
 <div class="ctc_g_sentbutton" style="<?= $send_css ?>">
+    <?php
+    if ( isset($ht_ctc_greetings['is_opt_in']) && '' !== $ht_ctc_greetings['is_opt_in'] && is_file( $g_optin_path ) ) {
+        include $g_optin_path;
+    }
+    ?>
     <div class="ht_ctc_chat_greetings_box_link ctc-analytics">
     <?php
     if ( is_file( $g_cta_path ) ) {
