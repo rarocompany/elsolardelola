@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP-Optimize &#8211; Cache, Clean, Compress. - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-06-08 19:00:33+0000\n"
+"PO-Revision-Date: 2022-06-21 04:42:03+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,8 +28,8 @@ msgid "This table is used by many plugins for batch processing. "
 msgstr "Esta tabla se usa por muchos plugins para realizar procesamiento por lotes."
 
 #: templates/cache/page-cache-advanced.php:41
-msgid "You can find more details about condtional tags from %s here"
-msgstr "Puedes saber más sobre las etiquetas condicionales de %s aquí"
+msgid "You can find more details about condtional tags from %1$shere%2$s"
+msgstr "Puedes encontrar más detalles sobre las etiquetas condicionales %1$saqií%2$s"
 
 #: templates/cache/page-cache-advanced.php:39
 msgid "List conditional tags (e.g. %s) that should not be cached (one per line)."
@@ -137,11 +137,11 @@ msgstr "Convertir a InnoDB"
 msgid "%s was not converted to InnoDB. For more details, please check your logs configured in logging destinations settings."
 msgstr "%s no se convirtió a InnoDB. Para más detalles, por favor, revisa tus registros configurados en los ajustes de destino de registro."
 
-#: includes/class-wp-optimize-admin.php:477
+#: includes/class-wp-optimize-admin.php:478
 msgid "Enjoyed %s? Please leave us a %s rating. We really appreciate your support!"
 msgstr "¿Disfrutaste de %s? Por favor, déjanos una valoración de %s. ¡Apreciamos mucho tu apoyo!"
 
-#: includes/class-wp-optimize-admin.php:447
+#: includes/class-wp-optimize-admin.php:448
 msgid "Your server takes care of table optimization"
 msgstr "Tu servidor se ocupa de la optimización de tablas"
 
@@ -699,23 +699,23 @@ msgstr "Precargando entradas encontradas en el mapa del sitio:"
 msgid "Probably page cache preload is running already."
 msgstr "Probablemente la precarga del caché de página ya está ejecutándose."
 
-#: cache/class-wpo-page-cache.php:845
+#: cache/class-wpo-page-cache.php:847
 msgid "Unable to write inside the cache configuration folder (%s); please check file/folder permissions"
 msgstr "No ha sido posible escribir dentro de la carpeta de configuración de caché (%s). Por favor, comprueba los permisos del archivo/carpeta."
 
-#: cache/class-wpo-page-cache.php:832
+#: cache/class-wpo-page-cache.php:834
 msgid "Unable to write inside the cache files folder (%s); please check file/folder permissions (no cache files will be able to be created otherwise)"
 msgstr "No ha sido posible escribir dentro de la carpeta de archivos de caché (%s); por favor comprueba los permisos del archivo/carpeta (no se podrán crear los archivos de caché de otra manera)."
 
-#: cache/class-wpo-page-cache.php:825
+#: cache/class-wpo-page-cache.php:827
 msgid "Unable to write the file advanced-cache.php inside the wp-content folder; please check file/folder permissions"
 msgstr "No ha sido posible escribir en el archivo advanced-cache.php dentro de la carpeta wp-content. Por favor, comprueba los permisos del archivo/carpeta."
 
-#: cache/class-wpo-page-cache.php:817
+#: cache/class-wpo-page-cache.php:819
 msgid "Unable to write to or find wp-config.php; please check file/folder permissions."
 msgstr "No ha sido posible escribir en o encontrar el wp-config.php. Por favor, comprueba los permisos del archivo/carpeta."
 
-#: cache/class-wpo-page-cache.php:719
+#: cache/class-wpo-page-cache.php:721
 msgid "Please try to disable and then re-enable the WP-Optimize cache manually."
 msgstr "Por favor, intenta desactivar y después reactivar el caché de WP-Optimize manualmente."
 
@@ -953,8 +953,8 @@ msgstr "Si ninguno de los plugins de la lista ha estado instalado en tu web en a
 msgid "Are you sure?"
 msgstr "¿Estás seguro?"
 
-#: includes/class-wp-optimize-admin.php:638
 #: includes/class-wp-optimize-admin.php:639
+#: includes/class-wp-optimize-admin.php:640
 msgid "Minify"
 msgstr "Minimizar"
 
@@ -962,7 +962,7 @@ msgstr "Minimizar"
 msgid "WP-Optimize settings have been deleted successfully."
 msgstr "Los ajustes de WP-Optimize se han eliminado correctamente."
 
-#: includes/class-wp-optimize-admin.php:64
+#: includes/class-wp-optimize-admin.php:65
 msgid "Advanced"
 msgstr "Avanzado"
 
@@ -991,7 +991,7 @@ msgstr "Estado de la minimización"
 msgid "In the settings, caching is disabled for the front page"
 msgstr "En los ajustes, el almacenamiento en la caché está desactivado para la página de inicio"
 
-#: cache/class-wpo-page-cache.php:718
+#: cache/class-wpo-page-cache.php:720
 msgid "The file advanced-cache.php needs to be updated, but the automatic process failed."
 msgstr "El archivo «advanced-cache.php» tiene que ser actualizado, pero el proceso automático ha fallado."
 
@@ -1899,8 +1899,8 @@ msgstr "Última precarga finalizada a las %s"
 msgid "Page cache is disabled."
 msgstr "La caché de páginas está desactivada."
 
-#: cache/class-wpo-page-cache.php:547 cache/class-wpo-page-cache.php:551
-#: cache/class-wpo-page-cache.php:556
+#: cache/class-wpo-page-cache.php:549 cache/class-wpo-page-cache.php:553
+#: cache/class-wpo-page-cache.php:558
 msgid "The request to the filesystem failed: unable to create directory %s. Please check your file permissions."
 msgstr "Ha fallado la solicitud al sistema de archivos: no ha sido posible crear el directorio %s. Por favor, comprueba tus permisos de archivos."
 
@@ -2071,8 +2071,8 @@ msgstr "El equipo de WP-Optimize está trabajando duro para hacer tu sitio rápi
 msgid "Make your site fast & efficient"
 msgstr "Haz tu sitio rápido y eficiente"
 
-#: includes/class-wp-optimize-admin.php:670
 #: includes/class-wp-optimize-admin.php:671
+#: includes/class-wp-optimize-admin.php:672
 msgid "Premium Upgrade"
 msgstr "Actualización premium"
 
@@ -2093,7 +2093,7 @@ msgstr "Cargando las URLs..."
 msgid "Started preload..."
 msgstr "Precarga iniciada..."
 
-#: includes/class-wp-optimize-admin.php:320
+#: includes/class-wp-optimize-admin.php:321
 msgid "Same as cache lifespan"
 msgstr "Igual que la vida útil de la caché"
 
@@ -2106,6 +2106,7 @@ msgid "Advanced settings"
 msgstr "Ajustes avanzados"
 
 #: includes/class-wp-optimize-admin.php:53
+#: includes/class-wp-optimize-admin.php:64
 msgid "Preload"
 msgstr "Precargar"
 
@@ -2185,8 +2186,8 @@ msgstr "Ajustes de la caché"
 msgid "Deletes the entire cache contents but keeps the page cache enabled."
 msgstr "Borra todo el contenido de la caché pero mantiene activada la caché de páginas."
 
-#: includes/class-wp-optimize-admin.php:559
-#: includes/class-wp-optimize-admin.php:562 templates/cache/page-cache.php:52
+#: includes/class-wp-optimize-admin.php:560
+#: includes/class-wp-optimize-admin.php:563 templates/cache/page-cache.php:52
 #: wp-optimize.php:953 wp-optimize.php:956
 msgid "Purge cache"
 msgstr "Purgar caché"
@@ -2599,8 +2600,8 @@ msgstr "Priorizar la compresión máxima"
 msgid "Restore original"
 msgstr "Restaurar original"
 
-#: includes/class-wp-optimize-admin.php:620
-#: includes/class-wp-optimize-admin.php:621 templates/images/lazyload.php:22
+#: includes/class-wp-optimize-admin.php:621
+#: includes/class-wp-optimize-admin.php:622 templates/images/lazyload.php:22
 msgid "Images"
 msgstr "Imágenes"
 
@@ -2725,21 +2726,21 @@ msgstr "Líder del proyecto"
 msgid "Useful links"
 msgstr "Enlaces útiles"
 
-#: includes/class-wp-optimize-admin.php:629
 #: includes/class-wp-optimize-admin.php:630
+#: includes/class-wp-optimize-admin.php:631
 msgid "Cache"
 msgstr "Caché"
 
-#: includes/class-wp-optimize-admin.php:662
+#: includes/class-wp-optimize-admin.php:663
 msgid "Help"
 msgstr "Ayuda"
 
-#: includes/class-wp-optimize-admin.php:661
+#: includes/class-wp-optimize-admin.php:662
 msgid "Support & FAQs"
 msgstr "Soporte y FAQ"
 
-#: includes/class-wp-optimize-admin.php:611
 #: includes/class-wp-optimize-admin.php:612
+#: includes/class-wp-optimize-admin.php:613
 msgid "Database"
 msgstr "Base de datos"
 
@@ -2759,7 +2760,7 @@ msgstr "Por favor, utiliza valores válidos."
 msgid "Please use positive integers."
 msgstr "Por favor, utiliza números enteros positivos."
 
-#: includes/class-wp-optimize-admin.php:71
+#: includes/class-wp-optimize-admin.php:72
 msgid "Support / FAQs"
 msgstr "Soporte y FAQ"
 
@@ -2820,11 +2821,11 @@ msgstr "La configuración de caché estática del navegador ya existe en el arch
 msgid "We successfully updated your .htaccess file. But it seems one of Apache modules - mod_expires or mod_headers is not active."
 msgstr "Hemos actualizado con éxito tu archivo.htaccess. Pero parece que uno de los módulos de Apache - mod_expires o mod_headers no está activo."
 
-#: includes/class-wp-optimize-admin.php:711
+#: includes/class-wp-optimize-admin.php:712
 msgid "You have no permissions to manage WP-Optimize settings."
 msgstr "No tienes permisos para gestionar los ajustes de WP-Optimize."
 
-#: includes/class-wp-optimize-admin.php:702
+#: includes/class-wp-optimize-admin.php:703
 msgid "You have no permissions to run optimizations."
 msgstr "No tienes permisos para ejecutar optimizaciones."
 
@@ -3150,7 +3151,7 @@ msgstr "Ejecutar optimizaciones"
 msgid "Automatic backup before optimizations"
 msgstr "Copia de seguridad automática antes de las optimizaciones"
 
-#: includes/class-wp-optimize-admin.php:72
+#: includes/class-wp-optimize-admin.php:73
 msgid "Premium / Plugin family"
 msgstr "Premium / Familia de plugins"
 
@@ -3814,22 +3815,22 @@ msgstr "Soporte y comentarios"
 msgid "Status"
 msgstr "Estado"
 
-#: includes/class-wp-optimize-admin.php:324
+#: includes/class-wp-optimize-admin.php:325
 #: templates/database/settings-auto-cleanup.php:30
 msgid "Monthly (approx. - every 30 days)"
 msgstr "Mensualmente (aproximadamente, cada 30 días)"
 
-#: includes/class-wp-optimize-admin.php:323
+#: includes/class-wp-optimize-admin.php:324
 #: templates/database/settings-auto-cleanup.php:29
 msgid "Fortnightly"
 msgstr "Quincenalmente"
 
-#: includes/class-wp-optimize-admin.php:322
+#: includes/class-wp-optimize-admin.php:323
 #: templates/database/settings-auto-cleanup.php:28
 msgid "Weekly"
 msgstr "Semanalmente"
 
-#: includes/class-wp-optimize-admin.php:321
+#: includes/class-wp-optimize-admin.php:322
 #: templates/database/settings-auto-cleanup.php:27
 msgid "Daily"
 msgstr "Diariamente"
@@ -4277,9 +4278,9 @@ msgstr "Tabla"
 
 #: includes/class-wp-optimize-admin.php:44
 #: includes/class-wp-optimize-admin.php:63
-#: includes/class-wp-optimize-admin.php:68
-#: includes/class-wp-optimize-admin.php:652
-#: includes/class-wp-optimize-admin.php:653 templates/minify/status-tab.php:111
+#: includes/class-wp-optimize-admin.php:69
+#: includes/class-wp-optimize-admin.php:653
+#: includes/class-wp-optimize-admin.php:654 templates/minify/status-tab.php:111
 #: templates/minify/status-tab.php:133 wp-optimize.php:982
 msgid "Settings"
 msgstr "Ajustes"
