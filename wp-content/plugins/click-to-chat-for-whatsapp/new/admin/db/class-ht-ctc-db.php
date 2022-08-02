@@ -104,8 +104,6 @@ class HT_CTC_DB {
      * checkboxes .. 
      *  hide/show options .. 
      *  same_settings - desktop, mobile same settings. i.e. apply dekstop setting to mobile - since v3.3.3 for new users auto checks
-     *  
-     *  webandapi  if checked ? web/api.whatsapp(mobile,desktop) : wa.me
      * 
      * @since 3.2.7 - cc, num - better user interface to add number
      * 

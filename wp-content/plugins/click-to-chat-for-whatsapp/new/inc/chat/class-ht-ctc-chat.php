@@ -130,6 +130,8 @@ class HT_CTC_Chat {
         
         // number
         $number = (isset($options['number'])) ? esc_attr($options['number']) : '';
+        $call_to_action = (isset($options['call_to_action'])) ? __(esc_attr($options['call_to_action']) , 'click-to-chat-for-whatsapp' ) : '';
+        $pre_filled = (isset($options['pre_filled'])) ? __(esc_attr($options['pre_filled']) , 'click-to-chat-for-whatsapp' ) : '';
 
         // safe side action .. if number not saved in new method
         if ( '' == $number ) {
@@ -142,17 +144,32 @@ class HT_CTC_Chat {
         $ht_ctc_chat['number'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_chat['number'], 'Click to Chat for WhatsApp', 'number' );
 
         // call to action
-        $ht_ctc_chat['call_to_action'] = (isset($ht_ctc_pagelevel['call_to_action'])) ? esc_attr($ht_ctc_pagelevel['call_to_action']) : __( esc_attr( $options['call_to_action'] ) , 'click-to-chat-for-whatsapp' );
+        $ht_ctc_chat['call_to_action'] = (isset($ht_ctc_pagelevel['call_to_action'])) ? esc_attr($ht_ctc_pagelevel['call_to_action']) : $call_to_action;
         $ht_ctc_chat['call_to_action'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_chat['call_to_action'], 'Click to Chat for WhatsApp', 'call_to_action' );
 
         // prefilled text
-        $ht_ctc_chat['pre_filled'] = (isset($ht_ctc_pagelevel['pre_filled'])) ? esc_attr($ht_ctc_pagelevel['pre_filled']) : __( esc_attr( $options['pre_filled'] ) , 'click-to-chat-for-whatsapp' );
+        $ht_ctc_chat['pre_filled'] = (isset($ht_ctc_pagelevel['pre_filled'])) ? esc_attr($ht_ctc_pagelevel['pre_filled']) : $pre_filled;
         $ht_ctc_chat['pre_filled'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_chat['pre_filled'], 'Click to Chat for WhatsApp', 'pre_filled' );
 
-        // wa: wa.me  /  web: web/api.whatsapp,  
-        $ht_ctc_chat['webandapi'] = 'wa';
-        if ( isset( $options['webandapi'] ) ) {
-            $ht_ctc_chat['webandapi'] = 'web';
+        $ht_ctc_chat['url_target_d'] = ( isset( $othersettings['url_target_d'] ) ) ? esc_attr($othersettings['url_target_d']) : '_blank';
+        $ht_ctc_chat['url_structure_d'] = ( isset( $othersettings['url_structure_d'] ) ) ? esc_attr($othersettings['url_structure_d']) : '';
+        $ht_ctc_chat['url_structure_m'] = ( isset( $othersettings['url_structure_m'] ) ) ? esc_attr($othersettings['url_structure_m']) : '';
+
+        $ht_ctc_chat['custom_link_d'] = ( isset( $othersettings['custom_link_d'] ) ) ? esc_attr($othersettings['custom_link_d']) : '';
+        $ht_ctc_chat['custom_link_m'] = ( isset( $othersettings['custom_link_m'] ) ) ? esc_attr($othersettings['custom_link_m']) : '';
+
+
+        /**
+         * compatibility with settings - web whatsapp - desktop - if new settings not updated, based on settings set before 3.12
+         * 
+         * @since 3.12 - $ht_ctc_chat - url_structure_d, url_structure_m, url_target_d
+         * @removed since 3.12 - webandapi, $ctc['web'] 
+         *      and added 'url_structure_d', $ctc['url_structure_d']
+         * 
+         * url_structure_d = '' (blank means user not updated new settings)
+         */
+        if ( isset( $options['webandapi'] ) && '' == $ht_ctc_chat['url_structure_d'] ) {
+            $ht_ctc_chat['url_structure_d'] = 'web';
         }
 
         // need to run the updater backup
@@ -199,6 +216,8 @@ class HT_CTC_Chat {
         // show effect
         $ht_ctc_os['show_effect'] = '';
         $ht_ctc_os['an_type'] = '';
+
+
 
         // hooks
         $ht_ctc_chat = apply_filters( 'ht_ctc_fh_chat', $ht_ctc_chat );
@@ -281,7 +300,7 @@ class HT_CTC_Chat {
          * 
          *  dont load if its an AMP page or if no greetings dialog selected
          */
-        if ( false == $is_amp && isset($greetings['greetings_template']) && 'no' !== $greetings['greetings_template'] ) {
+        if ( false == $is_amp ) {
             include HT_CTC_PLUGIN_DIR .'new/inc/greetings/class-ht-ctc-chat-greetings.php';
         }
 
@@ -308,9 +327,35 @@ class HT_CTC_Chat {
             'ani' => $ht_ctc_os['an_type'],
         );
 
-        // web whatsapp
-        if ( 'web' == $ht_ctc_chat['webandapi'] ) {
-            $ctc['web'] = 'y';
+        // desktop url structure if web whatsapp 
+        if ( 'web' == $ht_ctc_chat['url_structure_d'] ) {
+            $ctc['url_structure_d'] = 'web';
+        }
+
+        // mobile url structure if whatsapp://..
+        if ( 'wa_colon' == $ht_ctc_chat['url_structure_m'] ) {
+            $ctc['url_structure_m'] = 'wa_colon';
+        }
+
+        // url_target_d
+        $ctc['url_target_d'] = $ht_ctc_chat['url_target_d'];
+
+        // custom url - desktop
+        if ( 'custom_url' == $ht_ctc_chat['url_structure_d'] && '' !== $ht_ctc_chat['custom_link_d'] ) {
+            if ( function_exists('wp_http_validate_url') && wp_http_validate_url($ht_ctc_chat['custom_link_d']) ) {
+                $ctc['custom_link_d'] = $ht_ctc_chat['custom_link_d'];
+            } else {
+                $ctc['custom_link_d'] = '';
+            }
+        }
+
+        // custom url - mobile
+        if ( 'custom_url' == $ht_ctc_chat['url_structure_m'] && '' !== $ht_ctc_chat['custom_link_m'] ) {
+            if ( function_exists('wp_http_validate_url') && wp_http_validate_url($ht_ctc_chat['custom_link_m']) ) {
+                $ctc['custom_link_m'] = $ht_ctc_chat['custom_link_m'];
+            } else {
+                $ctc['custom_link_m'] = '';
+            }
         }
 
         // ga

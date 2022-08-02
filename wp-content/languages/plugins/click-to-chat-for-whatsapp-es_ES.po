@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Click to Chat - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-06-15 12:13:28+0000\n"
+"PO-Revision-Date: 2022-08-01 17:06:35+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,24 +11,86 @@ msgstr ""
 "Language: es\n"
 "Project-Id-Version: Plugins - Click to Chat - Stable (latest release)\n"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:265
+#: new/admin/class-ht-ctc-admin-other-settings.php:597
+msgid "hide for Accessibility API (screen readers)"
+msgstr "ocultar para la API de accesibilidad (lectores de pantalla)"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:591
+#: new/admin/class-ht-ctc-admin-other-settings.php:596
+msgid "Add aria-hidden=true"
+msgstr "Añadir aria-hidden=true"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:573
+msgid "z-index, Aria"
+msgstr "z-index, Aria"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:561
+msgid "Add Full URL for Mobile"
+msgstr "Añadir URL completa en móviles"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:531
+msgid "Add Full URL for Desktop"
+msgstr "Añadir URL completa en escritorio"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:526
+#: new/admin/class-ht-ctc-admin-other-settings.php:530
+#: new/admin/class-ht-ctc-admin-other-settings.php:556
+#: new/admin/class-ht-ctc-admin-other-settings.php:560
+msgid "Custom URL"
+msgstr "URL personalizada"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:500
+msgid "Same Tab"
+msgstr "Misma pestaña"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:499
+msgid "Pop-up"
+msgstr "Ventana emergente"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:498
+msgid "New Tab"
+msgstr "Nueva pestaña"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:494
+#: new/admin/class-ht-ctc-admin-other-settings.php:502
+msgid "Open links in"
+msgstr "Abrir enlaces en"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:488
+#: new/admin/class-ht-ctc-admin-other-settings.php:508
+#: new/admin/class-ht-ctc-admin-other-settings.php:520
+#: new/admin/class-ht-ctc-admin-other-settings.php:538
+#: new/admin/class-ht-ctc-admin-other-settings.php:550
+#: new/admin/class-ht-ctc-admin-other-settings.php:565
+msgid "URL Structure"
+msgstr "Estructura de URLs"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:737
+msgid "FAQ"
+msgstr "FAQ"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:778
+msgid "Chat"
+msgstr "Chat"
+
+#: new/admin/class-ht-ctc-admin-greetings-page.php:270
 msgid "Once website visitor opt-in, it won't display again"
 msgstr "Una vez que el visitante de la web acepte no se mostrará de nuevo"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:265
+#: new/admin/class-ht-ctc-admin-greetings-page.php:270
 msgid "User consent before starting the chat "
 msgstr "Consentimiento del usuario antes de empezar el chat"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:259
-#: new/admin/class-ht-ctc-admin-greetings-page.php:262
+#: new/admin/class-ht-ctc-admin-greetings-page.php:264
+#: new/admin/class-ht-ctc-admin-greetings-page.php:267
 msgid "Opt-in"
 msgstr "Aceptación"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:265
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:267
 msgid "Advanced"
 msgstr "Avanzado"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:173
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:182
 msgid "Shop, cart, checkout, Account"
 msgstr "Tienda, carrito, finalizar compra, cuenta"
 
@@ -36,69 +98,69 @@ msgstr "Tienda, carrito, finalizar compra, cuenta"
 msgid "-- No Greetings Dialog --"
 msgstr "-- Ventana sin saludo --"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:290
+#: new/admin/class-ht-ctc-admin-greetings-page.php:293
 msgid "Mobile Only"
 msgstr "Solo móvil"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:289
+#: new/admin/class-ht-ctc-admin-greetings-page.php:292
 msgid "Desktop Only"
 msgstr "Solo escritorio"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:288
+#: new/admin/class-ht-ctc-admin-greetings-page.php:291
 msgid "Desktop and Mobile"
 msgstr "Escritorio y móvil"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:286
+#: new/admin/class-ht-ctc-admin-greetings-page.php:289
 msgid "Display Greetings Dialog based on device"
 msgstr "Muestra la ventana de saludo basado en dispositivo"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:226
+#: new/admin/class-ht-ctc-admin-greetings-page.php:229
 #: new/admin/components/list/ht-ctc-admin-list-page.php:30
 msgid "Greetings-2 - Content Specific"
 msgstr "Saludos-2 - Específico del contenido"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:219
+#: new/admin/class-ht-ctc-admin-greetings-page.php:222
 msgid "Greetings Dialog - 2"
 msgstr "Ventana de saludo - 2"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:207
+#: new/admin/class-ht-ctc-admin-greetings-page.php:210
 msgid "Button with WhatsApp Icon (style-7 Extend)"
 msgstr "Botón con el icono de WhatsApp (style-7 ampliado)"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:206
+#: new/admin/class-ht-ctc-admin-greetings-page.php:209
 msgid "Themes Button (style-1)"
 msgstr "Botón del tema (style-1)"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:193
+#: new/admin/class-ht-ctc-admin-greetings-page.php:196
 msgid "Message Box - Background Color"
 msgstr "Caja de mensajes - Color de fondo"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:185
+#: new/admin/class-ht-ctc-admin-greetings-page.php:188
 msgid "Main Content - Background Color"
 msgstr "Contenido principal - Color de fondo"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:177
+#: new/admin/class-ht-ctc-admin-greetings-page.php:180
 msgid "Header - Background Color"
 msgstr "Cabecera - Color de fondo"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:170
+#: new/admin/class-ht-ctc-admin-greetings-page.php:173
 #: new/admin/components/list/ht-ctc-admin-list-page.php:29
 msgid "Greetings-1 - Customizable Design"
 msgstr "Saludos-1 - Diseño personalizable"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:163
+#: new/admin/class-ht-ctc-admin-greetings-page.php:166
 msgid "Greetings Dialog - 1"
 msgstr "Ventana de saludo - 1"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:156
+#: new/admin/class-ht-ctc-admin-greetings-page.php:159
 msgid "Call to Action (Button/Link Text)"
 msgstr "Llamada a la acción (texto del botón/enlace)"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:143
+#: new/admin/class-ht-ctc-admin-greetings-page.php:146
 msgid "Bottom Content"
 msgstr "Contenido del fondo"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:135
+#: new/admin/class-ht-ctc-admin-greetings-page.php:138
 msgid "Main Content"
 msgstr "Contenido principal"
 
@@ -106,27 +168,27 @@ msgstr "Contenido principal"
 msgid "Switch to New Interface"
 msgstr "Cambiar a la nueva interfaz"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:295
+#: new/admin/class-ht-ctc-admin-greetings-page.php:298
 msgid "Initial stage"
 msgstr "Etapa inicial"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:283
+#: new/admin/class-ht-ctc-admin-greetings-page.php:286
 msgid "Display"
 msgstr "Visualización"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:201
+#: new/admin/class-ht-ctc-admin-greetings-page.php:204
 msgid "Call to Action - button type"
 msgstr "Llamada a la acción - Tipo de botón"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:125
+#: new/admin/class-ht-ctc-admin-greetings-page.php:128
 msgid "Header Content"
 msgstr "Contenido de la cabecera"
 
-#: new/admin/class-ht-ctc-admin-greetings-page.php:105
+#: new/admin/class-ht-ctc-admin-greetings-page.php:108
 msgid "Add Greetings Dialog"
 msgstr "Añadir ventana de saludo"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:207
+#: new/admin/class-ht-ctc-admin-other-settings.php:210
 msgid "call gtag_report_conversion function"
 msgstr "llamada a la función `gtag_report_conversion`"
 
@@ -154,84 +216,80 @@ msgstr "Añade tu propia imagen / GIF (Estilo 99)"
 
 #: new/admin/admin_commons/admin-device-settings.php:68
 #: new/admin/admin_commons/admin-device-settings.php:178
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:316
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:466
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:318
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:450
 msgid "Add your own image / GIF (Style-99)"
 msgstr "Añade tu propia imagen / GIF (Estilo-99)"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:499
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:483
 msgid "Display center"
 msgstr "Mostrar centrado"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:417
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:520
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:401
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:504
 msgid "WooCommerce Shop page"
 msgstr "Página de tienda de WooCommerce"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:277
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:422
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:279
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:406
 msgid "Add WhatsApp"
 msgstr "Añadir WhatsApp"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:452
-msgid "Advanced Settings"
-msgstr "Ajustes avanzados"
-
-#: new/admin/class-ht-ctc-admin-other-settings.php:463
+#: new/admin/class-ht-ctc-admin-other-settings.php:584
 msgid "Position of the element along with z-index. stacking the elements"
 msgstr "Posición del elemento junto con el z-index, apilando los elementos"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:458
-#: new/admin/class-ht-ctc-admin-other-settings.php:462
+#: new/admin/class-ht-ctc-admin-other-settings.php:579
+#: new/admin/class-ht-ctc-admin-other-settings.php:583
 msgid "z-index"
 msgstr "z-index"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:448
+#: new/admin/class-ht-ctc-admin-other-settings.php:452
 msgid "All this below settings are not important to everyone"
 msgstr "Todos estos ajustes siguientes no son importantes para todo el mundo"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:427
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:411
 msgid "At Products - Archive, Shop Page"
 msgstr "En los productos - Archivo, página de la tienda"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:264
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:266
 msgid "Shop Page"
 msgstr "Página de la tienda"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:379
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:511
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:383
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:495
 msgid "Bottom"
 msgstr "Inferior"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:378
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:510
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:382
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:494
 msgid "Top"
 msgstr "Superior"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:375
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:507
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:379
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:491
 msgid "Spacing (Margin)"
 msgstr "Espacio (margen)"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:360
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:364
 msgid "Display Block Type"
 msgstr "Tipo de visualización del bloque"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:352
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:356
 msgid "Display center within available space"
 msgstr "Mostrar centrado dentro del espacio disponible"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:347
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:494
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:351
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:478
 msgid "Display Center"
 msgstr "Mostrar en el centro"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:388
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:393
 msgid "Add WhatsApp in WooCommerce Single Product pages"
 msgstr "Añadir WhatsApp en las páginas de productos individuales de WooCommerce"
 
 #: new/admin/admin_commons/admin-sidebar-content.php:39
-#: new/admin/class-ht-ctc-admin-greetings-page.php:407
+#: new/admin/class-ht-ctc-admin-greetings-page.php:410
 msgid "PRO"
 msgstr "PRO"
 
@@ -250,19 +308,15 @@ msgstr "Fijo: Posición relativa a la pantalla, permanece en el mismo lugar incl
 msgid "Position Type"
 msgstr "Tipo de posición"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:552
+#: new/admin/class-ht-ctc-admin-other-settings.php:675
 msgid "'Click to Chat' - 'Display Settings' - 'Global' - check "
 msgstr "«Click to Chat» - «Ajustes de visualización» - «Global» - comprobar "
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:472
-msgid "Add aria-hidden=true - hide for Accessibility API (screen readers)"
-msgstr "Añadir `aria-hidden=true` - ocultar para la API de accesibilidad (lectores de pantalla)"
-
-#: new/admin/class-ht-ctc-admin-other-settings.php:422
+#: new/admin/class-ht-ctc-admin-other-settings.php:425
 msgid "Entrance Effects"
 msgstr "Efectos de entrada"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:409
+#: new/admin/class-ht-ctc-admin-other-settings.php:412
 msgid "Entry Effects"
 msgstr "Efecto de entrada"
 
@@ -283,11 +337,11 @@ msgstr "Ejemplo: "
 msgid "Check this, If styles for mobile, desktop not selected as expected(due to cache)"
 msgstr "Márcalo si los estilos para móvil y escritorio no se seleccionan como se espera (debido a la caché)"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:243
+#: new/admin/class-ht-ctc-admin-other-settings.php:246
 msgid "using"
 msgstr "usando"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:243
+#: new/admin/class-ht-ctc-admin-other-settings.php:246
 msgid "Integrate, Automation"
 msgstr "Integración, automatización"
 
@@ -299,7 +353,7 @@ msgstr "Conversión de Google Analytics, Facebook Pixel y Google Ads"
 msgid "Override the Global settings"
 msgstr "Anular los ajustes globales"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:180
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:189
 msgid "WooCommerce Single Product pages"
 msgstr "Páginas de producto individual de WooCommerce"
 
@@ -307,8 +361,8 @@ msgstr "Páginas de producto individual de WooCommerce"
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:172
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:263
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:181
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:265
 msgid "Single Product Pages"
 msgstr "Páginas de producto individual"
 
@@ -324,8 +378,8 @@ msgid " (Desktop)"
 msgstr " (Escritorio)"
 
 #: new/admin/admin_commons/admin-device-settings.php:52
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:303
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:453
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:305
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:437
 msgid "Select Style"
 msgstr "Seleccionar el estilo"
 
@@ -346,7 +400,7 @@ msgid "Post Id's"
 msgstr "ID de entrada"
 
 #: new/admin/admin_commons/admin-show-hide.php:144
-#: new/admin/class-ht-ctc-admin-other-settings.php:552
+#: new/admin/class-ht-ctc-admin-other-settings.php:675
 msgid "Hide on all pages"
 msgstr "Ocultar en todas las páginas"
 
@@ -360,7 +414,7 @@ msgid "Global"
 msgstr "Global"
 
 #: new/admin/class-ht-ctc-admin-group-page.php:72
-#: new/admin/class-ht-ctc-admin-main-page.php:88
+#: new/admin/class-ht-ctc-admin-main-page.php:87
 #: new/admin/class-ht-ctc-admin-share-page.php:73
 msgid "Style, Position"
 msgstr "Estilo, posición"
@@ -370,75 +424,77 @@ msgstr "Estilo, posición"
 msgid "If Google Analytics 4 is installed"
 msgstr "Si Google Analytics 4 está instalado"
 
-#: new/admin/class-ht-ctc-admin-main-page.php:166
+#: new/admin/class-ht-ctc-admin-main-page.php:165
 msgid "country code"
 msgstr "código del país"
 
-#: new/admin/class-ht-ctc-admin-main-page.php:166
+#: new/admin/class-ht-ctc-admin-main-page.php:165
 msgid "WhatsApp or WhatsApp business number with "
 msgstr "Número de WhatsApp o de WhatsApp Business con "
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:297
+#: new/admin/class-ht-ctc-admin-other-settings.php:300
 msgid "Value"
 msgstr "Valor"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:297
-#: new/admin/class-ht-ctc-admin-other-settings.php:298
+#: new/admin/class-ht-ctc-admin-other-settings.php:300
+#: new/admin/class-ht-ctc-admin-other-settings.php:301
 msgid "Add Value"
 msgstr "Añadir el valor"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:250
+#: new/admin/class-ht-ctc-admin-other-settings.php:253
 msgid "Calls this webhook url after user clicks on WhatsApp Icon/Image"
 msgstr "Llama a la URL de este webhook después de que el usuario haga clic en el icono/imagen de WhatsApp"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:249
+#: new/admin/class-ht-ctc-admin-other-settings.php:252
 msgid "Webhook URL"
 msgstr "URL del webhook"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:240
 #: new/admin/class-ht-ctc-admin-other-settings.php:243
+#: new/admin/class-ht-ctc-admin-other-settings.php:246
 msgid "Webhooks"
 msgstr "Webhooks"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:533
-#: new/admin/class-ht-ctc-admin-other-settings.php:544
+#: new/admin/class-ht-ctc-admin-other-settings.php:656
+#: new/admin/class-ht-ctc-admin-other-settings.php:667
 msgid "Adds WhatsApp Icon for Share"
 msgstr "Añade el icono de WhatsApp para compartir"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:506
-#: new/admin/class-ht-ctc-admin-other-settings.php:517
+#: new/admin/class-ht-ctc-admin-other-settings.php:629
+#: new/admin/class-ht-ctc-admin-other-settings.php:640
 msgid "Adds WhatsApp Icon for Group"
 msgstr "Añade el icono de WhatsApp para el grupo"
 
-#: new/admin/class-ht-ctc-admin-main-page.php:328
+#: new/admin/class-ht-ctc-admin-main-page.php:298
 msgid "Please clear the cache after save changes"
 msgstr "Por favor, vacía la caché después de guardar los cambios"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:210
+#: new/admin/class-ht-ctc-admin-other-settings.php:213
 msgid "call gtag_report_conversion function, when user clicks"
 msgstr "llama a la función `gtag_report_conversion` cuando el usuario hace clic"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:207
+#: new/admin/class-ht-ctc-admin-other-settings.php:210
 msgid "Google Ads Conversion"
 msgstr "Conversión de Google Ads"
 
-#: new/admin/class-ht-ctc-admin-main-page.php:158
+#: new/admin/class-ht-ctc-admin-main-page.php:157
 msgid "Number"
 msgstr "Número"
 
-#: new/admin/class-ht-ctc-admin-main-page.php:150
+#: new/admin/class-ht-ctc-admin-main-page.php:149
 msgid "Country Code"
 msgstr "Código del país"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:649
+#: new/admin/class-ht-ctc-admin-other-settings.php:778
 msgid "WhatsApp Us"
 msgstr "Envíanos un WhatsApp"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:649
-msgid "If any issue: Please contact us"
-msgstr "Para cualquier problema: Por favor, contacta con nosotros"
+#: new/admin/class-ht-ctc-admin-other-settings.php:774
+msgid "If any issue? Please, contact us"
+msgstr "¿Tienes algún problema? Por favor, contacta con nosotros"
 
 #: new/admin/admin_commons/class-ht-ctc-metabox.php:107
+#: new/admin/class-ht-ctc-admin-other-settings.php:473
+#: new/admin/class-ht-ctc-admin-other-settings.php:479
 msgid "Default"
 msgstr "Por defecto"
 
@@ -460,9 +516,9 @@ msgstr "Mostrar"
 msgid "Pre-filled Message"
 msgstr "Mensaje inicial"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:582
-#: new/admin/class-ht-ctc-admin-other-settings.php:585
-#: new/admin/class-ht-ctc-admin-other-settings.php:593
+#: new/admin/class-ht-ctc-admin-other-settings.php:705
+#: new/admin/class-ht-ctc-admin-other-settings.php:708
+#: new/admin/class-ht-ctc-admin-other-settings.php:716
 msgid "AMP Compatibility"
 msgstr "Compatibilidad con AMP"
 
@@ -482,19 +538,19 @@ msgstr "Tamaño de la fuente (ej.: 15px)"
 msgid "Font Size"
 msgstr "Tamaño de la fuente"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:606
+#: new/admin/class-ht-ctc-admin-other-settings.php:729
 msgid "Debug mode"
 msgstr "Modo de depuración"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:565
+#: new/admin/class-ht-ctc-admin-other-settings.php:688
 msgid "Debug, Troubleshoot, .."
 msgstr "Depuración, diagnóstico, ..."
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:551
+#: new/admin/class-ht-ctc-admin-other-settings.php:674
 msgid "Chat settings are enabled by default. If like to hide chat on all pages"
 msgstr "Los ajustes del chat están activados por defecto. Si te gustaría ocultar el chat en todas las páginas"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:493
+#: new/admin/class-ht-ctc-admin-other-settings.php:616
 msgid "Group, Share features"
 msgstr "Características de grupo y de compartir"
 
@@ -506,25 +562,25 @@ msgstr "Se muestra en las páginas de este tipo de categoría. Añade varias cat
 msgid "Hides on this Category type pages, Add multiple Categories by separating with a comma ( , ) "
 msgstr "Se oculta en las páginas de este tipo de categoría. Añade varias categorías separándolas con una coma ( , )"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:649
+#: new/admin/class-ht-ctc-admin-other-settings.php:776
 msgid "Mail"
 msgstr "Correo"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:399
+#: new/admin/class-ht-ctc-admin-other-settings.php:402
 msgid "E.g. Add 2 to repeat animation 2 times"
 msgstr "Por ejemplo: Añade 2 para repetir la animación 2 veces"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:394
-#: new/admin/class-ht-ctc-admin-other-settings.php:398
+#: new/admin/class-ht-ctc-admin-other-settings.php:397
+#: new/admin/class-ht-ctc-admin-other-settings.php:401
 msgid "Animation Iteration"
 msgstr "Iteración de la animación"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:387
+#: new/admin/class-ht-ctc-admin-other-settings.php:390
 msgid "E.g. Add 1 for 1 second delay"
 msgstr "Por ejemplo: Añade 1 para un retraso de 1 segundo"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:382
-#: new/admin/class-ht-ctc-admin-other-settings.php:386
+#: new/admin/class-ht-ctc-admin-other-settings.php:385
+#: new/admin/class-ht-ctc-admin-other-settings.php:389
 msgid "Animation Delay"
 msgstr "Retraso de la animación"
 
@@ -537,10 +593,10 @@ msgstr "Retraso de la animación"
 msgid "Full Width on Mobile"
 msgstr "Ancho completo en móviles"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:351
 #: new/admin/class-ht-ctc-admin-other-settings.php:354
-#: new/admin/class-ht-ctc-admin-other-settings.php:361
-#: new/admin/class-ht-ctc-admin-other-settings.php:375
+#: new/admin/class-ht-ctc-admin-other-settings.php:357
+#: new/admin/class-ht-ctc-admin-other-settings.php:364
+#: new/admin/class-ht-ctc-admin-other-settings.php:378
 msgid "Animations"
 msgstr "Animaciones"
 
@@ -594,15 +650,15 @@ msgstr "Mostrar todos los estilos"
 
 #: new/admin/admin_commons/admin-device-settings.php:66
 #: new/admin/admin_commons/admin-device-settings.php:176
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:314
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:464
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:316
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:448
 msgid "Style-7 Extend"
 msgstr "Estilo-7 ampliado"
 
 #: new/admin/admin_commons/admin-device-settings.php:60
 #: new/admin/admin_commons/admin-device-settings.php:171
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:310
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:460
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:312
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:444
 msgid "Style-3 Extend"
 msgstr "Estilo-3 ampliado"
 
@@ -632,23 +688,23 @@ msgstr "Píxel de Facebook"
 msgid "If Google Analytics installed creates an Event there"
 msgstr "Si Google Analytics está instalado, crea un evento ahí"
 
-#: new/admin/class-ht-ctc-admin-main-page.php:194
+#: new/admin/class-ht-ctc-admin-main-page.php:193
 msgid "Text that pre-filled in WhatsApp Chat window. Add variables {site}, {url}, {title} to replace with site name, current webpage URL, Post title"
 msgstr "Texto que aparece en la ventana de chat de WhatsApp. Añade las variables `{site}`, `{url}` y `{title}` para reemplazar con el nombre del sitio, la URL de la página web actual y el título de la entrada"
 
-#: new/admin/class-ht-ctc-admin-main-page.php:193
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:189
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:436
+#: new/admin/class-ht-ctc-admin-main-page.php:192
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:198
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:420
 msgid "Pre-filled message"
 msgstr "Mensaje precompletado"
 
-#: new/admin/class-ht-ctc-admin-main-page.php:167
+#: new/admin/class-ht-ctc-admin-main-page.php:166
 msgid "( E.g. 916123456789 - herein e.g. 91 is country code, 6123456789 is the mobile number )"
 msgstr "(Por ejemplo: 916123456789 - aquí, por ejemplo, 91 es el código del país y 6123456789 es el número de móvil)"
 
 #: new/admin/admin_commons/admin-show-hide.php:18
 #: new/admin/admin_commons/class-ht-ctc-metabox.php:92
-#: new/admin/class-ht-ctc-admin-main-page.php:89
+#: new/admin/class-ht-ctc-admin-main-page.php:88
 msgid "Display Settings"
 msgstr "Ajustes de visualización"
 
@@ -656,33 +712,33 @@ msgstr "Ajustes de visualización"
 msgid "Pre-Filled Message"
 msgstr "Mensaje prerrellenado"
 
-#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:202
+#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:196
 msgid "to let vistiors Share your Webpages"
 msgstr "para permitir a los visitantes compartir tus páginas web"
 
-#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:202
+#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:196
 msgid "Add Share Text"
 msgstr "Añade el texto para compartir"
 
-#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:193
+#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:188
 msgid "to let visitors join in your WhatsApp Group"
 msgstr "para permitir a los visitantes unirse a tu grupo de WhatsApp"
 
-#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:193
+#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:188
 msgid "Add WhatsApp Group ID"
 msgstr "Añade el ID del grupo de WhatsApp"
 
-#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:183
+#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:179
 msgid "and let visitors chat"
 msgstr "y permite chatear a los visitantes"
 
-#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:183
+#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:179
 msgid "Add WhatsApp Number"
 msgstr "Añadir el número de WhatsApp"
 
-#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:183
-#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:193
-#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:202
+#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:179
+#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:188
+#: new/admin/admin_commons/class-ht-ctc-admin-hooks.php:196
 msgid "Click to Chat is almost ready"
 msgstr "Click to Chat ya casi está listo"
 
@@ -737,23 +793,23 @@ msgstr "Personaliza los estilos"
 
 #: new/admin/admin_commons/admin-device-settings.php:70
 #: new/admin/admin_commons/admin-device-settings.php:180
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:318
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:468
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:320
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:452
 msgid "List of Styles"
 msgstr "Lista de estilos"
 
 #: new/admin/admin_commons/admin-device-settings.php:67
 #: new/admin/admin_commons/admin-device-settings.php:177
 #: new/admin/class-ht-ctc-admin-customize-styles.php:1544
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:315
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:465
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:317
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:449
 msgid "Style-8"
 msgstr "Estilo-8"
 
 #: new/admin/admin_commons/admin-device-settings.php:65
 #: new/admin/admin_commons/admin-device-settings.php:175
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:313
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:463
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:315
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:447
 msgid "Style-7"
 msgstr "Estilo-7"
 
@@ -764,29 +820,29 @@ msgstr "Estilo-6"
 
 #: new/admin/admin_commons/admin-device-settings.php:63
 #: new/admin/admin_commons/admin-device-settings.php:173
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:312
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:462
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:314
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:446
 msgid "Style-5"
 msgstr "Estilo-5"
 
 #: new/admin/admin_commons/admin-device-settings.php:62
 #: new/admin/admin_commons/admin-device-settings.php:172
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:311
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:461
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:313
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:445
 msgid "Style-4"
 msgstr "Estilo-4"
 
 #: new/admin/admin_commons/admin-device-settings.php:59
 #: new/admin/admin_commons/admin-device-settings.php:170
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:309
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:459
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:311
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:443
 msgid "Style-3"
 msgstr "Estilo-3"
 
 #: new/admin/admin_commons/admin-device-settings.php:57
 #: new/admin/admin_commons/admin-device-settings.php:169
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:308
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:458
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:310
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:442
 msgid "Style-2"
 msgstr "Estilo-2"
 
@@ -794,8 +850,8 @@ msgstr "Estilo-2"
 #: new/admin/admin_commons/admin-device-settings.php:168
 #: new/admin/class-ht-ctc-admin-customize-styles.php:250
 #: new/admin/class-ht-ctc-admin-customize-styles.php:340
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:307
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:457
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:309
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:441
 msgid "Style-1"
 msgstr "Estilo-1"
 
@@ -810,6 +866,10 @@ msgstr "WhatsApp"
 #: new/admin/admin_commons/admin-sidebar-content.php:19
 msgid "Contact Us"
 msgstr "Contacta con nosotros"
+
+#: new/admin/class-ht-ctc-admin-other-settings.php:737
+msgid "Frequently Asked Questions"
+msgstr "Preguntas frecuentes"
 
 #: new/admin/admin_commons/admin-show-hide.php:273
 msgid "Show/Hide on Mobile/Desktop"
@@ -852,26 +912,26 @@ msgstr "Añade los ID de las entradas a ocultar. Añade varios ID de entradas se
 msgid "Hide on this pages"
 msgstr "Ocultar en estas páginas"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:632
-#: new/admin/class-ht-ctc-admin-other-settings.php:641
+#: new/admin/class-ht-ctc-admin-other-settings.php:756
+#: new/admin/class-ht-ctc-admin-other-settings.php:765
 msgid "Delete this plugin settings when uninstalls"
 msgstr "Borrar los ajustes de este plugin al desinstalarlo"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:533
+#: new/admin/class-ht-ctc-admin-other-settings.php:656
 msgid "Share Settings page"
 msgstr "Página de ajustes para compartir"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:531
-#: new/admin/class-ht-ctc-admin-other-settings.php:541
+#: new/admin/class-ht-ctc-admin-other-settings.php:654
+#: new/admin/class-ht-ctc-admin-other-settings.php:664
 msgid "Enable Share Features"
 msgstr "Activar las características para compartir"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:506
+#: new/admin/class-ht-ctc-admin-other-settings.php:629
 msgid "Group Settings page"
 msgstr "Página de ajustes de grupo"
 
-#: new/admin/class-ht-ctc-admin-other-settings.php:504
-#: new/admin/class-ht-ctc-admin-other-settings.php:514
+#: new/admin/class-ht-ctc-admin-other-settings.php:627
+#: new/admin/class-ht-ctc-admin-other-settings.php:637
 msgid "Enable Group Features"
 msgstr "Activar las características de grupo"
 
@@ -971,14 +1031,14 @@ msgid "If style position/located: Right to screen then select Right, if Left to 
 msgstr "Estilo de posición/ubicación: Si es a la derecha de la pantalla, selecciona «Derecha», si es a la izquierda de la pantalla, selecciona «Izquierda»"
 
 #: new/admin/class-ht-ctc-admin-customize-styles.php:980
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:380
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:512
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:384
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:496
 msgid "Left"
 msgstr "Izquierda"
 
 #: new/admin/class-ht-ctc-admin-customize-styles.php:979
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:381
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:513
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:385
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:497
 msgid "Right"
 msgstr "Derecha"
 
@@ -1102,20 +1162,17 @@ msgstr "Estilo 1"
 msgid "Shortcodes for Share"
 msgstr "Shortcodes para compartir"
 
-#: new/admin/class-ht-ctc-admin-main-page.php:248
 #: new/admin/class-ht-ctc-admin-share-page.php:144
 msgid "If checked opens Web.WhatsApp directly on Desktop and in mobile WhatsApp App"
 msgstr "Si está activado, en escritorio abre directamente la web de WhatsApp y en el móvil la aplicación de WhatsApp"
 
-#: new/admin/class-ht-ctc-admin-main-page.php:233
-#: new/admin/class-ht-ctc-admin-main-page.php:242
 #: new/admin/class-ht-ctc-admin-share-page.php:129
 #: new/admin/class-ht-ctc-admin-share-page.php:138
 msgid "Web WhatsApp on Desktop"
 msgstr "Web WhatsApp en escritorio"
 
 #: new/admin/class-ht-ctc-admin-group-page.php:112
-#: new/admin/class-ht-ctc-admin-main-page.php:209
+#: new/admin/class-ht-ctc-admin-main-page.php:208
 #: new/admin/class-ht-ctc-admin-share-page.php:113
 msgid "Text that appears along with WhatsApp icon/button"
 msgstr "Texto que aparece junto con el icono/botón de WhatsApp"
@@ -1135,28 +1192,37 @@ msgstr "Mostrar/ocultar"
 
 #: new/admin/admin_commons/admin-device-settings.php:161
 #: new/admin/admin_commons/admin-show-hide.php:107
+#: new/admin/class-ht-ctc-admin-other-settings.php:535
+#: new/admin/class-ht-ctc-admin-other-settings.php:538
+#: new/admin/class-ht-ctc-admin-other-settings.php:550
+#: new/admin/class-ht-ctc-admin-other-settings.php:556
+#: new/admin/class-ht-ctc-admin-other-settings.php:560
 msgid "Mobile"
 msgstr "Móvil"
 
 #: new/admin/admin_commons/admin-show-hide.php:85
+#: new/admin/class-ht-ctc-admin-other-settings.php:491
+#: new/admin/class-ht-ctc-admin-other-settings.php:508
+#: new/admin/class-ht-ctc-admin-other-settings.php:520
+#: new/admin/class-ht-ctc-admin-other-settings.php:526
+#: new/admin/class-ht-ctc-admin-other-settings.php:530
 msgid "Desktop"
 msgstr "Escritorio"
 
-#: new/admin/class-ht-ctc-admin-main-page.php:87
 #: new/admin/class-ht-ctc-admin-share-page.php:71
 msgid "Web WhatsApp"
 msgstr "Web de WhatsApp"
 
 #: new/admin/admin_commons/class-ht-ctc-metabox.php:80
-#: new/admin/class-ht-ctc-admin-greetings-page.php:152
+#: new/admin/class-ht-ctc-admin-greetings-page.php:155
 #: new/admin/class-ht-ctc-admin-group-page.php:70
 #: new/admin/class-ht-ctc-admin-group-page.php:111
 #: new/admin/class-ht-ctc-admin-main-page.php:86
-#: new/admin/class-ht-ctc-admin-main-page.php:208
+#: new/admin/class-ht-ctc-admin-main-page.php:207
 #: new/admin/class-ht-ctc-admin-share-page.php:70
 #: new/admin/class-ht-ctc-admin-share-page.php:112
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:198
-#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:446
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:207
+#: new/tools/woo/woo-admin/class-ht-ctc-admin-woo-page.php:430
 msgid "Call to Action"
 msgstr "Llamada a la acción"
 
@@ -1178,16 +1244,15 @@ msgstr "Haciendo trampas, ¿eh?"
 #: new/admin/admin_commons/admin-show-hide.php:268
 #: new/admin/class-ht-ctc-admin-group-page.php:97
 #: new/admin/class-ht-ctc-admin-group-page.php:112
-#: new/admin/class-ht-ctc-admin-main-page.php:167
-#: new/admin/class-ht-ctc-admin-main-page.php:194
-#: new/admin/class-ht-ctc-admin-main-page.php:248
+#: new/admin/class-ht-ctc-admin-main-page.php:166
+#: new/admin/class-ht-ctc-admin-main-page.php:193
 #: new/admin/class-ht-ctc-admin-other-settings.php:157
 #: new/admin/class-ht-ctc-admin-other-settings.php:184
-#: new/admin/class-ht-ctc-admin-other-settings.php:210
-#: new/admin/class-ht-ctc-admin-other-settings.php:250
-#: new/admin/class-ht-ctc-admin-other-settings.php:517
-#: new/admin/class-ht-ctc-admin-other-settings.php:544
-#: new/admin/class-ht-ctc-admin-other-settings.php:552
+#: new/admin/class-ht-ctc-admin-other-settings.php:213
+#: new/admin/class-ht-ctc-admin-other-settings.php:253
+#: new/admin/class-ht-ctc-admin-other-settings.php:640
+#: new/admin/class-ht-ctc-admin-other-settings.php:667
+#: new/admin/class-ht-ctc-admin-other-settings.php:675
 #: new/admin/class-ht-ctc-admin-share-page.php:98
 #: new/admin/class-ht-ctc-admin-share-page.php:113
 #: new/admin/class-ht-ctc-admin-share-page.php:144
@@ -1356,7 +1421,7 @@ msgstr "Mensaje inicial"
 
 #: new/admin/admin_commons/class-ht-ctc-metabox.php:73
 #: new/admin/class-ht-ctc-admin-main-page.php:84
-#: new/admin/class-ht-ctc-admin-main-page.php:139
+#: new/admin/class-ht-ctc-admin-main-page.php:138
 #: prev/admin/class-ccw-admin-page.php:29
 msgid "WhatsApp Number"
 msgstr "Numero de WhatsApp"

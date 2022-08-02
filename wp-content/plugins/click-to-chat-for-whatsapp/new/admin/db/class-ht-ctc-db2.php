@@ -128,7 +128,6 @@ class HT_CTC_DB2 {
      * share chat
      * 
      * checkboxes
-     *  webandapi
      *  show/hide ..
      */
     public function ht_ctc_share() {

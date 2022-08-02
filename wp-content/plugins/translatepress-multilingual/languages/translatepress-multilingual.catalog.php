@@ -98,6 +98,8 @@
 <?php __("Top Left", "translatepress-multilingual"); ?>
 <?php __("Dark", "translatepress-multilingual"); ?>
 <?php __("Light", "translatepress-multilingual"); ?>
+<?php __("Invalid language code. Please try again.", "translatepress-multilingual"); ?>
+<?php __("Language codes can contain only A-Z a-z 0-9 - _ characters. Check your language codes in TranslatePress General Settings.", "translatepress-multilingual"); ?>
 <?php __("Error! Duplicate URL slug values.", "translatepress-multilingual"); ?>
 <?php __("Current Language", "translatepress-multilingual"); ?>
 <?php __("Opposite Language", "translatepress-multilingual"); ?>
@@ -177,6 +179,7 @@
 <?php __("Visual Editor", "translatepress-multilingual"); ?>
 <?php __("String Translation", "translatepress-multilingual"); ?>
 <?php __("Translate Page", "translatepress-multilingual"); ?>
+<?php __("Opens post in the translation editor. Post must be saved as draft or published beforehand.", "translatepress-multilingual"); ?>
 <?php __("Security check", "translatepress-multilingual"); ?>
 <?php __("<strong>Warning:</strong> Some strings have possibly incorrectly encoded characters. This may result in breaking the queries, rendering the page untranslated in live mode. Consider revising the following strings or their method of outputting.", "translatepress-multilingual"); ?>
 <?php __("Description", "translatepress-multilingual"); ?>
@@ -289,7 +292,7 @@
 <?php __("Add a limit to the number of automatically translated characters so you can better budget your project.", "translatepress-multilingual"); ?>
 <?php __("Today's character count:", "translatepress-multilingual"); ?>
 <?php __("Log machine translation queries.", "translatepress-multilingual"); ?>
-<?php __("Only enable for testing purposes. Can impact performance.<br>All records are stored in the wp_trp_machine_translation_log database table. Use a plugin like <a href=\"https://wordpress.org/plugins/wp-data-access/\">WP Data Access</a> to browse the logs or directly from your database manager (PHPMyAdmin, etc.)", "translatepress-multilingual"); ?>
+<?php __("Only enable for testing purposes. Can impact performance.<br>All records are stored in the wp_trp_machine_translation_log database table. Use a plugin like <a href=\"https://wordpress.org/plugins/wp-data-access/\" target=\"_blank\">WP Data Access</a> to browse the logs or directly from your database manager (PHPMyAdmin, etc.)", "translatepress-multilingual"); ?>
 <?php __("All Languages", "translatepress-multilingual"); ?>
 <?php __("Language", "translatepress-multilingual"); ?>
 <?php __("Formality", "translatepress-multilingual"); ?>
@@ -301,7 +304,7 @@
 <?php __("Are you sure you want to remove this language?", "translatepress-multilingual"); ?>
 <?php __("Choose...", "translatepress-multilingual"); ?>
 <?php __("Custom Languages", "translatepress-multilingual"); ?>
-<?php __("Select the languages you wish to make your website available in.<br>The Formality field is used by Automatic Translation to decide whether the translated text should lean towards formal or informal language. For now, it is supported only for a few languages and only by <a href=\"%s\">DeepL</a>.", "translatepress-multilingual"); ?>
+<?php __("Select the languages you wish to make your website available in.<br>The Formality field is used by Automatic Translation to decide whether the translated text should lean towards formal or informal language. For now, it is supported only for a few languages and only by <a href=\"%s\" target=\"_blank\">DeepL</a>.", "translatepress-multilingual"); ?>
 <?php __("To add <strong>more than two languages</strong> and support for SEO Title, Description, Slug and more check out <a href=\"%1$s\" target=\"_blank\" title=\"%2$s\">%2$s</a>.", "translatepress-multilingual"); ?>
 <?php __("TranslatePress Advanced Add-ons", "translatepress-multilingual"); ?>
 <?php __("Not only are you getting extra features and premium support, but you also help fund the future development of TranslatePress.", "translatepress-multilingual"); ?>
@@ -409,6 +412,10 @@
 <?php __("Remove Region Independent Locale", "translatepress-multilingual"); ?>
 <?php __("Remove duplicate hreflang", "translatepress-multilingual"); ?>
 <?php __("Choose which hreflang tags will appear on your website.<br/>We recommend showing both types of hreflang tags as indicated by <a href=\"https://developers.google.com/search/docs/advanced/crawling/localized-versions\" title=\"Google Crawling\" target=\"_blank\">Google documentation</a>.<br/>Removing Country Locale when having multiple Country Locales of the same language (ex. English UK and English US) will result in showing one hreflang tag with link to just one of the region locales for that language.", "translatepress-multilingual"); ?>
+<?php __("Default (example: en-US, fr-CA, etc.)", "translatepress-multilingual"); ?>
+<?php __("Regional (example: en, fr, es, etc.)", "translatepress-multilingual"); ?>
+<?php __("HTML Lang Attribute Format", "translatepress-multilingual"); ?>
+<?php __("Change lang attribute of the html tag to a format that includes country regional or not. <br>In HTML, the lang attribute (<html lang=\"en-US\">)  should be used to  specify the language of text content so that the  browser can correctly display or process  your content (eg. for  hyphenation, styling, spell checking, etc).", "translatepress-multilingual"); ?>
 <?php __("Open language switcher only on click", "translatepress-multilingual"); ?>
 <?php __("Open the language switcher shortcode by clicking on it instead of hovering.<br> Close it by clicking on it, anywhere else on the screen or by pressing the escape key. This will affect only the shortcode language switcher.", "translatepress-multilingual"); ?>
 <?php __("Show opposite language in the language switcher", "translatepress-multilingual"); ?>

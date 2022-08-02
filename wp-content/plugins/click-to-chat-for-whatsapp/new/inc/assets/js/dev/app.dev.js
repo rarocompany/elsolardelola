@@ -130,7 +130,7 @@
                     } else {
                         ht_ctc_link(ht_ctc_chat);
                     }
-                        
+
                     document.dispatchEvent(
                         new CustomEvent("ht_ctc_event_greetings")
                     );
@@ -186,11 +186,11 @@
                 // Display greetings - device based
                 if (ctc.g_device) {
                     if (is_mobile !== 'yes' && 'mobile' == ctc.g_device) {
-                        // in desktop, mobile only
+                        // in desktop: mobile only
                         $('.ht_ctc_chat_greetings_box').remove();
                         return;
                     } else if (is_mobile == 'yes' && 'desktop' == ctc.g_device) {
-                        // in mobile, desktop only
+                        // in mobile: desktop only
                         $('.ht_ctc_chat_greetings_box').remove();
                         return;
                     }
@@ -440,14 +440,53 @@
                 return;
             }
 
-            // web/api.whatsapp or wa.me 
-            if (ctc.web && is_mobile !== 'yes') {
-                // web.whatsapp - if web api is enabled and is not mobile
-                window.open('https://web.whatsapp.com/send' + '?phone=' + number + '&text=' + pre_filled, '_blank', 'noopener');
+            // navigations links..
+            // 1.base_url
+            var base_url = 'https://wa.me/' + number + '?text=' + pre_filled;
+
+            // 2.url_target - _blank, _self or if popup type just add a name - here popup only
+            var url_target = (ctc.url_target_d) ? ctc.url_target_d : '_blank';
+
+            if (is_mobile == 'yes') {
+                console.log('-- mobile --');
+                // mobile
+                if (ctc.url_structure_m) {
+                    console.log('-- url struture: whatsapp:// --');
+                    // whatsapp://.. is selected.
+                    base_url = 'whatsapp://send?phone=' + number + '&text=' + pre_filled;
+                    // for whatsapp://.. url open target is _self.
+                    url_target = '_self';
+                }
+                // custom url mobile
+                if (ctc.custom_link_m && '' !== ctc.custom_link_m) {
+                    console.log('custom link');
+                    base_url = ctc.custom_link_m;
+                }
+
             } else {
-                // wa.me
-                window.open('https://wa.me/' + number + '?text=' + pre_filled, '_blank', 'noopener');
+                // desktop
+                console.log('-- desktop --');
+                if (ctc.url_structure_d) {
+                    console.log('-- url struture: web whatsapp --');
+                    // web whatsapp is enabled/selected.
+                    base_url = 'https://web.whatsapp.com/send' + '?phone=' + number + '&text=' + pre_filled;
+                }
+
+                // custom url desktop
+                if (ctc.custom_link_d && '' !== ctc.custom_link_d) {
+                    console.log('custom link');
+                    base_url = ctc.custom_link_d;
+                }
             }
+
+            // 3.specs - specs - if popup then add 'pop_window_features' else 'noopener'
+            var pop_window_features = 'scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=750,height=400,left=100,top=100';
+            var specs = ('popup' == url_target) ? pop_window_features : 'noopener';
+            console.log('-- specs: ' + specs + ' --');
+
+            window.open(base_url, url_target, specs);
+
+            
 
             // analytics
             ht_ctc_chat_analytics(values);
@@ -467,7 +506,7 @@
                 pre_filled = pre_filled.replace(/\[url]/gi, url);
                 pre_filled = encodeURIComponent(pre_filled);
 
-                if (ctc.web && is_mobile !== 'yes') {
+                if (ctc.url_structure_d && is_mobile !== 'yes') {
                     // web.whatsapp - if web api is enabled and is not mobile
                     window.open('https://web.whatsapp.com/send' + '?phone=' + number + '&text=' + pre_filled, '_blank', 'noopener');
                 } else {

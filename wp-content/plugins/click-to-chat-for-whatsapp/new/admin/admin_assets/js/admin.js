@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
         wn();
         hook();
         ss();
+        url_structure();
         other();
 
         try {
@@ -306,6 +307,44 @@ document.addEventListener('DOMContentLoaded', function () {
                 $(".ht_ctc_wn").html(cc + '' + num);
                 $("#ctc_whatsapp_number").val(cc + '' + num);
             }
+
+        }
+
+        // url structure - custom url..
+        function url_structure() {
+            // default display
+            var url_structure_d = $('.url_structure_d').find(":selected").val();
+            if (url_structure_d == 'custom_url') {
+                $(".custom_url_desktop").show();
+            }
+
+            var url_structure_m = $('.url_structure_m').find(":selected").val();
+            if (url_structure_m == 'custom_url') {
+                $(".custom_url_mobile").show();
+            }
+
+            // on change
+            $(".url_structure_d").on("change", function (e) {
+
+                var change_url_structure_d = e.target.value;
+
+                if (change_url_structure_d == 'custom_url') {
+                    $(".custom_url_desktop").show(500);
+                } else {
+                    $(".custom_url_desktop").hide(500);
+                }
+            });
+            $(".url_structure_m").on("change", function (e) {
+
+                var change_url_structure_m = e.target.value;
+
+                if (change_url_structure_m == 'custom_url') {
+                    $(".custom_url_mobile").show(500);
+                } else {
+                    $(".custom_url_mobile").hide(500);
+                }
+            });
+
 
         }
 
@@ -550,9 +589,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 'ht_ctc_show_hide_settings',
                 'ht_ctc_woo_1',
                 'ht_ctc_woo_shop',
-                'ht_ctc_woo_cart',
-                'ht_ctc_woo_checkout',
-                'ht_ctc_woo_myaccount',
+                'ctc_g_opt_in',
+                'url_structure',
             ];
 
             var default_active = [
@@ -563,6 +601,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 'ht_ctc_analytics',
                 'ht_ctc_animations',
                 'ht_ctc_other_settings',
+                'url_structure',
             ];
 
 

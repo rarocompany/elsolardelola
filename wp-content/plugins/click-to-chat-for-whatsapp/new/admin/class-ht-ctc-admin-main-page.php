@@ -84,7 +84,6 @@ class HT_CTC_Admin_Main_Page {
         add_settings_field( 'number', __( 'WhatsApp Number', 'click-to-chat-for-whatsapp'), array( $this, 'number_cb' ), 'ht_ctc_main_page_settings_sections_do', 'ht_ctc_chat_page_settings_sections_add' );
         add_settings_field( 'prefilled', __( 'Pre-Filled Message', 'click-to-chat-for-whatsapp'), array( $this, 'prefilled_cb' ), 'ht_ctc_main_page_settings_sections_do', 'ht_ctc_chat_page_settings_sections_add' );
         add_settings_field( 'cta', __( 'Call to Action', 'click-to-chat-for-whatsapp'), array( $this, 'cta_cb' ), 'ht_ctc_main_page_settings_sections_do', 'ht_ctc_chat_page_settings_sections_add' );
-        add_settings_field( 'ctc_webandapi', __( 'Web WhatsApp', 'click-to-chat-for-whatsapp'), array( $this, 'ctc_webandapi_cb' ), 'ht_ctc_main_page_settings_sections_do', 'ht_ctc_chat_page_settings_sections_add' );
         add_settings_field( 'ctc_desktop', __( 'Style, Position', 'click-to-chat-for-whatsapp'), array( $this, 'ctc_device_cb' ), 'ht_ctc_main_page_settings_sections_do', 'ht_ctc_chat_page_settings_sections_add' );
         add_settings_field( 'ctc_show_hide', __( 'Display Settings', 'click-to-chat-for-whatsapp'), array( $this, 'ctc_show_hide_cb' ), 'ht_ctc_main_page_settings_sections_do', 'ht_ctc_chat_page_settings_sections_add' );
         
@@ -214,40 +213,12 @@ class HT_CTC_Admin_Main_Page {
                 <p class= "description">To Change Pre-filled Message, Call to action for WooCommerce Single Product Pages <a target="_blank" href="<?= $woo_link ?>">( Click to Chat -> WooCommerce )</a></p>
                 <?php
             }
+
+            $other_settings_link = admin_url( 'admin.php?page=click-to-chat-other-settings#url_structure' );
             ?>
+            <p class= "description" style="margin-top:40px;"><strong>'Web WhatsApp'</strong> feature is moved to 'Other Settings' <a target="_blank" href="<?= $other_settings_link ?>">( Click to Chat -> Other Settings - URL Structure )</a></p>
             </div>
         </div>
-        <?php
-    }
-
-    // If checked web / api whatsapp link. If unchecked wa.me links
-    function ctc_webandapi_cb() {
-        $options = get_option('ht_ctc_chat_options');
-        $dbrow = 'ht_ctc_chat_options';
-
-        if ( isset( $options['webandapi'] ) ) {
-            ?>
-            <p>
-                <label>
-                    <input name="ht_ctc_chat_options[webandapi]" type="checkbox" value="1" <?php checked( $options['webandapi'], 1 ); ?> id="webandapi"   />
-                    <span><?php _e( 'Web WhatsApp on Desktop', 'click-to-chat-for-whatsapp' ); ?></span>
-                </label>
-            </p>
-            <?php
-        } else {
-            ?>
-            <p>
-                <label>
-                    <input name="ht_ctc_chat_options[webandapi]" type="checkbox" value="1" id="webandapi"   />
-                    <span><?php _e( 'Web WhatsApp on Desktop', 'click-to-chat-for-whatsapp' ); ?></span>
-                </label>
-            </p>
-            <?php
-        }
-        ?>
-        <p class="description"><?php _e( 'If checked opens Web.WhatsApp directly on Desktop and in mobile WhatsApp App', 'click-to-chat-for-whatsapp' ); ?> - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/web-whatsapp/"><?php _e( 'more info', 'click-to-chat-for-whatsapp' ); ?></a> </p>
-        <br>
-
         <?php
     }
 
@@ -260,7 +231,6 @@ class HT_CTC_Admin_Main_Page {
 
         include_once HT_CTC_PLUGIN_DIR .'new/admin/admin_commons/admin-device-settings.php';
     }
-
 
     // show/hide 
     function ctc_show_hide_cb() {

@@ -171,10 +171,6 @@ class HT_CTC_Admin_Others {
 
         }
 
-        // // todo -comment this..  - added here for testing.. 
-        // add_action('admin_notices', array( $this, 'pro_notice') );
-        // add_action('admin_footer', array( $this, 'admin_pro_notice_scripts') );
-
     }
 
     function ifnumberblank() {
@@ -182,7 +178,6 @@ class HT_CTC_Admin_Others {
         <div class="notice notice-info is-dismissible">
             <p><?php _e( 'Click to Chat is almost ready', 'click-to-chat-for-whatsapp' ); ?>. <a href="<?= admin_url('admin.php?page=click-to-chat'); ?>"><?php _e( 'Add WhatsApp Number', 'click-to-chat-for-whatsapp' ); ?></a> <?php _e( 'and let visitors chat', 'click-to-chat-for-whatsapp' ); ?>.</p>
             <!-- <p>Click to Chat is almost ready. <a href="<?php // echo admin_url('admin.php?page=click-to-chat');?>">Add WhatsApp Number</a> to display the chat options and let visitors chat.</p> -->
-            <!-- <a href="?dismis">Dismiss</a> -->
         </div>
         <?php
     }
@@ -191,7 +186,6 @@ class HT_CTC_Admin_Others {
         ?>
         <div class="notice notice-info is-dismissible">
             <p><?php _e( 'Click to Chat is almost ready', 'click-to-chat-for-whatsapp' ); ?>. <a href="<?= admin_url('admin.php?page=click-to-chat-group-feature'); ?>"><?php _e( 'Add WhatsApp Group ID', 'click-to-chat-for-whatsapp' ); ?></a> <?php _e( 'to let visitors join in your WhatsApp Group', 'click-to-chat-for-whatsapp' ); ?>.</p>
-            <!-- <a href="?dismis">Dismiss</a> -->
         </div>
         <?php
     }
@@ -200,7 +194,6 @@ class HT_CTC_Admin_Others {
         ?>
         <div class="notice notice-info is-dismissible">
             <p><?php _e( 'Click to Chat is almost ready', 'click-to-chat-for-whatsapp' ); ?>. <a href="<?= admin_url('admin.php?page=click-to-chat-share-feature'); ?>"><?php _e( 'Add Share Text', 'click-to-chat-for-whatsapp' ); ?></a> <?php _e( 'to let vistiors Share your Webpages', 'click-to-chat-for-whatsapp' ); ?>.</p>
-            <!-- <a href="?dismis">Dismiss</a> -->
         </div>
         <?php
     }

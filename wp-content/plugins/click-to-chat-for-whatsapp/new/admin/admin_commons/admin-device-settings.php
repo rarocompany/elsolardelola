@@ -49,7 +49,7 @@ $position_type_values = apply_filters( 'ht_ctc_fh_position_type_values', $positi
 <blockquote class="not_samesettings" style="margin-bottom: 25px;">Desktop:</blockquote>
 
 <!-- style -->
-<p class="description ht_ctc_admin_desktop ht_ctc_subtitle"><?php _e( 'Select Style', 'click-to-chat-for-whatsapp' ); ?> <span class="not_samesettings"><?php _e( ' (Desktop)', 'click-to-chat-for-whatsapp' ); ?></span>:</p class="description">
+<p class="description ht_ctc_admin_desktop ht_ctc_subtitle"><?php _e( 'Select Style', 'click-to-chat-for-whatsapp' ); ?> <span class="not_samesettings"><?php _e( ' (Desktop)', 'click-to-chat-for-whatsapp' ); ?></span>:</p>
 <div class="row ht_ctc_admin_desktop">
     <div class="input-field col s12 m12">
         <select name="<?= $dbrow; ?>[style_desktop]" class="chat_select_style select_style_desktop">
@@ -161,7 +161,7 @@ if ( isset( $options['same_settings'] ) ) {
 <blockquote class="not_samesettings " style="margin-bottom: 25px;"><?php _e( 'Mobile', 'click-to-chat-for-whatsapp' ); ?>:</blockquote>
 
 <!-- style -->
-<p class="description ht_ctc_admin_mobile ht_ctc_subtitle not_samesettings"><?php _e( 'Select Style (Mobile)', 'click-to-chat-for-whatsapp' ); ?>:</p class="description">
+<p class="description ht_ctc_admin_mobile ht_ctc_subtitle not_samesettings"><?php _e( 'Select Style (Mobile)', 'click-to-chat-for-whatsapp' ); ?>:</p>
 <div class="row ht_ctc_admin_mobile not_samesettings">
     <div class="input-field col s12 m12">
         <select name="<?= $dbrow; ?>[style_mobile]" class="chat_select_style select_style_mobile">
@@ -182,7 +182,7 @@ if ( isset( $options['same_settings'] ) ) {
 </div>
 
 <!-- position type - mobile -->
-<p class="description ht_ctc_admin_mobile ht_ctc_subtitle not_samesettings"><?php _e( 'Position Type', 'click-to-chat-for-whatsapp' ); ?>:</p class="description">
+<p class="description ht_ctc_admin_mobile ht_ctc_subtitle not_samesettings"><?php _e( 'Position Type', 'click-to-chat-for-whatsapp' ); ?>:</p>
 <div class="row ht_ctc_admin_mobile not_samesettings">
     <div class="input-field col s12 m12">
         <select name="<?php echo $dbrow ?>[position_type_mobile]" class="chat_select_position_type">

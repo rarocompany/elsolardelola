@@ -186,6 +186,9 @@ class HT_CTC_Admin_Other_Settings {
 
         <?php
 
+        do_action('ht_ctc_ah_admin_after_fb_pixel');
+
+
         // Google Ads gtag_report_conversion
         $ga_ads_checkbox = ( isset( $options['ga_ads']) ) ? esc_attr( $options['ga_ads'] ) : '';
         
@@ -434,6 +437,7 @@ class HT_CTC_Admin_Other_Settings {
     function ht_ctc_othersettings_cb() {
 
         $options = get_option('ht_ctc_othersettings');
+        $chat_options = get_option('ht_ctc_chat_options');
         $dbrow = 'ht_ctc_othersettings';
 
         $aria = (isset($options['aria'])) ? 1 : '';
@@ -446,10 +450,127 @@ class HT_CTC_Admin_Other_Settings {
         ?>
 
         <p class="description"><?php _e( 'All this below settings are not important to everyone', 'click-to-chat-for-whatsapp' ); ?></p>
+        <?php
+
+        // url strucutre
+        $url_target_d = ( isset( $options['url_target_d']) ) ? esc_attr( $options['url_target_d'] ) :'_blank';
+        $url_structure_d = ( isset( $options['url_structure_d']) ) ? esc_attr( $options['url_structure_d'] ) :'';
+        $url_structure_m = ( isset( $options['url_structure_m']) ) ? esc_attr( $options['url_structure_m'] ) :'';
+
+        $custom_link_d = ( isset( $options['custom_link_d']) ) ? esc_attr( $options['custom_link_d'] ) :'';
+        $custom_link_m = ( isset( $options['custom_link_m']) ) ? esc_attr( $options['custom_link_m'] ) :'';
+
+        /**
+         * web whatsapp - deskop - if new settings not updated, based on settings set before 3.12
+         * url_structure_d = '' (blank means user not updated new settings) 
+         * isset( $chat_options['webandapi'] )- existing user no need to check this new settings and update the page. no issue.
+         */
+        if ( '' == $url_structure_d && isset( $chat_options['webandapi'] ) ) {
+            $url_structure_d = 'web';
+        }
+        
+        $url_structure_d_list = array(
+            'default' => '(' . __( 'Default', 'click-to-chat-for-') .') wa.me',
+            'web' => 'Web WhatsApp',
+            // 'custom_url' => __( 'Custom URL', 'click-to-chat-for-whatsapp' ),
+        );
+        
+        $url_structure_m_list = array(
+            'default' => '(' . __( 'Default', 'click-to-chat-for-') .') wa.me',
+            'wa_colon' => 'WhatsApp://',
+            // 'custom_url' => __( 'Custom URL', 'click-to-chat-for-whatsapp' ),
+        );
+        
+        ?>
+
+        <ul class="collapsible url_structure" id="url_structure">
+        <li class="">
+        <div class="collapsible-header" id="showhide_settings"><?php _e( 'URL Structure', 'click-to-chat-for-whatsapp' ); ?></div>
+        <div class="collapsible-body">
+
+        <p class="description ht_ctc_subtitle" style="margin-bottom: 11px;"><?php _e( 'Desktop', 'click-to-chat-for-whatsapp' ); ?>:</p>
+        <div class="row">
+            <div class="col s6">
+                <p><?php _e( 'Open links in', 'click-to-chat-for-whatsapp' ); ?></p>
+            </div>
+            <div class="input-field col s6">
+                <select name="<?= $dbrow; ?>[url_target_d]" class="url_target_d">
+                    <option value="_blank" <?= $url_target_d == '_blank' ? 'SELECTED' : ''; ?> ><?php _e( 'New Tab', 'click-to-chat-for-whatsapp' ); ?></option>
+                    <option value="popup" <?= $url_target_d == 'popup' ? 'SELECTED' : ''; ?> ><?php _e( 'Pop-up', 'click-to-chat-for-whatsapp' ); ?></option>
+                    <option value="_self" <?= $url_target_d == '_self' ? 'SELECTED' : ''; ?> ><?php _e( 'Same Tab', 'click-to-chat-for-whatsapp' ); ?></option>
+                </select>
+                <label><?php _e( 'Open links in', 'click-to-chat-for-whatsapp' ); ?></label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6">
+                <p><?php _e( 'Desktop', 'click-to-chat-for-whatsapp' ); ?>: <?php _e( 'URL Structure', 'click-to-chat-for-whatsapp' ); ?></p>
+            </div>
+            <div class="input-field col s6">
+                <select name="<?= $dbrow; ?>[url_structure_d]" class="url_structure_d">
+                    <?php 
+                    foreach ( $url_structure_d_list as $key => $value ) {
+                    ?>
+                    <option value="<?= $key ?>" <?= $url_structure_d == $key ? 'SELECTED' : ''; ?> ><?= $value ?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <label><?php _e( 'Desktop', 'click-to-chat-for-whatsapp' ); ?>: <?php _e( 'URL Structure', 'click-to-chat-for-whatsapp' ); ?></label>
+            </div>
+        </div>
+
+        <div class="row custom_url_desktop ctc_init_display_none">
+            <div class="col s6">
+                <p><?php _e( 'Desktop', 'click-to-chat-for-whatsapp' ); ?>: <?php _e( 'Custom URL', 'click-to-chat-for-whatsapp' ); ?></p>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="" name="<?= $dbrow; ?>[custom_link_d]" value="<?= $custom_link_d ?>" id="custom_link_d" type="text">
+                <label><?php _e( 'Desktop', 'click-to-chat-for-whatsapp' ); ?>: <?php _e( 'Custom URL', 'click-to-chat-for-whatsapp' ); ?></label>
+                <p class="description"><?php _e( 'Add Full URL for Desktop', 'click-to-chat-for-whatsapp' ); ?></p>
+            </div>
+        </div>
+
+        <p class="description ht_ctc_subtitle" style="margin-bottom: 11px;"><?php _e( 'Mobile', 'click-to-chat-for-whatsapp' ); ?>:</p>
+        <div class="row">
+            <div class="col s6">
+                <p><?php _e( 'Mobile', 'click-to-chat-for-whatsapp' ); ?>: <?php _e( 'URL Structure', 'click-to-chat-for-whatsapp' ); ?></p>
+            </div>
+            <div class="input-field col s6">
+                <select name="<?= $dbrow; ?>[url_structure_m]" class="url_structure_m">
+                    <?php 
+                    foreach ( $url_structure_m_list as $key => $value ) {
+                    ?>
+                    <option value="<?= $key ?>" <?= $url_structure_m == $key ? 'SELECTED' : ''; ?> ><?= $value ?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <label><?php _e( 'Mobile', 'click-to-chat-for-whatsapp' ); ?>: <?php _e( 'URL Structure', 'click-to-chat-for-whatsapp' ); ?></label>
+            </div>
+        </div>
+
+        <div class="row custom_url_mobile ctc_init_display_none">
+            <div class="col s6">
+                <p><?php _e( 'Mobile', 'click-to-chat-for-whatsapp' ); ?>: <?php _e( 'Custom URL', 'click-to-chat-for-whatsapp' ); ?></p>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="" name="<?= $dbrow; ?>[custom_link_m]" value="<?= $custom_link_m ?>" id="custom_link_m" type="text">
+                <label><?php _e( 'Mobile', 'click-to-chat-for-whatsapp' ); ?>: <?php _e( 'Custom URL', 'click-to-chat-for-whatsapp' ); ?></label>
+                <p class="description"><?php _e( 'Add Full URL for Mobile', 'click-to-chat-for-whatsapp' ); ?></p>
+            </div>
+        </div>
+
+        <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/url-structure/"><?php _e( 'URL Structure', 'click-to-chat-for-whatsapp' ); ?></a> </p>
+        </div>
+        </li>
+        </ul>
+        <br>
 
         <ul class="collapsible ht_ctc_other_settings" data-collapsible="accordion" id="ht_ctc_othersettings">
         <li class="">
-        <div class="collapsible-header"><?php _e( 'Advanced Settings', 'click-to-chat-for-whatsapp' ); ?></div>
+        <div class="collapsible-header"><?php _e( 'z-index, Aria', 'click-to-chat-for-whatsapp' ); ?></div>
         <div class="collapsible-body">
 
         <!-- z-index -->
@@ -466,12 +587,17 @@ class HT_CTC_Admin_Other_Settings {
 
         <!-- aria -->
         <div class="row">
-            <p id="aria">
+            <div class="col s6">
+                <p><?php _e( 'Add aria-hidden=true', 'click-to-chat-for-whatsapp' ); ?></p>
+            </div>
+            <div class="col s6">
                 <label>
                     <input name="<?php echo $dbrow ?>[aria]" type="checkbox" value="1" <?php checked( $aria, 1 ); ?> id="aria" />
-                    <span><?php _e( 'Add aria-hidden=true - hide for Accessibility API (screen readers)', 'click-to-chat-for-whatsapp' ); ?></span>
+                    <span><?php _e( 'Add aria-hidden=true', 'click-to-chat-for-whatsapp' ); ?></span>
+                    <p class="description"><?php _e( 'hide for Accessibility API (screen readers)', 'click-to-chat-for-whatsapp' ); ?></p>
                 </label>
-            </p>
+                <br>
+            </div>
         </div>        
 
         <?php
@@ -479,12 +605,9 @@ class HT_CTC_Admin_Other_Settings {
         // in other settings
         do_action('ht_ctc_ah_admin_in_os');
         ?>
-
         </div>
         </li>
         </ul>
-
-
         <br>
 
         <!-- enable group, share features -->
@@ -611,6 +734,7 @@ class HT_CTC_Admin_Other_Settings {
 
         ?>
 
+        <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/faq"><?php _e( 'FAQ', 'click-to-chat-for-whatsapp' ); ?> (<?php _e( 'Frequently Asked Questions', 'click-to-chat-for-whatsapp' ); ?>)</a></p>
         <p class="description">
             <ul>
             Basic Troubleshoot
@@ -646,7 +770,13 @@ class HT_CTC_Admin_Other_Settings {
         ?>
 
         <br><br>
-        <p class="description"><?php _e( 'If any issue: Please contact us', 'click-to-chat-for-whatsapp' ); ?> <br> <?php _e( 'Mail', 'click-to-chat-for-whatsapp' ); ?>: <a href="mailto:ctc@holithemes.com">ctc@holithemes.com</a> <br> <a target="_blank" href="https://api.whatsapp.com/send?phone=919494429789&text=Hi%20HoliThemes,%20I%20have%20a%20question"><?php _e( 'WhatsApp Us', 'click-to-chat-for-whatsapp' ); ?></a></p>
+        <p class="description">
+            <?php _e( 'If any issue? Please, contact us', 'click-to-chat-for-whatsapp' ); ?> 
+            <br>
+            <?php _e( 'Mail', 'click-to-chat-for-whatsapp' ); ?>: <a href="mailto:ctc@holithemes.com">ctc@holithemes.com</a> 
+            <br>
+            <?php _e( 'Chat', 'click-to-chat-for-whatsapp' ); ?>: <a target="_blank" href="https://api.whatsapp.com/send?phone=919494429789&text=Hi%20HoliThemes,%20I%20have%20a%20question"><?php _e( 'WhatsApp Us', 'click-to-chat-for-whatsapp' ); ?></a>
+        </p>
 
 
         </div>
